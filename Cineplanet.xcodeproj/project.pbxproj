@@ -12,6 +12,8 @@
 		8B2F19E81E9D676900CCD172 /* WebAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F19E71E9D676900CCD172 /* WebAPIClient.swift */; };
 		8B2F19EA1E9D686900CCD172 /* WebAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F19E91E9D686900CCD172 /* WebAPIRequest.swift */; };
 		8B2F19EC1E9D697E00CCD172 /* WebAPIURLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F19EB1E9D697E00CCD172 /* WebAPIURLBuilder.swift */; };
+		8B2F19EF1E9D770300CCD172 /* ModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F19EE1E9D770300CCD172 /* ModelParser.swift */; };
+		8B2F19F11E9D772100CCD172 /* ParsingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F19F01E9D772100CCD172 /* ParsingError.swift */; };
 		8B76BEFD1E9D1096003074DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76BEFC1E9D1096003074DD /* AppDelegate.swift */; };
 		8B76BEFF1E9D1096003074DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76BEFE1E9D1096003074DD /* ViewController.swift */; };
 		8B76BF021E9D1096003074DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B76BF001E9D1096003074DD /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 		8B2F19E71E9D676900CCD172 /* WebAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPIClient.swift; sourceTree = "<group>"; };
 		8B2F19E91E9D686900CCD172 /* WebAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPIRequest.swift; sourceTree = "<group>"; };
 		8B2F19EB1E9D697E00CCD172 /* WebAPIURLBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPIURLBuilder.swift; sourceTree = "<group>"; };
+		8B2F19EE1E9D770300CCD172 /* ModelParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelParser.swift; sourceTree = "<group>"; };
+		8B2F19F01E9D772100CCD172 /* ParsingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsingError.swift; sourceTree = "<group>"; };
 		8B76BEF91E9D1096003074DD /* Cineplanet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cineplanet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B76BEFC1E9D1096003074DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B76BEFE1E9D1096003074DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				8B2F19E61E9D675400CCD172 /* General */,
+				8B2F19ED1E9D76F800CCD172 /* Parsing */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -84,6 +89,15 @@
 				8B2F19EB1E9D697E00CCD172 /* WebAPIURLBuilder.swift */,
 			);
 			path = General;
+			sourceTree = "<group>";
+		};
+		8B2F19ED1E9D76F800CCD172 /* Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				8B2F19EE1E9D770300CCD172 /* ModelParser.swift */,
+				8B2F19F01E9D772100CCD172 /* ParsingError.swift */,
+			);
+			path = Parsing;
 			sourceTree = "<group>";
 		};
 		8B76BEF01E9D1096003074DD = {
@@ -253,10 +267,12 @@
 			files = (
 				8B2F19E21E9D3C2600CCD172 /* Result.swift in Sources */,
 				8B2F19E81E9D676900CCD172 /* WebAPIClient.swift in Sources */,
+				8B2F19EF1E9D770300CCD172 /* ModelParser.swift in Sources */,
 				8B76BEFF1E9D1096003074DD /* ViewController.swift in Sources */,
 				8B2F19E41E9D3C7500CCD172 /* UNIXTimestamp.swift in Sources */,
 				8B76BEFD1E9D1096003074DD /* AppDelegate.swift in Sources */,
 				8B2F19EC1E9D697E00CCD172 /* WebAPIURLBuilder.swift in Sources */,
+				8B2F19F11E9D772100CCD172 /* ParsingError.swift in Sources */,
 				8B2F19EA1E9D686900CCD172 /* WebAPIRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
