@@ -1,3 +1,25 @@
-PODFILE CHECKSUM: a68474c7210fca4b6c9fe5a169d5f551e1d48ce9
+PODS:
+  - Alamofire (4.4.0)
+  - Timberjack (0.0.3)
+
+DEPENDENCIES:
+  - Alamofire
+  - Timberjack (from `https://github.com/andysmart/Timberjack.git`, branch `master`)
+
+EXTERNAL SOURCES:
+  Timberjack:
+    :branch: master
+    :git: https://github.com/andysmart/Timberjack.git
+
+CHECKOUT OPTIONS:
+  Timberjack:
+    :commit: 303b398d5ead5d5fc4dbf86a476b09a856dda4ec
+    :git: https://github.com/andysmart/Timberjack.git
+
+SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  Timberjack: 20de84a2c135134de6821d1ea90cd57709567e2d
+
+PODFILE CHECKSUM: 3f3b66a8204e91e1d2a24ac98226c887831fd942
 
 COCOAPODS: 1.1.1

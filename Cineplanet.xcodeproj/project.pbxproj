@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		8B2F19E21E9D3C2600CCD172 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F19E11E9D3C2600CCD172 /* Result.swift */; };
 		8B2F19E41E9D3C7500CCD172 /* UNIXTimestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F19E31E9D3C7500CCD172 /* UNIXTimestamp.swift */; };
+		8B2F19E81E9D676900CCD172 /* WebAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F19E71E9D676900CCD172 /* WebAPIClient.swift */; };
+		8B2F19EA1E9D686900CCD172 /* WebAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F19E91E9D686900CCD172 /* WebAPIRequest.swift */; };
+		8B2F19EC1E9D697E00CCD172 /* WebAPIURLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F19EB1E9D697E00CCD172 /* WebAPIURLBuilder.swift */; };
 		8B76BEFD1E9D1096003074DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76BEFC1E9D1096003074DD /* AppDelegate.swift */; };
 		8B76BEFF1E9D1096003074DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76BEFE1E9D1096003074DD /* ViewController.swift */; };
 		8B76BF021E9D1096003074DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B76BF001E9D1096003074DD /* Main.storyboard */; };
@@ -23,6 +26,9 @@
 		55D8D44DCA88AD92B952382C /* Pods-Cineplanet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cineplanet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cineplanet/Pods-Cineplanet.debug.xcconfig"; sourceTree = "<group>"; };
 		8B2F19E11E9D3C2600CCD172 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		8B2F19E31E9D3C7500CCD172 /* UNIXTimestamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNIXTimestamp.swift; sourceTree = "<group>"; };
+		8B2F19E71E9D676900CCD172 /* WebAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPIClient.swift; sourceTree = "<group>"; };
+		8B2F19E91E9D686900CCD172 /* WebAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPIRequest.swift; sourceTree = "<group>"; };
+		8B2F19EB1E9D697E00CCD172 /* WebAPIURLBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPIURLBuilder.swift; sourceTree = "<group>"; };
 		8B76BEF91E9D1096003074DD /* Cineplanet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cineplanet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B76BEFC1E9D1096003074DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B76BEFE1E9D1096003074DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +68,24 @@
 			path = General;
 			sourceTree = "<group>";
 		};
+		8B2F19E51E9D674800CCD172 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				8B2F19E61E9D675400CCD172 /* General */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		8B2F19E61E9D675400CCD172 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				8B2F19E71E9D676900CCD172 /* WebAPIClient.swift */,
+				8B2F19E91E9D686900CCD172 /* WebAPIRequest.swift */,
+				8B2F19EB1E9D697E00CCD172 /* WebAPIURLBuilder.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
 		8B76BEF01E9D1096003074DD = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				8B2F19E01E9D3C1800CCD172 /* General */,
+				8B2F19E51E9D674800CCD172 /* Networking */,
 				8B76BEFC1E9D1096003074DD /* AppDelegate.swift */,
 				8B76BEFE1E9D1096003074DD /* ViewController.swift */,
 				8B76BF001E9D1096003074DD /* Main.storyboard */,
@@ -227,9 +252,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B2F19E21E9D3C2600CCD172 /* Result.swift in Sources */,
+				8B2F19E81E9D676900CCD172 /* WebAPIClient.swift in Sources */,
 				8B76BEFF1E9D1096003074DD /* ViewController.swift in Sources */,
 				8B2F19E41E9D3C7500CCD172 /* UNIXTimestamp.swift in Sources */,
 				8B76BEFD1E9D1096003074DD /* AppDelegate.swift in Sources */,
+				8B2F19EC1E9D697E00CCD172 /* WebAPIURLBuilder.swift in Sources */,
+				8B2F19EA1E9D686900CCD172 /* WebAPIRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,5 +6,7 @@ target 'Cineplanet' do
   use_frameworks!
 
   # Pods for Cineplanet
+  pod 'Alamofire'#, '~> 4.4'
+  pod 'Timberjack', :git => 'https://github.com/andysmart/Timberjack.git', :branch => 'master'
 
 end
