@@ -12,9 +12,13 @@
 		8B76BF021E9D1096003074DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B76BF001E9D1096003074DD /* Main.storyboard */; };
 		8B76BF041E9D1096003074DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B76BF031E9D1096003074DD /* Assets.xcassets */; };
 		8B76BF071E9D1096003074DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B76BF051E9D1096003074DD /* LaunchScreen.storyboard */; };
+		9722424BFB7D33D7CC114203 /* Pods_Cineplanet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D1A6A46B3F7CA56F64FF60 /* Pods_Cineplanet.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24FEFE1B5D074C2E585D1BA1 /* Pods-Cineplanet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cineplanet.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cineplanet/Pods-Cineplanet.release.xcconfig"; sourceTree = "<group>"; };
+		41D1A6A46B3F7CA56F64FF60 /* Pods_Cineplanet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cineplanet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55D8D44DCA88AD92B952382C /* Pods-Cineplanet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cineplanet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cineplanet/Pods-Cineplanet.debug.xcconfig"; sourceTree = "<group>"; };
 		8B76BEF91E9D1096003074DD /* Cineplanet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cineplanet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B76BEFC1E9D1096003074DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B76BEFE1E9D1096003074DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9722424BFB7D33D7CC114203 /* Pods_Cineplanet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32057B704C33CBA2068BCA80 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				55D8D44DCA88AD92B952382C /* Pods-Cineplanet.debug.xcconfig */,
+				24FEFE1B5D074C2E585D1BA1 /* Pods-Cineplanet.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8B76BEF01E9D1096003074DD = {
 			isa = PBXGroup;
 			children = (
 				8B76BEFB1E9D1096003074DD /* Cineplanet */,
 				8B76BEFA1E9D1096003074DD /* Products */,
+				32057B704C33CBA2068BCA80 /* Pods */,
+				C5EA73F2ABB67662FF19297F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = Cineplanet;
 			sourceTree = "<group>";
 		};
+		C5EA73F2ABB67662FF19297F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41D1A6A46B3F7CA56F64FF60 /* Pods_Cineplanet.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B76BF0B1E9D1096003074DD /* Build configuration list for PBXNativeTarget "Cineplanet" */;
 			buildPhases = (
+				EB243C84A746033B8E8CCA82 /* [CP] Check Pods Manifest.lock */,
 				8B76BEF51E9D1096003074DD /* Sources */,
 				8B76BEF61E9D1096003074DD /* Frameworks */,
 				8B76BEF71E9D1096003074DD /* Resources */,
+				529C5470075CD49022176347 /* [CP] Embed Pods Frameworks */,
+				B9732769FA73EE2C5648E859 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		529C5470075CD49022176347 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cineplanet/Pods-Cineplanet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9732769FA73EE2C5648E859 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cineplanet/Pods-Cineplanet-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB243C84A746033B8E8CCA82 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8B76BEF51E9D1096003074DD /* Sources */ = {
@@ -259,6 +334,7 @@
 		};
 		8B76BF0C1E9D1096003074DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55D8D44DCA88AD92B952382C /* Pods-Cineplanet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UMT34K4222;
@@ -272,6 +348,7 @@
 		};
 		8B76BF0D1E9D1096003074DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24FEFE1B5D074C2E585D1BA1 /* Pods-Cineplanet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UMT34K4222;
