@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B2F19E21E9D3C2600CCD172 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F19E11E9D3C2600CCD172 /* Result.swift */; };
+		8B2F19E41E9D3C7500CCD172 /* UNIXTimestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F19E31E9D3C7500CCD172 /* UNIXTimestamp.swift */; };
 		8B76BEFD1E9D1096003074DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76BEFC1E9D1096003074DD /* AppDelegate.swift */; };
 		8B76BEFF1E9D1096003074DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76BEFE1E9D1096003074DD /* ViewController.swift */; };
 		8B76BF021E9D1096003074DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B76BF001E9D1096003074DD /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 		24FEFE1B5D074C2E585D1BA1 /* Pods-Cineplanet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cineplanet.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cineplanet/Pods-Cineplanet.release.xcconfig"; sourceTree = "<group>"; };
 		41D1A6A46B3F7CA56F64FF60 /* Pods_Cineplanet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cineplanet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D8D44DCA88AD92B952382C /* Pods-Cineplanet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cineplanet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cineplanet/Pods-Cineplanet.debug.xcconfig"; sourceTree = "<group>"; };
+		8B2F19E11E9D3C2600CCD172 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		8B2F19E31E9D3C7500CCD172 /* UNIXTimestamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNIXTimestamp.swift; sourceTree = "<group>"; };
 		8B76BEF91E9D1096003074DD /* Cineplanet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cineplanet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B76BEFC1E9D1096003074DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B76BEFE1E9D1096003074DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +53,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8B2F19E01E9D3C1800CCD172 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				8B2F19E11E9D3C2600CCD172 /* Result.swift */,
+				8B2F19E31E9D3C7500CCD172 /* UNIXTimestamp.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
 		8B76BEF01E9D1096003074DD = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +83,7 @@
 		8B76BEFB1E9D1096003074DD /* Cineplanet */ = {
 			isa = PBXGroup;
 			children = (
+				8B2F19E01E9D3C1800CCD172 /* General */,
 				8B76BEFC1E9D1096003074DD /* AppDelegate.swift */,
 				8B76BEFE1E9D1096003074DD /* ViewController.swift */,
 				8B76BF001E9D1096003074DD /* Main.storyboard */,
@@ -212,7 +226,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B2F19E21E9D3C2600CCD172 /* Result.swift in Sources */,
 				8B76BEFF1E9D1096003074DD /* ViewController.swift in Sources */,
+				8B2F19E41E9D3C7500CCD172 /* UNIXTimestamp.swift in Sources */,
 				8B76BEFD1E9D1096003074DD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,6 +395,7 @@
 				8B76BF0D1E9D1096003074DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
