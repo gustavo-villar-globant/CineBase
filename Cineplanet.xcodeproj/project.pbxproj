@@ -13,7 +13,18 @@
 		8B76BF041E9D1096003074DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B76BF031E9D1096003074DD /* Assets.xcassets */; };
 		8B76BF071E9D1096003074DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B76BF051E9D1096003074DD /* LaunchScreen.storyboard */; };
 		9722424BFB7D33D7CC114203 /* Pods_Cineplanet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D1A6A46B3F7CA56F64FF60 /* Pods_Cineplanet.framework */; };
+		F55B4CC31E9EB68500A40E39 /* CineplanetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B4CC21E9EB68500A40E39 /* CineplanetTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F55B4CC51E9EB68500A40E39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B76BEF11E9D1096003074DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B76BEF81E9D1096003074DD;
+			remoteInfo = Cineplanet;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		24FEFE1B5D074C2E585D1BA1 /* Pods-Cineplanet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cineplanet.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cineplanet/Pods-Cineplanet.release.xcconfig"; sourceTree = "<group>"; };
@@ -26,6 +37,9 @@
 		8B76BF031E9D1096003074DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B76BF061E9D1096003074DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B76BF081E9D1096003074DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F55B4CC01E9EB68500A40E39 /* CineplanetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CineplanetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F55B4CC21E9EB68500A40E39 /* CineplanetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CineplanetTests.swift; sourceTree = "<group>"; };
+		F55B4CC41E9EB68500A40E39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +48,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9722424BFB7D33D7CC114203 /* Pods_Cineplanet.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F55B4CBD1E9EB68500A40E39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				8B76BEFB1E9D1096003074DD /* Cineplanet */,
+				F55B4CC11E9EB68500A40E39 /* CineplanetTests */,
 				8B76BEFA1E9D1096003074DD /* Products */,
 				32057B704C33CBA2068BCA80 /* Pods */,
 				C5EA73F2ABB67662FF19297F /* Frameworks */,
@@ -70,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				8B76BEF91E9D1096003074DD /* Cineplanet.app */,
+				F55B4CC01E9EB68500A40E39 /* CineplanetTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,6 +100,7 @@
 		8B76BEFB1E9D1096003074DD /* Cineplanet */ = {
 			isa = PBXGroup;
 			children = (
+				F55B4CCA1E9EB6AE00A40E39 /* Flows */,
 				8B2F19E51E9D674800CCD172 /* Networking */,
 				8B76BEFC1E9D1096003074DD /* AppDelegate.swift */,
 				8B76BEFE1E9D1096003074DD /* ViewController.swift */,
@@ -94,6 +118,22 @@
 				41D1A6A46B3F7CA56F64FF60 /* Pods_Cineplanet.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F55B4CC11E9EB68500A40E39 /* CineplanetTests */ = {
+			isa = PBXGroup;
+			children = (
+				F55B4CC21E9EB68500A40E39 /* CineplanetTests.swift */,
+				F55B4CC41E9EB68500A40E39 /* Info.plist */,
+			);
+			path = CineplanetTests;
+			sourceTree = "<group>";
+		};
+		F55B4CCA1E9EB6AE00A40E39 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Flows;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,13 +159,31 @@
 			productReference = 8B76BEF91E9D1096003074DD /* Cineplanet.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F55B4CBF1E9EB68500A40E39 /* CineplanetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F55B4CC91E9EB68500A40E39 /* Build configuration list for PBXNativeTarget "CineplanetTests" */;
+			buildPhases = (
+				F55B4CBC1E9EB68500A40E39 /* Sources */,
+				F55B4CBD1E9EB68500A40E39 /* Frameworks */,
+				F55B4CBE1E9EB68500A40E39 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F55B4CC61E9EB68500A40E39 /* PBXTargetDependency */,
+			);
+			name = CineplanetTests;
+			productName = CineplanetTests;
+			productReference = F55B4CC01E9EB68500A40E39 /* CineplanetTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		8B76BEF11E9D1096003074DD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Globant;
 				TargetAttributes = {
@@ -133,6 +191,11 @@
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = UMT34K4222;
 						ProvisioningStyle = Automatic;
+					};
+					F55B4CBF1E9EB68500A40E39 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8B76BEF81E9D1096003074DD;
 					};
 				};
 			};
@@ -150,6 +213,7 @@
 			projectRoot = "";
 			targets = (
 				8B76BEF81E9D1096003074DD /* Cineplanet */,
+				F55B4CBF1E9EB68500A40E39 /* CineplanetTests */,
 			);
 		};
 /* End PBXProject section */
@@ -162,6 +226,13 @@
 				8B76BF071E9D1096003074DD /* LaunchScreen.storyboard in Resources */,
 				8B76BF041E9D1096003074DD /* Assets.xcassets in Resources */,
 				8B76BF021E9D1096003074DD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F55B4CBE1E9EB68500A40E39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,7 +296,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F55B4CBC1E9EB68500A40E39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F55B4CC31E9EB68500A40E39 /* CineplanetTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F55B4CC61E9EB68500A40E39 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B76BEF81E9D1096003074DD /* Cineplanet */;
+			targetProxy = F55B4CC51E9EB68500A40E39 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8B76BF001E9D1096003074DD /* Main.storyboard */ = {
@@ -368,6 +455,34 @@
 			};
 			name = Release;
 		};
+		F55B4CC71E9EB68500A40E39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CineplanetTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = gustavovillar.CineplanetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cineplanet.app/Cineplanet";
+			};
+			name = Debug;
+		};
+		F55B4CC81E9EB68500A40E39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CineplanetTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = gustavovillar.CineplanetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cineplanet.app/Cineplanet";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -388,6 +503,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		F55B4CC91E9EB68500A40E39 /* Build configuration list for PBXNativeTarget "CineplanetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F55B4CC71E9EB68500A40E39 /* Debug */,
+				F55B4CC81E9EB68500A40E39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
