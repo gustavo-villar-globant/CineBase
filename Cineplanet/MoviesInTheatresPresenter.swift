@@ -10,9 +10,9 @@ protocol MoviesInTheatresView : class {
 final class MoviesInTheatresPresenter {
     unowned fileprivate var view : MoviesInTheatresView
     fileprivate let service : MovieService
-    fileprivate var moviesData : MovieResponseData!
+    fileprivate var moviesData : MovieResponseData?
     var moviesInTheaters : [MovieInTheatre] {
-        get { return moviesData.results }
+        get { return moviesData?.results ?? [MovieInTheatre]() }
     }
     
     init(view: MoviesInTheatresView, service: MovieService) {
