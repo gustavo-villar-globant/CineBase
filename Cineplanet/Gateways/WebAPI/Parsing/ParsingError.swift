@@ -12,7 +12,7 @@ import Foundation
  Error that describes a json response that coundn't 
  be parsed into the appropriate model.
 */
-struct ParsingError<Model>: LocalizedError, CustomDebugStringConvertible {
+struct ParsingError<Model>: Error, LocalizedError, CustomDebugStringConvertible {
     
     var json: Any
     

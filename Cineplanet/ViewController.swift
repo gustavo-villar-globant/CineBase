@@ -9,10 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    private var moviesFetchRequest: WebAPIRequest?
+    private let moviesAPIClient = MoviesAPIClient()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        moviesFetchRequest = moviesAPIClient.fetchNowPlaying { (result) in
+            print(result)
+        }
     }
 
     override func didReceiveMemoryWarning() {

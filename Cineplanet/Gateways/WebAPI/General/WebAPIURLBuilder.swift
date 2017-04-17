@@ -15,7 +15,7 @@ import Foundation
 */
 struct WebAPIURLBuilder {
     
-    private static let baseURL = "https://api.domain.com"
+//    private static let baseURL = "https://api.domain.com"
     
     static func url(forPath path: String, queryParameters: [String: Any]? = nil) -> URL {
         
@@ -25,7 +25,7 @@ struct WebAPIURLBuilder {
             query += queryParameters.map { "\($0.key)=\($0.value)" }.joined(separator: "&").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         }
         
-        return URL(string: baseURL + path + query)!
+        return URL(string: path + query)!
         
     }
     

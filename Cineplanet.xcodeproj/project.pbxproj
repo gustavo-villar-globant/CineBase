@@ -19,6 +19,9 @@
 		8BC3C4011EA564200001184A /* WebAPIURLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3C3FB1EA564200001184A /* WebAPIURLBuilder.swift */; };
 		8BC3C4021EA564200001184A /* ModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3C3FD1EA564200001184A /* ModelParser.swift */; };
 		8BC3C4031EA564200001184A /* ParsingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3C3FE1EA564200001184A /* ParsingError.swift */; };
+		8BC3C4051EA569B00001184A /* MoviesAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3C4041EA569B00001184A /* MoviesAPIClient.swift */; };
+		8BC3C4081EA56A3F0001184A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3C4071EA56A3F0001184A /* Movie.swift */; };
+		8BC3C40A1EA56C180001184A /* MovieParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3C4091EA56C180001184A /* MovieParser.swift */; };
 		9722424BFB7D33D7CC114203 /* Pods_Cineplanet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D1A6A46B3F7CA56F64FF60 /* Pods_Cineplanet.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +43,9 @@
 		8BC3C3FB1EA564200001184A /* WebAPIURLBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPIURLBuilder.swift; sourceTree = "<group>"; };
 		8BC3C3FD1EA564200001184A /* ModelParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelParser.swift; sourceTree = "<group>"; };
 		8BC3C3FE1EA564200001184A /* ParsingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsingError.swift; sourceTree = "<group>"; };
+		8BC3C4041EA569B00001184A /* MoviesAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesAPIClient.swift; sourceTree = "<group>"; };
+		8BC3C4071EA56A3F0001184A /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		8BC3C4091EA56C180001184A /* MovieParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				8BC3C3DB1EA55F060001184A /* General */,
+				8BC3C4061EA56A2D0001184A /* Models */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -134,6 +141,7 @@
 			children = (
 				8BC3C3F81EA564200001184A /* General */,
 				8BC3C3FC1EA564200001184A /* Parsing */,
+				8BC3C4041EA569B00001184A /* MoviesAPIClient.swift */,
 			);
 			path = WebAPI;
 			sourceTree = "<group>";
@@ -153,8 +161,17 @@
 			children = (
 				8BC3C3FD1EA564200001184A /* ModelParser.swift */,
 				8BC3C3FE1EA564200001184A /* ParsingError.swift */,
+				8BC3C4091EA56C180001184A /* MovieParser.swift */,
 			);
 			path = Parsing;
+			sourceTree = "<group>";
+		};
+		8BC3C4061EA56A2D0001184A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8BC3C4071EA56A3F0001184A /* Movie.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		C5EA73F2ABB67662FF19297F /* Frameworks */ = {
@@ -291,12 +308,15 @@
 			files = (
 				8BC3C3DF1EA55F060001184A /* UNIXTimestamp.swift in Sources */,
 				8BC3C3FF1EA564200001184A /* WebAPIClient.swift in Sources */,
+				8BC3C4051EA569B00001184A /* MoviesAPIClient.swift in Sources */,
 				8BC3C4021EA564200001184A /* ModelParser.swift in Sources */,
 				8B76BEFF1E9D1096003074DD /* ViewController.swift in Sources */,
+				8BC3C40A1EA56C180001184A /* MovieParser.swift in Sources */,
 				8B76BEFD1E9D1096003074DD /* AppDelegate.swift in Sources */,
 				8BC3C3DE1EA55F060001184A /* Result.swift in Sources */,
 				8BC3C4011EA564200001184A /* WebAPIURLBuilder.swift in Sources */,
 				8BC3C4031EA564200001184A /* ParsingError.swift in Sources */,
+				8BC3C4081EA56A3F0001184A /* Movie.swift in Sources */,
 				8BC3C4001EA564200001184A /* WebAPIRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

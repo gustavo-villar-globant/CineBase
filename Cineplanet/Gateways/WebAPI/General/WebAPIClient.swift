@@ -26,6 +26,10 @@ enum HTTPMethod: String {
 */
 class WebAPIClient {
     
+    private static let baseURL = "https://api.themoviedb.org/3"
+    private static let imgageBaseURL =  "https://image.tmdb.org/t/p/w500"
+    private static let apiKey = "1f4d7de5836b788bdfd897c3e0d0a24b"
+    
     let sessionManager: SessionManager
     
     init() {
@@ -38,9 +42,12 @@ class WebAPIClient {
     @discardableResult
     func request(_ method: HTTPMethod, path: String, headers: [String: String]? = nil, queryParameters: [String: Any]? = nil, bodyParameters: [String: Any]? = nil, completion: @escaping (Result<Any>) -> Void) -> WebAPIRequest {
         
-        let url = WebAPIURLBuilder.url(forPath: path, queryParameters: queryParameters)
-        let alamofireHTTPMethod = Alamofire.HTTPMethod(rawValue: method.rawValue)!
+        var apiQueryParameters = queryParameters ?? [:]
+        apiQueryParameters["api_key"] = WebAPIClient.apiKey
         
+        let url = WebAPIURLBuilder.url(forPath: WebAPIClient.baseURL + path, queryParameters: apiQueryParameters)
+        let alamofireHTTPMethod = Alamofire.HTTPMethod(rawValue: method.rawValue)!
+
         let request = sessionManager.request(url, method: alamofireHTTPMethod, parameters: bodyParameters, encoding: JSONEncoding.default, headers: headers)
         
         request.responseJSON { (dataResponse) in
@@ -64,11 +71,11 @@ class WebAPIClient {
     }
     
     @discardableResult
-    func authenticatedRequest(_ method: HTTPMethod, path: String, queryParameters: [String: Any]? = nil, bodyParameters: [String: Any]? = nil, firebaseToken: String, completion: @escaping (Result<Any>) -> Void) -> WebAPIRequest {
+    func authenticatedRequest(_ method: HTTPMethod, path: String, queryParameters: [String: Any]? = nil, bodyParameters: [String: Any]? = nil, token: String, completion: @escaping (Result<Any>) -> Void) -> WebAPIRequest {
         
         let headers: [String: String] = [
             "AndroidVersion": "55",
-            "x-access-token": firebaseToken
+            "x-access-token": token
         ]
         
         return self.request(method, path: path, headers: headers, queryParameters: queryParameters, bodyParameters: bodyParameters, completion: completion)
