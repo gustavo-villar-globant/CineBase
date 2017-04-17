@@ -14,6 +14,13 @@
 		8B76BF071E9D1096003074DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B76BF051E9D1096003074DD /* LaunchScreen.storyboard */; };
 		9722424BFB7D33D7CC114203 /* Pods_Cineplanet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D1A6A46B3F7CA56F64FF60 /* Pods_Cineplanet.framework */; };
 		F55B4CC31E9EB68500A40E39 /* CineplanetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B4CC21E9EB68500A40E39 /* CineplanetTests.swift */; };
+		F55B4CD21E9EB89D00A40E39 /* MovieInTheatre.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B4CD11E9EB89D00A40E39 /* MovieInTheatre.swift */; };
+		F55B4CD81E9EB9F900A40E39 /* MoviesInTheaterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B4CD71E9EB9F900A40E39 /* MoviesInTheaterPresenter.swift */; };
+		F55B4CDD1E9EBB5300A40E39 /* MoviesInTheatresService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B4CDC1E9EBB5300A40E39 /* MoviesInTheatresService.swift */; };
+		F55B4CDF1E9EBC4800A40E39 /* NetworkResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B4CDE1E9EBC4800A40E39 /* NetworkResults.swift */; };
+		F55B4CE61EA506B400A40E39 /* MoviesInTheatresTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B4CE51EA506B400A40E39 /* MoviesInTheatresTest.swift */; };
+		F55B4CE91EA50F2500A40E39 /* MoviesInTheatresResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B4CE81EA50F2500A40E39 /* MoviesInTheatresResponse.swift */; };
+		F55B4CEB1EA50F6300A40E39 /* MovieEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B4CEA1EA50F6300A40E39 /* MovieEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +47,13 @@
 		F55B4CC01E9EB68500A40E39 /* CineplanetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CineplanetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F55B4CC21E9EB68500A40E39 /* CineplanetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CineplanetTests.swift; sourceTree = "<group>"; };
 		F55B4CC41E9EB68500A40E39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F55B4CD11E9EB89D00A40E39 /* MovieInTheatre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInTheatre.swift; sourceTree = "<group>"; };
+		F55B4CD71E9EB9F900A40E39 /* MoviesInTheaterPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesInTheaterPresenter.swift; sourceTree = "<group>"; };
+		F55B4CDC1E9EBB5300A40E39 /* MoviesInTheatresService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesInTheatresService.swift; sourceTree = "<group>"; };
+		F55B4CDE1E9EBC4800A40E39 /* NetworkResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResults.swift; sourceTree = "<group>"; };
+		F55B4CE51EA506B400A40E39 /* MoviesInTheatresTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesInTheatresTest.swift; sourceTree = "<group>"; };
+		F55B4CE81EA50F2500A40E39 /* MoviesInTheatresResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesInTheatresResponse.swift; sourceTree = "<group>"; };
+		F55B4CEA1EA50F6300A40E39 /* MovieEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,13 +84,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		8B2F19E51E9D674800CCD172 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
 		8B76BEF01E9D1096003074DD = {
 			isa = PBXGroup;
 			children = (
@@ -101,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				F55B4CCA1E9EB6AE00A40E39 /* Flows */,
-				8B2F19E51E9D674800CCD172 /* Networking */,
 				8B76BEFC1E9D1096003074DD /* AppDelegate.swift */,
 				8B76BEFE1E9D1096003074DD /* ViewController.swift */,
 				8B76BF001E9D1096003074DD /* Main.storyboard */,
@@ -124,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				F55B4CC21E9EB68500A40E39 /* CineplanetTests.swift */,
+				F55B4CE51EA506B400A40E39 /* MoviesInTheatresTest.swift */,
 				F55B4CC41E9EB68500A40E39 /* Info.plist */,
 			);
 			path = CineplanetTests;
@@ -132,8 +139,70 @@
 		F55B4CCA1E9EB6AE00A40E39 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				F55B4CD31E9EB9B100A40E39 /* Core */,
+				F55B4CCC1E9EB75700A40E39 /* Common */,
+				F55B4CCB1E9EB6EB00A40E39 /* MoviesInTheatres */,
 			);
 			name = Flows;
+			sourceTree = "<group>";
+		};
+		F55B4CCB1E9EB6EB00A40E39 /* MoviesInTheatres */ = {
+			isa = PBXGroup;
+			children = (
+				F55B4CDB1E9EBB2200A40E39 /* Entities */,
+				F55B4CD61E9EB9E500A40E39 /* Service */,
+				F55B4CD71E9EB9F900A40E39 /* MoviesInTheaterPresenter.swift */,
+			);
+			name = MoviesInTheatres;
+			sourceTree = "<group>";
+		};
+		F55B4CCC1E9EB75700A40E39 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F55B4CE71EA50D8800A40E39 /* Entities */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		F55B4CD31E9EB9B100A40E39 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F55B4CDE1E9EBC4800A40E39 /* NetworkResults.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		F55B4CD61E9EB9E500A40E39 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F55B4CE41EA505AA00A40E39 /* Adapters */,
+				F55B4CDC1E9EBB5300A40E39 /* MoviesInTheatresService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		F55B4CDB1E9EBB2200A40E39 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F55B4CD11E9EB89D00A40E39 /* MovieInTheatre.swift */,
+				F55B4CE81EA50F2500A40E39 /* MoviesInTheatresResponse.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		F55B4CE41EA505AA00A40E39 /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Adapters;
+			sourceTree = "<group>";
+		};
+		F55B4CE71EA50D8800A40E39 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F55B4CEA1EA50F6300A40E39 /* MovieEntity.swift */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,7 +360,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F55B4CDD1E9EBB5300A40E39 /* MoviesInTheatresService.swift in Sources */,
+				F55B4CEB1EA50F6300A40E39 /* MovieEntity.swift in Sources */,
+				F55B4CDF1E9EBC4800A40E39 /* NetworkResults.swift in Sources */,
+				F55B4CD81E9EB9F900A40E39 /* MoviesInTheaterPresenter.swift in Sources */,
 				8B76BEFF1E9D1096003074DD /* ViewController.swift in Sources */,
+				F55B4CD21E9EB89D00A40E39 /* MovieInTheatre.swift in Sources */,
+				F55B4CE91EA50F2500A40E39 /* MoviesInTheatresResponse.swift in Sources */,
 				8B76BEFD1E9D1096003074DD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F55B4CC31E9EB68500A40E39 /* CineplanetTests.swift in Sources */,
+				F55B4CE61EA506B400A40E39 /* MoviesInTheatresTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
