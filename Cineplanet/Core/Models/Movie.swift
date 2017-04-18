@@ -11,4 +11,5 @@ import Foundation
 struct Movie {
     let movieID: Int
     let title: String
+    let overview: String
 }

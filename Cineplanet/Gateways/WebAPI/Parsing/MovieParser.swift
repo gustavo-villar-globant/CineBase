@@ -17,12 +17,13 @@ class MovieParser: ModelParser {
 //        self.title = json["title"] as? String ?? ""
         
         guard let movieID = json["id"] as? Int,
-            let title = json["title"] as? String else {
+            let title = json["title"] as? String,
+            let overview = json["overview"] as? String else {
                 let parsingError = ParsingError<Movie>(json: json)
                 return .failure(parsingError)
         }
         
-        let movie = Movie(movieID: movieID, title: title)
+        let movie = Movie(movieID: movieID, title: title, overview: overview)
         return .success(movie)
         
     }
