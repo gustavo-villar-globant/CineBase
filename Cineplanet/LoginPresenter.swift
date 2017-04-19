@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 protocol LoginView :class {
-    func loginStateDidChange(user: UserBasicInfo)
+    func loginStateDidChange(user: UserBasicInfo?)
 }
 
 protocol LoginPresenter {

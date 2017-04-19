@@ -14,6 +14,13 @@ class MoviesInTheatresViewController : UIViewController {
         presenter.listMovies()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
     }
+    
+    @IBAction func onSignOut() {
+        let parent = self.navigationController?.presentingViewController as! LoginManagerViewController
+        
+        parent.signOut()
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension MoviesInTheatresViewController : UITableViewDataSource {

@@ -27,6 +27,8 @@
 		F55B4D3C1EA70F5100A40E39 /* UserBasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B4D3B1EA70F5100A40E39 /* UserBasicInfo.swift */; };
 		F55B4D3F1EA70FB800A40E39 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B4D3E1EA70FB800A40E39 /* LoginPresenter.swift */; };
 		F55B4D431EA713D900A40E39 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F55B4D421EA713D900A40E39 /* GoogleService-Info.plist */; };
+		F55B4D461EA714CB00A40E39 /* FirebaseLoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B4D451EA714CB00A40E39 /* FirebaseLoginPresenter.swift */; };
+		F55B4D481EA715A000A40E39 /* LoginManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B4D471EA715A000A40E39 /* LoginManagerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		F55B4D3B1EA70F5100A40E39 /* UserBasicInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserBasicInfo.swift; sourceTree = "<group>"; };
 		F55B4D3E1EA70FB800A40E39 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		F55B4D421EA713D900A40E39 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F55B4D451EA714CB00A40E39 /* FirebaseLoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseLoginPresenter.swift; sourceTree = "<group>"; };
+		F55B4D471EA715A000A40E39 /* LoginManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManagerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,7 +230,9 @@
 			isa = PBXGroup;
 			children = (
 				F55B4D3D1EA70F7400A40E39 /* Entities */,
+				F55B4D441EA714BC00A40E39 /* Adapters */,
 				F55B4D3E1EA70FB800A40E39 /* LoginPresenter.swift */,
+				F55B4D471EA715A000A40E39 /* LoginManagerViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -237,6 +243,14 @@
 				F55B4D3B1EA70F5100A40E39 /* UserBasicInfo.swift */,
 			);
 			name = Entities;
+			sourceTree = "<group>";
+		};
+		F55B4D441EA714BC00A40E39 /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				F55B4D451EA714CB00A40E39 /* FirebaseLoginPresenter.swift */,
+			);
+			name = Adapters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,10 +412,12 @@
 				F55B4CDD1E9EBB5300A40E39 /* MoviesInTheatresService.swift in Sources */,
 				F55B4CDF1E9EBC4800A40E39 /* NetworkResults.swift in Sources */,
 				F55B4CF31EA511AF00A40E39 /* Parseable.swift in Sources */,
+				F55B4D481EA715A000A40E39 /* LoginManagerViewController.swift in Sources */,
 				F55B4CD81E9EB9F900A40E39 /* MoviesInTheatresPresenter.swift in Sources */,
 				F55B4CF11EA511AA00A40E39 /* MoviesServiceImp.swift in Sources */,
 				F55B4CD21E9EB89D00A40E39 /* MovieInTheatre.swift in Sources */,
 				F55B4CEF1EA511A100A40E39 /* MovieEntity.swift in Sources */,
+				F55B4D461EA714CB00A40E39 /* FirebaseLoginPresenter.swift in Sources */,
 				F55B4CED1EA5119300A40E39 /* MoviesInTheatresResponse.swift in Sources */,
 				F55B4D3F1EA70FB800A40E39 /* LoginPresenter.swift in Sources */,
 				F55B4CF51EA511B500A40E39 /* TheMovieDBService.swift in Sources */,
