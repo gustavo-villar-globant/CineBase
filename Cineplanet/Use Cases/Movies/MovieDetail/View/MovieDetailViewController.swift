@@ -14,8 +14,7 @@ struct MovieViewModel {
     var overview: String
 }
 
-
-protocol MovieDetailView: class {
+protocol MovieDetailView: class, LoginView {
     func display(_ movieViewModel: MovieViewModel)
 }
 
@@ -35,4 +34,14 @@ class MovieDetailViewController: UIViewController, MovieDetailView {
         overviewLabel.text = movieViewModel.overview
     }
     
+    @IBAction func buyTickets(_ sender: Any) {
+        presenter.buyTickets()
+    }
+}
+
+// MARK: - Login View
+extension MovieDetailViewController {
+    func presentLogin(_ loginViewController: UIViewController) {
+        present(loginViewController, animated: true)
+    }
 }

@@ -7,12 +7,15 @@
 //
 
 import Foundation
+import UIKit
 
 protocol MovieDetailRouterProtocol: class {
-    
+    func presentBuyingOptions(for user: User, and movie: Movie)
 }
 
 class MovieDetailRouter: MovieDetailRouterProtocol {
+    
+    weak var viewController: UIViewController?
     
     static func makeScene(with movie: Movie) -> MovieDetailViewController {
         
@@ -20,8 +23,17 @@ class MovieDetailRouter: MovieDetailRouterProtocol {
         let router = MovieDetailRouter()
         let presenter = MovieDetailPresenter(view: viewController, router: router, movie: movie)
         viewController.presenter = presenter
+        router.viewController = viewController
         
         return viewController
+        
+    }
+    
+    func presentBuyingOptions(for user: User, and movie: Movie) {
+        
+        let buyTicketViewController = BuyTicketsRouter.makeScene()
+        let navigationController = UINavigationController(rootViewController: buyTicketViewController)
+        viewController?.present(navigationController, animated: true)
         
     }
     

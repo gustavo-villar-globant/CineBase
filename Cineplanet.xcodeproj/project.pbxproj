@@ -11,6 +11,13 @@
 		8B5227C21EA6A03600C72873 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5227C11EA6A03600C72873 /* MovieDetailViewController.swift */; };
 		8B5227C61EA6AB1600C72873 /* MovieDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5227C51EA6AB1600C72873 /* MovieDetailPresenter.swift */; };
 		8B5227C81EA6AF0900C72873 /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B5227C71EA6AF0900C72873 /* MovieDetailViewController.xib */; };
+		8B5227CA1EA6BCD300C72873 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B5227C91EA6BCD300C72873 /* GoogleService-Info.plist */; };
+		8B5227CC1EA6C39F00C72873 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5227CB1EA6C39F00C72873 /* AuthenticationManager.swift */; };
+		8B660C881EA7CC6A0099626B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B660C871EA7CC6A0099626B /* User.swift */; };
+		8B660C8D1EA7D0920099626B /* BuyTicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B660C8C1EA7D0920099626B /* BuyTicketsViewController.swift */; };
+		8B660C8F1EA7D0A40099626B /* BuyTicketsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B660C8E1EA7D0A40099626B /* BuyTicketsViewController.xib */; };
+		8B660C911EA7D0EF0099626B /* BuyTicketsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B660C901EA7D0EF0099626B /* BuyTicketsPresenter.swift */; };
+		8B660C931EA7D1080099626B /* BuyTicketsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B660C921EA7D1080099626B /* BuyTicketsRouter.swift */; };
 		8B76BEFD1E9D1096003074DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76BEFC1E9D1096003074DD /* AppDelegate.swift */; };
 		8B76BF071E9D1096003074DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B76BF051E9D1096003074DD /* LaunchScreen.storyboard */; };
 		8B7A7ED41EA64D9F00572F50 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7A7ED21EA64D9F00572F50 /* NowPlayingViewController.swift */; };
@@ -41,6 +48,13 @@
 		8B5227C11EA6A03600C72873 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		8B5227C51EA6AB1600C72873 /* MovieDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailPresenter.swift; sourceTree = "<group>"; };
 		8B5227C71EA6AF0900C72873 /* MovieDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieDetailViewController.xib; sourceTree = "<group>"; };
+		8B5227C91EA6BCD300C72873 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8B5227CB1EA6C39F00C72873 /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		8B660C871EA7CC6A0099626B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8B660C8C1EA7D0920099626B /* BuyTicketsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyTicketsViewController.swift; sourceTree = "<group>"; };
+		8B660C8E1EA7D0A40099626B /* BuyTicketsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuyTicketsViewController.xib; sourceTree = "<group>"; };
+		8B660C901EA7D0EF0099626B /* BuyTicketsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyTicketsPresenter.swift; sourceTree = "<group>"; };
+		8B660C921EA7D1080099626B /* BuyTicketsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyTicketsRouter.swift; sourceTree = "<group>"; };
 		8B76BEF91E9D1096003074DD /* Cineplanet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cineplanet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B76BEFC1E9D1096003074DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B76BF061E9D1096003074DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -104,6 +118,33 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		8B660C891EA7D0760099626B /* Tickets */ = {
+			isa = PBXGroup;
+			children = (
+				8B660C8A1EA7D0760099626B /* Buy */,
+			);
+			path = Tickets;
+			sourceTree = "<group>";
+		};
+		8B660C8A1EA7D0760099626B /* Buy */ = {
+			isa = PBXGroup;
+			children = (
+				8B660C8B1EA7D0880099626B /* View */,
+				8B660C901EA7D0EF0099626B /* BuyTicketsPresenter.swift */,
+				8B660C921EA7D1080099626B /* BuyTicketsRouter.swift */,
+			);
+			path = Buy;
+			sourceTree = "<group>";
+		};
+		8B660C8B1EA7D0880099626B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B660C8E1EA7D0A40099626B /* BuyTicketsViewController.xib */,
+				8B660C8C1EA7D0920099626B /* BuyTicketsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8B76BEF01E9D1096003074DD = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +172,7 @@
 				8B76BF051E9D1096003074DD /* LaunchScreen.storyboard */,
 				8B76BEFC1E9D1096003074DD /* AppDelegate.swift */,
 				8B76BF081E9D1096003074DD /* Info.plist */,
+				8B5227C91EA6BCD300C72873 /* GoogleService-Info.plist */,
 				8BC3C3ED1EA5614C0001184A /* Resources */,
 			);
 			path = Cineplanet;
@@ -141,6 +183,7 @@
 			children = (
 				8B7A7ED61EA64DB100572F50 /* Main */,
 				8B7A7ECF1EA64D9F00572F50 /* Movies */,
+				8B660C891EA7D0760099626B /* Tickets */,
 			);
 			path = "Use Cases";
 			sourceTree = "<group>";
@@ -204,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				8BC3C3F71EA564200001184A /* WebAPI */,
+				8B5227CB1EA6C39F00C72873 /* AuthenticationManager.swift */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -250,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				8BC3C4071EA56A3F0001184A /* Movie.swift */,
+				8B660C871EA7CC6A0099626B /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -326,7 +371,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B5227C81EA6AF0900C72873 /* MovieDetailViewController.xib in Resources */,
+				8B660C8F1EA7D0A40099626B /* BuyTicketsViewController.xib in Resources */,
 				8B7A7ED51EA64D9F00572F50 /* NowPlayingViewController.xib in Resources */,
+				8B5227CA1EA6BCD300C72873 /* GoogleService-Info.plist in Resources */,
 				8BC3C3EF1EA5614C0001184A /* Images.xcassets in Resources */,
 				8B76BF071E9D1096003074DD /* LaunchScreen.storyboard in Resources */,
 			);
@@ -392,6 +439,7 @@
 				8B5227BF1EA69F9800C72873 /* MovieDetailRouter.swift in Sources */,
 				8BC3C3FF1EA564200001184A /* WebAPIClient.swift in Sources */,
 				8BC3C4051EA569B00001184A /* MoviesAPIClient.swift in Sources */,
+				8B660C8D1EA7D0920099626B /* BuyTicketsViewController.swift in Sources */,
 				8B7A7ED41EA64D9F00572F50 /* NowPlayingViewController.swift in Sources */,
 				8B5227C61EA6AB1600C72873 /* MovieDetailPresenter.swift in Sources */,
 				8BC3C4021EA564200001184A /* ModelParser.swift in Sources */,
@@ -400,12 +448,16 @@
 				8B7A7EDC1EA65B5900572F50 /* NowPlayingRouter.swift in Sources */,
 				8B76BEFD1E9D1096003074DD /* AppDelegate.swift in Sources */,
 				8BC3C3DE1EA55F060001184A /* Result.swift in Sources */,
+				8B5227CC1EA6C39F00C72873 /* AuthenticationManager.swift in Sources */,
 				8BC3C4011EA564200001184A /* WebAPIURLBuilder.swift in Sources */,
 				8BC3C4031EA564200001184A /* ParsingError.swift in Sources */,
+				8B660C931EA7D1080099626B /* BuyTicketsRouter.swift in Sources */,
 				8BC3C4081EA56A3F0001184A /* Movie.swift in Sources */,
+				8B660C911EA7D0EF0099626B /* BuyTicketsPresenter.swift in Sources */,
 				8B7A7EDA1EA64FA100572F50 /* NowPlayingPresenter.swift in Sources */,
 				8B5227C21EA6A03600C72873 /* MovieDetailViewController.swift in Sources */,
 				8BC3C4001EA564200001184A /* WebAPIRequest.swift in Sources */,
+				8B660C881EA7CC6A0099626B /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
