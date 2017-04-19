@@ -26,6 +26,7 @@
 		F55B4CF71EA511BC00A40E39 /* MoviesInTheatresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B4CF61EA511BC00A40E39 /* MoviesInTheatresViewController.swift */; };
 		F55B4D3C1EA70F5100A40E39 /* UserBasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B4D3B1EA70F5100A40E39 /* UserBasicInfo.swift */; };
 		F55B4D3F1EA70FB800A40E39 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B4D3E1EA70FB800A40E39 /* LoginPresenter.swift */; };
+		F55B4D431EA713D900A40E39 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F55B4D421EA713D900A40E39 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		F55B4CF61EA511BC00A40E39 /* MoviesInTheatresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesInTheatresViewController.swift; sourceTree = "<group>"; };
 		F55B4D3B1EA70F5100A40E39 /* UserBasicInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserBasicInfo.swift; sourceTree = "<group>"; };
 		F55B4D3E1EA70FB800A40E39 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		F55B4D421EA713D900A40E39 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				8B76BF031E9D1096003074DD /* Assets.xcassets */,
 				8B76BF051E9D1096003074DD /* LaunchScreen.storyboard */,
 				8B76BF081E9D1096003074DD /* Info.plist */,
+				F55B4D421EA713D900A40E39 /* GoogleService-Info.plist */,
 			);
 			path = Cineplanet;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B76BF071E9D1096003074DD /* LaunchScreen.storyboard in Resources */,
+				F55B4D431EA713D900A40E39 /* GoogleService-Info.plist in Resources */,
 				8B76BF041E9D1096003074DD /* Assets.xcassets in Resources */,
 				8B76BF021E9D1096003074DD /* Main.storyboard in Resources */,
 			);
