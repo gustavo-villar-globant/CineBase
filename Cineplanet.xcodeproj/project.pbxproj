@@ -24,6 +24,8 @@
 		F55B4CF31EA511AF00A40E39 /* Parseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B4CF21EA511AF00A40E39 /* Parseable.swift */; };
 		F55B4CF51EA511B500A40E39 /* TheMovieDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B4CF41EA511B500A40E39 /* TheMovieDBService.swift */; };
 		F55B4CF71EA511BC00A40E39 /* MoviesInTheatresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B4CF61EA511BC00A40E39 /* MoviesInTheatresViewController.swift */; };
+		F55B4D3C1EA70F5100A40E39 /* UserBasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B4D3B1EA70F5100A40E39 /* UserBasicInfo.swift */; };
+		F55B4D3F1EA70FB800A40E39 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55B4D3E1EA70FB800A40E39 /* LoginPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		F55B4CF21EA511AF00A40E39 /* Parseable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parseable.swift; sourceTree = "<group>"; };
 		F55B4CF41EA511B500A40E39 /* TheMovieDBService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheMovieDBService.swift; sourceTree = "<group>"; };
 		F55B4CF61EA511BC00A40E39 /* MoviesInTheatresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesInTheatresViewController.swift; sourceTree = "<group>"; };
+		F55B4D3B1EA70F5100A40E39 /* UserBasicInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserBasicInfo.swift; sourceTree = "<group>"; };
+		F55B4D3E1EA70FB800A40E39 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 				F55B4CD31E9EB9B100A40E39 /* Core */,
 				F55B4CCC1E9EB75700A40E39 /* Common */,
 				F55B4CCB1E9EB6EB00A40E39 /* MoviesInTheatres */,
+				F55B4D3A1EA70F3000A40E39 /* Login */,
 			);
 			name = Flows;
 			sourceTree = "<group>";
@@ -210,6 +215,23 @@
 			isa = PBXGroup;
 			children = (
 				F55B4CEE1EA511A100A40E39 /* MovieEntity.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		F55B4D3A1EA70F3000A40E39 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F55B4D3D1EA70F7400A40E39 /* Entities */,
+				F55B4D3E1EA70FB800A40E39 /* LoginPresenter.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		F55B4D3D1EA70F7400A40E39 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F55B4D3B1EA70F5100A40E39 /* UserBasicInfo.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -377,9 +399,11 @@
 				F55B4CD21E9EB89D00A40E39 /* MovieInTheatre.swift in Sources */,
 				F55B4CEF1EA511A100A40E39 /* MovieEntity.swift in Sources */,
 				F55B4CED1EA5119300A40E39 /* MoviesInTheatresResponse.swift in Sources */,
+				F55B4D3F1EA70FB800A40E39 /* LoginPresenter.swift in Sources */,
 				F55B4CF51EA511B500A40E39 /* TheMovieDBService.swift in Sources */,
 				F55B4CF71EA511BC00A40E39 /* MoviesInTheatresViewController.swift in Sources */,
 				8B76BEFD1E9D1096003074DD /* AppDelegate.swift in Sources */,
+				F55B4D3C1EA70F5100A40E39 /* UserBasicInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +623,7 @@
 				F55B4CC81E9EB68500A40E39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
