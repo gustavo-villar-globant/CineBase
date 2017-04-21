@@ -12,7 +12,7 @@ class MoviesAPIClient {
     
     private let webAPIClient = WebAPIClient()
     
-    func fetchNowPlaying(completion: @escaping (Result<[Movie]>) -> Void) -> WebAPIRequest {
+    func fetchNowPlaying(completion: @escaping (Result<[Movie]>) -> Void) -> WebAPIRequestProtocol {
         
         return webAPIClient.request(.get, path: "/movie/now_playing") { (result) in
             

@@ -40,7 +40,7 @@ class WebAPIClient {
     }
     
     @discardableResult
-    func request(_ method: HTTPMethod, path: String, headers: [String: String]? = nil, queryParameters: [String: Any]? = nil, bodyParameters: [String: Any]? = nil, completion: @escaping (Result<Any>) -> Void) -> WebAPIRequest {
+    func request(_ method: HTTPMethod, path: String, headers: [String: String]? = nil, queryParameters: [String: Any]? = nil, bodyParameters: [String: Any]? = nil, completion: @escaping (Result<Any>) -> Void) -> WebAPIRequestProtocol {
         
         var apiQueryParameters = queryParameters ?? [:]
         apiQueryParameters["api_key"] = WebAPIClient.apiKey
@@ -71,7 +71,7 @@ class WebAPIClient {
     }
     
     @discardableResult
-    func authenticatedRequest(_ method: HTTPMethod, path: String, queryParameters: [String: Any]? = nil, bodyParameters: [String: Any]? = nil, token: String, completion: @escaping (Result<Any>) -> Void) -> WebAPIRequest {
+    func authenticatedRequest(_ method: HTTPMethod, path: String, queryParameters: [String: Any]? = nil, bodyParameters: [String: Any]? = nil, token: String, completion: @escaping (Result<Any>) -> Void) -> WebAPIRequestProtocol {
         
         let headers: [String: String] = [
             "AndroidVersion": "55",

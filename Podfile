@@ -7,8 +7,19 @@ target 'Cinebase' do
 
   # Pods for Cinebase
   pod 'Alamofire'#, '~> 4.4'
-  pod 'Timberjack', :git => 'https://github.com/andysmart/Timberjack.git', :branch => 'master'
+  pod 'Timberjack', git: 'https://github.com/andysmart/Timberjack.git', branch: 'master', tag: 'v0.0.3'
+  pod 'Firebase', '~> 3.15.0'
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
+  
+  target 'CinebaseTests' do
+#      inherit! :complete
+#      use_frameworks!
 
+      # Pods for Cinebase Tests
+      pod 'Nimble'
+      pod 'Quick'
+  end
+  
 end
+

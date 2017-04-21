@@ -13,7 +13,7 @@ class NowPlayingPresenter {
     weak var view: NowPlayingView?
     let router: NowPlayingRouterProtocol
     private let moviesAPIClient: MoviesAPIClient
-    private weak var fetchMoviesRequest: WebAPIRequest?
+    private weak var fetchMoviesRequest: WebAPIRequestProtocol?
     private var movies: [Movie] = []
     
     init(view: NowPlayingView, router: NowPlayingRouterProtocol, moviesAPIClient: MoviesAPIClient = MoviesAPIClient()) {
