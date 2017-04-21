@@ -33,10 +33,21 @@ class AuthenticationManager: NSObject {
         super.init()
     }
     
+    func setup() {
+        FIRApp.configure()
+        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = AuthenticationManager.shared
+        GIDSignIn.sharedInstance().uiDelegate = AuthenticationManager.shared
+    }
+    
     func requestLoginWithGoogle(from viewController: LoginView) {
         self.loginView = viewController
         GIDSignIn.sharedInstance().signOut()
         GIDSignIn.sharedInstance().signIn()
+    }
+    
+    func handle(_ url: URL, sourceApplication: String?) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url, sourceApplication: sourceApplication, annotation: [:])
     }
     
 }
