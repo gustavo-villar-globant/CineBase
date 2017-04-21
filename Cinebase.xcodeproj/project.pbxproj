@@ -20,6 +20,8 @@
 		8B660C931EA7D1080099626B /* BuyTicketsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B660C921EA7D1080099626B /* BuyTicketsRouter.swift */; };
 		8B76BEFD1E9D1096003074DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76BEFC1E9D1096003074DD /* AppDelegate.swift */; };
 		8B76BF071E9D1096003074DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B76BF051E9D1096003074DD /* LaunchScreen.storyboard */; };
+		8B7A15A81EAA54A800BAF207 /* MovieDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B7A15A71EAA54A800BAF207 /* MovieDetail.storyboard */; };
+		8B7A15AB1EAA562800BAF207 /* StoryboardLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7A15AA1EAA562800BAF207 /* StoryboardLoader.swift */; };
 		8B7A7ED41EA64D9F00572F50 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7A7ED21EA64D9F00572F50 /* NowPlayingViewController.swift */; };
 		8B7A7ED51EA64D9F00572F50 /* NowPlayingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B7A7ED31EA64D9F00572F50 /* NowPlayingViewController.xib */; };
 		8B7A7ED81EA64DC000572F50 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7A7ED71EA64DC000572F50 /* MainRouter.swift */; };
@@ -57,6 +59,8 @@
 		8B76BEFC1E9D1096003074DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8B76BF061E9D1096003074DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B76BF081E9D1096003074DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B7A15A71EAA54A800BAF207 /* MovieDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MovieDetail.storyboard; sourceTree = "<group>"; };
+		8B7A15AA1EAA562800BAF207 /* StoryboardLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardLoader.swift; sourceTree = "<group>"; };
 		8B7A7ED21EA64D9F00572F50 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NowPlayingViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8B7A7ED31EA64D9F00572F50 /* NowPlayingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NowPlayingViewController.xib; sourceTree = "<group>"; };
 		8B7A7ED71EA64DC000572F50 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MainRouter.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -112,6 +116,7 @@
 		8B5227C01EA69FC600C72873 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8B7A15A71EAA54A800BAF207 /* MovieDetail.storyboard */,
 				8B5227C71EA6AF0900C72873 /* MovieDetailViewController.xib */,
 				8B5227C11EA6A03600C72873 /* MovieDetailViewController.swift */,
 			);
@@ -178,6 +183,14 @@
 			path = Cinebase;
 			sourceTree = "<group>";
 		};
+		8B7A15A91EAA55EC00BAF207 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8B7A15AA1EAA562800BAF207 /* StoryboardLoader.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		8B7A7EC81EA64B3000572F50 /* Use Cases */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +243,7 @@
 			children = (
 				8BC3C3DB1EA55F060001184A /* General */,
 				8BC3C4061EA56A2D0001184A /* Models */,
+				8B7A15A91EAA55EC00BAF207 /* Views */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -376,6 +390,7 @@
 				8B5227CA1EA6BCD300C72873 /* GoogleService-Info.plist in Resources */,
 				8BC3C3EF1EA5614C0001184A /* Images.xcassets in Resources */,
 				8B76BF071E9D1096003074DD /* LaunchScreen.storyboard in Resources */,
+				8B7A15A81EAA54A800BAF207 /* MovieDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B7A15AB1EAA562800BAF207 /* StoryboardLoader.swift in Sources */,
 				8BC3C3DF1EA55F060001184A /* UNIXTimestamp.swift in Sources */,
 				8B7A7ED81EA64DC000572F50 /* MainRouter.swift in Sources */,
 				8B5227BF1EA69F9800C72873 /* MovieDetailRouter.swift in Sources */,

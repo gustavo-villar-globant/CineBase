@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Movie Detail View Controller-->
+        <scene sceneID="KKZ-AZ-L6Y">
+            <objects>
+                <viewController storyboardIdentifier="MovieDetailViewController" id="vbI-vv-CLs" customClass="MovieDetailViewController" customModule="Cinebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jmq-1o-jlD"/>
+                        <viewControllerLayoutGuide type="bottom" id="mco-k6-YK2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LW0-hr-Mlk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWL-3Q-9Xv">
+                                <rect key="frame" x="37" y="579" width="300" height="38"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="Buy tickets"/>
+                                <connections>
+                                    <action selector="buyTickets:" destination="vbI-vv-CLs" eventType="touchUpInside" id="HB7-FK-m7k"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgd-Kd-G6C">
+                                <rect key="frame" x="37" y="94" width="300" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(You will be asked to login)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Pw-Ts-edq">
+                                <rect key="frame" x="37" y="617" width="300" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.17454663209999999" green="0.17454663209999999" blue="0.17454663209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zgd-Kd-G6C" firstAttribute="top" secondItem="Jmq-1o-jlD" secondAttribute="bottom" constant="30" id="CQZ-A1-k90"/>
+                            <constraint firstItem="6Pw-Ts-edq" firstAttribute="leading" secondItem="WWL-3Q-9Xv" secondAttribute="leading" id="CWc-YB-vgd"/>
+                            <constraint firstItem="WWL-3Q-9Xv" firstAttribute="width" secondItem="LW0-hr-Mlk" secondAttribute="width" multiplier="0.8" id="FGJ-e4-LeG"/>
+                            <constraint firstItem="zgd-Kd-G6C" firstAttribute="width" secondItem="LW0-hr-Mlk" secondAttribute="width" multiplier="0.8" id="La8-lN-d78"/>
+                            <constraint firstItem="zgd-Kd-G6C" firstAttribute="centerX" secondItem="LW0-hr-Mlk" secondAttribute="centerX" id="NJO-0n-uU9"/>
+                            <constraint firstItem="mco-k6-YK2" firstAttribute="top" secondItem="WWL-3Q-9Xv" secondAttribute="bottom" constant="50" id="agl-KG-4jn"/>
+                            <constraint firstItem="6Pw-Ts-edq" firstAttribute="trailing" secondItem="WWL-3Q-9Xv" secondAttribute="trailing" id="oUe-31-Zqe"/>
+                            <constraint firstItem="6Pw-Ts-edq" firstAttribute="top" secondItem="WWL-3Q-9Xv" secondAttribute="bottom" id="vKT-64-zTI"/>
+                            <constraint firstItem="WWL-3Q-9Xv" firstAttribute="centerX" secondItem="LW0-hr-Mlk" secondAttribute="centerX" id="wmI-gM-88M"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="overviewLabel" destination="zgd-Kd-G6C" id="BGz-1C-Jiu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o5c-sN-7MZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="298" y="-210"/>
+        </scene>
+    </scenes>
+</document>

@@ -26,6 +26,7 @@ class MovieDetailViewController: UIViewController, MovieDetailView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        edgesForExtendedLayout = []
         presenter.onViewLoad()
     }
     
