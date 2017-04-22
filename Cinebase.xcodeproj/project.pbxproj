@@ -203,14 +203,11 @@
 		8B76BEFB1E9D1096003074DD /* Cinebase */ = {
 			isa = PBXGroup;
 			children = (
+				A143A3201EABA72C009C4153 /* Bootstrap */,
+				8BC3C3ED1EA5614C0001184A /* Resources */,
 				8BC3C3DA1EA55F060001184A /* Core */,
 				8B7A7EC81EA64B3000572F50 /* Use Cases */,
 				8BC3C3E01EA560C20001184A /* Gateways */,
-				8B76BF051E9D1096003074DD /* LaunchScreen.storyboard */,
-				8B76BEFC1E9D1096003074DD /* AppDelegate.swift */,
-				8B76BF081E9D1096003074DD /* Info.plist */,
-				8B5227C91EA6BCD300C72873 /* GoogleService-Info.plist */,
-				8BC3C3ED1EA5614C0001184A /* Resources */,
 			);
 			path = Cinebase;
 			sourceTree = "<group>";
@@ -403,6 +400,17 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		A143A3201EABA72C009C4153 /* Bootstrap */ = {
+			isa = PBXGroup;
+			children = (
+				8B76BF051E9D1096003074DD /* LaunchScreen.storyboard */,
+				8B76BEFC1E9D1096003074DD /* AppDelegate.swift */,
+				8B76BF081E9D1096003074DD /* Info.plist */,
+				8B5227C91EA6BCD300C72873 /* GoogleService-Info.plist */,
+			);
+			name = Bootstrap;
+			sourceTree = "<group>";
+		};
 		C5EA73F2ABB67662FF19297F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,12 +476,12 @@
 				TargetAttributes = {
 					8B76BEF81E9D1096003074DD = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = UMT34K4222;
+						DevelopmentTeam = 692K8L98GH;
 						ProvisioningStyle = Automatic;
 					};
 					8B8450FC1EAA75F700F2E4A8 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = UMT34K4222;
+						DevelopmentTeam = 692K8L98GH;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 8B76BEF81E9D1096003074DD;
 					};
@@ -777,7 +785,7 @@
 			baseConfigurationReference = CE904512BB970A51D34177A4 /* Pods-Cinebase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = UMT34K4222;
+				DEVELOPMENT_TEAM = 692K8L98GH;
 				INFOPLIST_FILE = "$(SRCROOT)/Cinebase/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gustavovillar.Cinebase;
@@ -791,7 +799,7 @@
 			baseConfigurationReference = D332E963C17B2CE0638948AA /* Pods-Cinebase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = UMT34K4222;
+				DEVELOPMENT_TEAM = 692K8L98GH;
 				INFOPLIST_FILE = "$(SRCROOT)/Cinebase/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gustavovillar.Cinebase;
@@ -805,7 +813,7 @@
 			baseConfigurationReference = 9FF4061BD5BEFD59C22427C1 /* Pods-Cinebase-CinebaseTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = UMT34K4222;
+				DEVELOPMENT_TEAM = 692K8L98GH;
 				INFOPLIST_FILE = CinebaseTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -821,7 +829,7 @@
 			baseConfigurationReference = 4D69DABABA173DA4E60DC3AB /* Pods-Cinebase-CinebaseTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = UMT34K4222;
+				DEVELOPMENT_TEAM = 692K8L98GH;
 				INFOPLIST_FILE = CinebaseTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
