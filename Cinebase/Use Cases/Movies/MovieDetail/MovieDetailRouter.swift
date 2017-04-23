@@ -19,7 +19,8 @@ class MovieDetailRouter: MovieDetailRouterProtocol {
     
     static func makeScene(with movie: Movie) -> MovieDetailViewController {
         
-        let viewController = MovieDetailViewController()
+        let viewController = UIStoryboard.movieDetail.instantiate(MovieDetailViewController.self)
+//        let viewController = MovieDetailViewController()
         let router = MovieDetailRouter()
         let presenter = MovieDetailPresenter(view: viewController, router: router, movie: movie)
         viewController.presenter = presenter
