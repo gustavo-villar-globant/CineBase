@@ -12,5 +12,5 @@ struct Movie {
     let movieID: Int
     let title: String
     let overview: String
-    let imageURL: String
+    let imagePath: String
 }

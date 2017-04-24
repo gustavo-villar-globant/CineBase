@@ -10,7 +10,7 @@ import UIKit
 
 struct MovieCellModel {
     var title: String
-    var imageURL: String
+    var imagePath: String
 }
 
 protocol NowPlayingView: class {

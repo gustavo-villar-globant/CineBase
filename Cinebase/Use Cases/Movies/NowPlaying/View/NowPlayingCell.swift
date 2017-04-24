@@ -9,8 +9,6 @@
 import UIKit
 import Kingfisher
 
-private let imageBaseURL =  "https://image.tmdb.org/t/p/w500"
-
 class NowPlayingCell: UICollectionViewCell {
     
     @IBOutlet weak var movieImage: UIImageView!
@@ -25,8 +23,7 @@ class NowPlayingCell: UICollectionViewCell {
     func presentWith(_ model: MovieCellModel) {
         
         self.movieLabel.text = model.title
-        let urlString = imageBaseURL + model.imageURL
-        let url = URL(string: urlString)
+        let url = URL(string: model.imagePath)
         movieImage.kf.setImage(with: url)
     }
     

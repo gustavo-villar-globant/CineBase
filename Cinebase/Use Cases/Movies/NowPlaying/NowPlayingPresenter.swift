@@ -33,7 +33,7 @@ class NowPlayingPresenter {
                 self?.view?.display(error)
             case .success(let movies):
                 self?.movies = movies
-                let movieCells = movies.map { MovieCellModel(title: $0.title, imageURL: $0.imageURL) }
+                let movieCells = movies.map { MovieCellModel(title: $0.title, imagePath: $0.imagePath) }
                 self?.view?.displayMovies(movieCells)
             }
             
