@@ -324,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				8B84510D1EAA765000F2E4A8 /* NowPlaying */,
+				8BE6E2251EAE8A9D00FB7267 /* MovieDetail */,
 			);
 			path = Movies;
 			sourceTree = "<group>";
@@ -410,6 +411,13 @@
 				8B660C871EA7CC6A0099626B /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8BE6E2251EAE8A9D00FB7267 /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MovieDetail;
 			sourceTree = "<group>";
 		};
 		A143A3201EABA72C009C4153 /* Bootstrap */ = {

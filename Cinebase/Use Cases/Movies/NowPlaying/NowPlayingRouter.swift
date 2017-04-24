@@ -14,15 +14,15 @@ protocol NowPlayingRouterProtocol: class {
 
 class NowPlayingRouter: NowPlayingRouterProtocol {
     
-    weak var viewController: UIViewController?
+    weak var nowPlayingViewController: NowPlayingViewController?
     
-    init(_ nowPlayingViewController: UIViewController) {
-        self.viewController = nowPlayingViewController
+    init(_ nowPlayingViewController: NowPlayingViewController) {
+        self.nowPlayingViewController = nowPlayingViewController
     }
     
     func showDetail(of movie: Movie) {
         let detailVC = MovieDetailRouter.makeScene(with: movie)
-        viewController?.show(detailVC, sender: nil)
+        nowPlayingViewController?.show(detailVC, sender: nil)
     }
     
     static func makeScene() -> NowPlayingViewController {

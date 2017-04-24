@@ -45,7 +45,7 @@ class NowPlayingRouterSpec: QuickSpec {
 // MARK: - Mocks
 extension NowPlayingRouterSpec {
     
-    class MockViewController: UIViewController {
+    class MockViewController: NowPlayingViewController {
         
         private(set) var shownViewController: UIViewController?
         override func show(_ vc: UIViewController, sender: Any?) {
