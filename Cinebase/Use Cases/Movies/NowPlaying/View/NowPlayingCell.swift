@@ -7,14 +7,11 @@
 //
 
 import UIKit
-import Kingfisher
 
 class NowPlayingCell: UICollectionViewCell {
     
-    @IBOutlet weak var movieImage: UIImageView!
+    @IBOutlet weak var movieImageView: UIImageView!
     @IBOutlet weak var movieLabel: UILabel!
-    
-    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -24,7 +21,8 @@ class NowPlayingCell: UICollectionViewCell {
         
         self.movieLabel.text = model.title
         let url = URL(string: model.imagePath)
-        movieImage.kf.setImage(with: url)
+        movieImageView.setImage(with: url)
+        
     }
     
     
