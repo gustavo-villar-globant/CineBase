@@ -27,7 +27,7 @@ enum HTTPMethod: String {
 class WebAPIClient {
     
     private static let baseURL = "https://api.themoviedb.org/3"
-    private static let imgageBaseURL =  "https://image.tmdb.org/t/p/w500"
+    private static let imageBaseURL =  "https://image.tmdb.org/t/p/w500"
     private static let apiKey = "1f4d7de5836b788bdfd897c3e0d0a24b"
     
     let sessionManager: SessionManager

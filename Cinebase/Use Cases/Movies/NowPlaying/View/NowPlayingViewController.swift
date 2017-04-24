@@ -10,6 +10,7 @@ import UIKit
 
 struct MovieCellModel {
     var title: String
+    var imageURL: String
 }
 
 protocol NowPlayingView: class {
@@ -26,7 +27,7 @@ class NowPlayingViewController: UIViewController {
     var movieCellModels: [MovieCellModel] = []
     let movieCellIdentifier = "MovieCell"
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     fileprivate weak var loadingView: UIActivityIndicatorView?
 
     override func viewDidLoad() {
@@ -36,10 +37,10 @@ class NowPlayingViewController: UIViewController {
     
     private func setupSubviews() {
         title = "Now Playing"
-        tableView.alpha = 0
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: movieCellIdentifier)
+        collectionView.alpha = 0
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(UINib(nibName: "NowPlayingCell", bundle: nil), forCellWithReuseIdentifier: movieCellIdentifier)
     }
 }
 
@@ -92,9 +93,9 @@ extension NowPlayingViewController: NowPlayingView {
     
     func displayMovies(_ movieCellModels: [MovieCellModel]) {
         self.movieCellModels = movieCellModels
-        tableView.reloadData()
+        collectionView.reloadData()
         UIView.animate(withDuration: 0.3) { [weak self] in
-            self?.tableView.alpha = 1
+            self?.collectionView.alpha = 1
         }
     }
     
