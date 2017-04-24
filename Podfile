@@ -11,6 +11,7 @@ target 'Cinebase' do
   pod 'Firebase', '~> 3.15.0'
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
+  pod 'Kingfisher', '~> 3.0'
   
   target 'CinebaseTests' do
 #      inherit! :complete
