@@ -15,15 +15,19 @@ protocol LoginView: class {
 }
 
 protocol AuthenticationManagerDelegate: class {
-    func authenticationManager(_ manager: AuthenticationManager, didLoginWith user: User)
-    func authenticationManager(_ manager: AuthenticationManager, didFailLoginWith error: Error)
+    func authenticationManager(_ manager: AuthenticationManagerProtocol, didLoginWith user: User)
+    func authenticationManager(_ manager: AuthenticationManagerProtocol, didFailLoginWith error: Error)
 }
 
 extension AuthenticationManagerDelegate {
-    func authenticationManager(_ manager: AuthenticationManager, didFailLoginWith error: Error) { }
+    func authenticationManager(_ manager: AuthenticationManagerProtocol, didFailLoginWith error: Error) { }
+}
+protocol AuthenticationManagerProtocol: class {
+    weak var delegate: AuthenticationManagerDelegate? { get set }
+    func requestLoginWithGoogle(from viewController: LoginView)
 }
 
-class AuthenticationManager: NSObject {
+class AuthenticationManager: NSObject, AuthenticationManagerProtocol {
     
     static let shared = AuthenticationManager()
     fileprivate weak var loginView: LoginView?

@@ -8,10 +8,16 @@
 
 import UIKit
 
-struct MovieViewModel {
+struct MovieViewModel: Equatable {
     var title: String
     var imagePath: String
     var overview: String
+    
+    static func ==(lhs: MovieViewModel, rhs: MovieViewModel) -> Bool {
+        return lhs.title == rhs.title &&
+            lhs.imagePath == rhs.imagePath &&
+            lhs.overview == rhs.overview
+    }
 }
 
 protocol MovieDetailView: class, LoginView {
