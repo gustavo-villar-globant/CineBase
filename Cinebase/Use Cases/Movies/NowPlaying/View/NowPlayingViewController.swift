@@ -8,9 +8,13 @@
 
 import UIKit
 
-struct MovieCellModel {
+struct MovieCellModel: Equatable {
     var title: String
     var imagePath: String
+    
+    static func ==(lhs: MovieCellModel, rhs: MovieCellModel) -> Bool {
+        return lhs.title == rhs.title && lhs.imagePath == rhs.imagePath
+    }
 }
 
 protocol NowPlayingView: class {
