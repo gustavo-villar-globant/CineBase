@@ -36,7 +36,7 @@ class MovieDetailPresenterSpec: QuickSpec {
                     sut.onViewLoad()
                 }
                 it("should display the movie details") {
-                    let movieViewModel = MovieViewModel(title: "Movie with detail", backdropPath: "/awesome.png", overview: "Amazing movie review detail")
+                    let movieViewModel = MovieViewModel(title: "Movie with detail", backdropPath: "/backdrop.png", overview: "Amazing movie review detail")
                     expect(mockView.displayedMovieViewModel).to(equal(movieViewModel))
                 }
                 
