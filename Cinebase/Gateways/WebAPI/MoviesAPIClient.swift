@@ -14,7 +14,7 @@ class MoviesAPIClient {
     
     func fetchNowPlaying(completion: @escaping (Result<[Movie]>) -> Void) -> WebAPIRequestProtocol {
         
-        return webAPIClient.request(.get, path: "/movie/now_playing") { (result) in
+        return webAPIClient.request(.get, path: "/movie/now_playing", queryParameters: ["language": Locale.current.languageCode!]) { (result) in
             
             switch result {
             case .failure(let error):

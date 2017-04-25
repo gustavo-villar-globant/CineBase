@@ -26,7 +26,7 @@ class MovieDetailPresenterSpec: QuickSpec {
             beforeEach {
                 mockView = MockMovieDetailView()
                 mockRouter = MockMovieDetailRouter()
-                movie = Movie(movieID: 1, title: "Movie with detail", overview: "Amazing movie review detail", imagePath: "/awesome.png")
+                movie = Movie(movieID: 1, title: "Movie with detail", overview: "Amazing movie review detail", imagePath: "/awesome.png", backdropPath: "/backdrop.png")
                 mockAuthenticationManager = MockAuthenticationManager()
                 sut = MovieDetailPresenter(view: mockView, router: mockRouter, movie: movie, authenticationManager: mockAuthenticationManager)
             }
@@ -36,7 +36,7 @@ class MovieDetailPresenterSpec: QuickSpec {
                     sut.onViewLoad()
                 }
                 it("should display the movie details") {
-                    let movieViewModel = MovieViewModel(title: "Movie with detail", imagePath: "/awesome.png", overview: "Amazing movie review detail")
+                    let movieViewModel = MovieViewModel(title: "Movie with detail", backdropPath: "/awesome.png", overview: "Amazing movie review detail")
                     expect(mockView.displayedMovieViewModel).to(equal(movieViewModel))
                 }
                 

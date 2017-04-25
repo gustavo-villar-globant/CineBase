@@ -27,7 +27,7 @@ class MovieDetailRouterSpec: QuickSpec {
             context("when present buying options is called") {
                 beforeEach {
                     let user = User(userID: "", name: "John")
-                    let movie = Movie(movieID: 1, title: "Avengers", overview: "", imagePath: "")
+                    let movie = Movie(movieID: 1, title: "Avengers", overview: "", imagePath: "", backdropPath: "")
                     sut.presentBuyingOptions(for: user, and: movie)
                 }
                 it("should present buying options") {
