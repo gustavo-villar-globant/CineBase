@@ -35,6 +35,11 @@ class NowPlayingViewController: UIViewController {
         presenter.onViewLoad()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+    
     private func setupSubviews() {
         title = "Now Playing"
         collectionView.alpha = 0

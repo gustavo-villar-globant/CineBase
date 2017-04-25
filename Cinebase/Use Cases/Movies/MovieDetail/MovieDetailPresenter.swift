@@ -22,7 +22,7 @@ class MovieDetailPresenter {
     }
     
     func onViewLoad() {
-        let movieViewModel = MovieViewModel(title: movie.title, imagePath: "", overview: movie.overview)
+        let movieViewModel = MovieViewModel(title: movie.title, backdropPath: movie.backdropPath, overview: movie.overview)
         view?.display(movieViewModel)
     }
     

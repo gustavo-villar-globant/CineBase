@@ -10,7 +10,7 @@ import UIKit
 
 struct MovieViewModel {
     var title: String
-    var imagePath: String
+    var backdropPath: String
     var overview: String
 }
 
@@ -22,7 +22,9 @@ class MovieDetailViewController: UIViewController, MovieDetailView {
     
     var presenter: MovieDetailPresenter!
     
-    @IBOutlet weak var overviewLabel: UILabel!
+    
+    @IBOutlet weak var overviewTextView: UITextView!
+    @IBOutlet weak var backdropImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +34,10 @@ class MovieDetailViewController: UIViewController, MovieDetailView {
     
     func display(_ movieViewModel: MovieViewModel) {
         title = movieViewModel.title
-        overviewLabel.text = movieViewModel.overview
+        overviewTextView.text = movieViewModel.overview
+        let url = URL(string: movieViewModel.backdropPath)
+        backdropImageView.setImage(with: url)
+        
     }
     
     @IBAction func buyTickets(_ sender: Any) {

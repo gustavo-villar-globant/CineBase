@@ -13,4 +13,5 @@ struct Movie {
     let title: String
     let overview: String
     let imagePath: String
+    let backdropPath: String
 }
