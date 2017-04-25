@@ -15,16 +15,20 @@ protocol MovieDetailRouterProtocol: class {
 
 class MovieDetailRouter: MovieDetailRouterProtocol {
     
-    weak var viewController: UIViewController?
+    weak var movieDetailViewController: MovieDetailViewController?
+    
+    init(_ movieDetailViewController: MovieDetailViewController) {
+        self.movieDetailViewController = movieDetailViewController
+    }
     
     static func makeScene(with movie: Movie) -> MovieDetailViewController {
         
         let viewController = UIStoryboard.movieDetail.instantiate(MovieDetailViewController.self)
 //        let viewController = MovieDetailViewController()
-        let router = MovieDetailRouter()
+        let router = MovieDetailRouter(viewController)
         let presenter = MovieDetailPresenter(view: viewController, router: router, movie: movie)
         viewController.presenter = presenter
-        router.viewController = viewController
+        router.movieDetailViewController = viewController
         
         return viewController
         
@@ -34,7 +38,7 @@ class MovieDetailRouter: MovieDetailRouterProtocol {
         
         let buyTicketViewController = BuyTicketsRouter.makeScene()
         let navigationController = UINavigationController(rootViewController: buyTicketViewController)
-        viewController?.present(navigationController, animated: true)
+        movieDetailViewController?.present(navigationController, animated: true)
         
     }
     

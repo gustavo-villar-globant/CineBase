@@ -14,8 +14,7 @@ target 'Cinebase' do
   pod 'Kingfisher', '~> 3.0'
   
   target 'CinebaseTests' do
-#      inherit! :complete
-#      use_frameworks!
+#      inherit! :search_paths
 
       # Pods for Cinebase Tests
       pod 'Nimble'

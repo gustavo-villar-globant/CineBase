@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02E95806775F0EBAAF471D19 /* Pods_CinebaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA0F006DF6CBD6E05660BBF5 /* Pods_CinebaseTests.framework */; };
 		3F98A6F3E053541C1D703B2B /* Pods_Cinebase_CinebaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F51BCFFB909DEE3C38D47B /* Pods_Cinebase_CinebaseTests.framework */; };
 		8B32A7701EAE58C500EE9BEB /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B32A76F1EAE58C500EE9BEB /* UIImageView+URL.swift */; };
+		8B32A7731EAE67D100EE9BEB /* NowPlayingRouterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B32A7721EAE67D100EE9BEB /* NowPlayingRouterSpec.swift */; };
 		8B5227BF1EA69F9800C72873 /* MovieDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5227BE1EA69F9800C72873 /* MovieDetailRouter.swift */; };
 		8B5227C21EA6A03600C72873 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5227C11EA6A03600C72873 /* MovieDetailViewController.swift */; };
 		8B5227C61EA6AB1600C72873 /* MovieDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5227C51EA6AB1600C72873 /* MovieDetailPresenter.swift */; };
@@ -31,6 +33,9 @@
 		8B7A7EDC1EA65B5900572F50 /* NowPlayingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7A7EDB1EA65B5900572F50 /* NowPlayingRouter.swift */; };
 		8B84510F1EAA765000F2E4A8 /* MockWebAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84510A1EAA765000F2E4A8 /* MockWebAPIRequest.swift */; };
 		8B8451101EAA765000F2E4A8 /* NowPlayingPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84510E1EAA765000F2E4A8 /* NowPlayingPresenterSpec.swift */; };
+		8B84BAC81EAE92CD00F377A5 /* MovieDetailRouterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84BAC71EAE92CD00F377A5 /* MovieDetailRouterSpec.swift */; };
+		8B84BACA1EAEA56400F377A5 /* MovieDetailPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84BAC91EAEA56400F377A5 /* MovieDetailPresenterSpec.swift */; };
+		8B84BACC1EAEAA8600F377A5 /* MockAuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84BACB1EAEAA8600F377A5 /* MockAuthenticationManager.swift */; };
 		8BC3C3DE1EA55F060001184A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3C3DC1EA55F060001184A /* Result.swift */; };
 		8BC3C3DF1EA55F060001184A /* UNIXTimestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3C3DD1EA55F060001184A /* UNIXTimestamp.swift */; };
 		8BC3C3EF1EA5614C0001184A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BC3C3EE1EA5614C0001184A /* Images.xcassets */; };
@@ -60,8 +65,11 @@
 
 /* Begin PBXFileReference section */
 		050FACF85B33DC20ED05DEC4 /* Pods_Cinebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cinebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		221DA47ABB835F3429E7D4E1 /* Pods-CinebaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinebaseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CinebaseTests/Pods-CinebaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		4D69DABABA173DA4E60DC3AB /* Pods-Cinebase-CinebaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinebase-CinebaseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cinebase-CinebaseTests/Pods-Cinebase-CinebaseTests.release.xcconfig"; sourceTree = "<group>"; };
+		52E1CA9C2D2C992405091A83 /* Pods-CinebaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinebaseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CinebaseTests/Pods-CinebaseTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8B32A76F1EAE58C500EE9BEB /* UIImageView+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
+		8B32A7721EAE67D100EE9BEB /* NowPlayingRouterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingRouterSpec.swift; sourceTree = "<group>"; };
 		8B5227BE1EA69F9800C72873 /* MovieDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MovieDetailRouter.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8B5227C11EA6A03600C72873 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MovieDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8B5227C51EA6AB1600C72873 /* MovieDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MovieDetailPresenter.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -88,6 +96,9 @@
 		8B8451011EAA75F700F2E4A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B84510A1EAA765000F2E4A8 /* MockWebAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockWebAPIRequest.swift; sourceTree = "<group>"; };
 		8B84510E1EAA765000F2E4A8 /* NowPlayingPresenterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingPresenterSpec.swift; sourceTree = "<group>"; };
+		8B84BAC71EAE92CD00F377A5 /* MovieDetailRouterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailRouterSpec.swift; sourceTree = "<group>"; };
+		8B84BAC91EAEA56400F377A5 /* MovieDetailPresenterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailPresenterSpec.swift; sourceTree = "<group>"; };
+		8B84BACB1EAEAA8600F377A5 /* MockAuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAuthenticationManager.swift; sourceTree = "<group>"; };
 		8BC3C3DC1EA55F060001184A /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Result.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8BC3C3DD1EA55F060001184A /* UNIXTimestamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = UNIXTimestamp.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8BC3C3EE1EA5614C0001184A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -103,6 +114,7 @@
 		A1E1F3C71EAD697E00B41C67 /* NowPlayingViewController + UICollectionView delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NowPlayingViewController + UICollectionView delegates.swift"; sourceTree = "<group>"; };
 		A1E1F3C91EAD6C1500B41C67 /* NowPlayingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NowPlayingCell.xib; sourceTree = "<group>"; };
 		A1E1F3CB1EAD6CD600B41C67 /* NowPlayingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingCell.swift; sourceTree = "<group>"; };
+		BA0F006DF6CBD6E05660BBF5 /* Pods_CinebaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CinebaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE904512BB970A51D34177A4 /* Pods-Cinebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinebase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cinebase/Pods-Cinebase.debug.xcconfig"; sourceTree = "<group>"; };
 		D332E963C17B2CE0638948AA /* Pods-Cinebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cinebase/Pods-Cinebase.release.xcconfig"; sourceTree = "<group>"; };
 		F2F51BCFFB909DEE3C38D47B /* Pods_Cinebase_CinebaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cinebase_CinebaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F98A6F3E053541C1D703B2B /* Pods_Cinebase_CinebaseTests.framework in Frameworks */,
+				02E95806775F0EBAAF471D19 /* Pods_CinebaseTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +148,8 @@
 				D332E963C17B2CE0638948AA /* Pods-Cinebase.release.xcconfig */,
 				9FF4061BD5BEFD59C22427C1 /* Pods-Cinebase-CinebaseTests.debug.xcconfig */,
 				4D69DABABA173DA4E60DC3AB /* Pods-Cinebase-CinebaseTests.release.xcconfig */,
+				52E1CA9C2D2C992405091A83 /* Pods-CinebaseTests.debug.xcconfig */,
+				221DA47ABB835F3429E7D4E1 /* Pods-CinebaseTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -290,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				8B8451081EAA765000F2E4A8 /* WebAPI */,
+				8B84BACB1EAEAA8600F377A5 /* MockAuthenticationManager.swift */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -322,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				8B84510D1EAA765000F2E4A8 /* NowPlaying */,
+				8BE6E2251EAE8A9D00FB7267 /* MovieDetail */,
 			);
 			path = Movies;
 			sourceTree = "<group>";
@@ -330,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				8B84510E1EAA765000F2E4A8 /* NowPlayingPresenterSpec.swift */,
+				8B32A7721EAE67D100EE9BEB /* NowPlayingRouterSpec.swift */,
 			);
 			path = NowPlaying;
 			sourceTree = "<group>";
@@ -409,6 +427,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		8BE6E2251EAE8A9D00FB7267 /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8B84BAC71EAE92CD00F377A5 /* MovieDetailRouterSpec.swift */,
+				8B84BAC91EAEA56400F377A5 /* MovieDetailPresenterSpec.swift */,
+			);
+			path = MovieDetail;
+			sourceTree = "<group>";
+		};
 		A143A3201EABA72C009C4153 /* Bootstrap */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +452,7 @@
 			children = (
 				050FACF85B33DC20ED05DEC4 /* Pods_Cinebase.framework */,
 				F2F51BCFFB909DEE3C38D47B /* Pods_Cinebase_CinebaseTests.framework */,
+				BA0F006DF6CBD6E05660BBF5 /* Pods_CinebaseTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -485,12 +513,12 @@
 				TargetAttributes = {
 					8B76BEF81E9D1096003074DD = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = 692K8L98GH;
+						DevelopmentTeam = UMT34K4222;
 						ProvisioningStyle = Automatic;
 					};
 					8B8450FC1EAA75F700F2E4A8 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = 692K8L98GH;
+						DevelopmentTeam = UMT34K4222;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 8B76BEF81E9D1096003074DD;
 					};
@@ -673,7 +701,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B84510F1EAA765000F2E4A8 /* MockWebAPIRequest.swift in Sources */,
+				8B84BACC1EAEAA8600F377A5 /* MockAuthenticationManager.swift in Sources */,
+				8B84BACA1EAEA56400F377A5 /* MovieDetailPresenterSpec.swift in Sources */,
+				8B84BAC81EAE92CD00F377A5 /* MovieDetailRouterSpec.swift in Sources */,
 				8B8451101EAA765000F2E4A8 /* NowPlayingPresenterSpec.swift in Sources */,
+				8B32A7731EAE67D100EE9BEB /* NowPlayingRouterSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -797,7 +829,7 @@
 			baseConfigurationReference = CE904512BB970A51D34177A4 /* Pods-Cinebase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 692K8L98GH;
+				DEVELOPMENT_TEAM = UMT34K4222;
 				INFOPLIST_FILE = "$(SRCROOT)/Cinebase/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gustavovillar.Cinebase;
@@ -811,7 +843,7 @@
 			baseConfigurationReference = D332E963C17B2CE0638948AA /* Pods-Cinebase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 692K8L98GH;
+				DEVELOPMENT_TEAM = UMT34K4222;
 				INFOPLIST_FILE = "$(SRCROOT)/Cinebase/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gustavovillar.Cinebase;
@@ -825,7 +857,24 @@
 			baseConfigurationReference = 9FF4061BD5BEFD59C22427C1 /* Pods-Cinebase-CinebaseTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 692K8L98GH;
+				DEVELOPMENT_TEAM = UMT34K4222;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Nimble\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Quick\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Alamofire\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/GTMOAuth2\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/GTMSessionFetcher\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/GoogleToolboxForMac\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Kingfisher\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Timberjack\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseAuth/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseCore/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleSignIn/Frameworks\"",
+				);
 				INFOPLIST_FILE = CinebaseTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -841,7 +890,7 @@
 			baseConfigurationReference = 4D69DABABA173DA4E60DC3AB /* Pods-Cinebase-CinebaseTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 692K8L98GH;
+				DEVELOPMENT_TEAM = UMT34K4222;
 				INFOPLIST_FILE = CinebaseTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

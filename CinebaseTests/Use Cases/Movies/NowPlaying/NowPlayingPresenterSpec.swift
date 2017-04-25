@@ -31,7 +31,7 @@ class NowPlayingPresenterSpec: QuickSpec {
                 sut = NowPlayingPresenter(view: mockView, router: mockRouter, moviesAPIClient: mockAPIClient)
             }
             
-            context("When the view is loaded") {
+            context("when the view is loaded") {
                 
                 beforeEach {
                     sut.onViewLoad()
@@ -39,6 +39,38 @@ class NowPlayingPresenterSpec: QuickSpec {
                 it("should fetch the movies") {
                     expect(mockAPIClient.isFetchingNowPlaying).to(beTrue())
                     expect(mockView.isLoading).to(beTrue())
+                }
+                
+                context("when the request fails") {
+                    var networkError: Error!
+                    beforeEach {
+                        networkError = NSError()
+                        mockAPIClient.completeFetching(with: .failure(networkError))
+                    }
+                    it("should display the error") {
+                        expect(mockView.displayedError).to(be(networkError))
+                    }
+                }
+                
+                context("when the request completes successfully") {
+                    var movie: Movie!
+                    beforeEach {
+                        movie = Movie(movieID: 1, title: "First movie", overview: "Great movie. Recommended.", imagePath: "/first_image.png")
+                        mockAPIClient.completeFetching(with: .success([movie]))
+                    }
+                    it("should display the movie cells") {
+                        let movieCell = MovieCellModel(title: "First movie", imagePath: "/first_image.png")
+                        expect(mockView.displayedMovies).to(equal([movieCell]))
+                    }
+                    
+                    context("when an item is selected") {
+                        beforeEach {
+                            sut.onItemSelected(at: 0)
+                        }
+                        it("should show movie details") {
+                            expect(mockRouter.isShowingDetail).to(beTrue())
+                        }
+                    }
                 }
                 
             }

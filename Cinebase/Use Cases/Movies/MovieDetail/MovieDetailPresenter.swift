@@ -14,28 +14,30 @@ class MovieDetailPresenter {
     weak var view: MovieDetailView?
     fileprivate let router: MovieDetailRouterProtocol
     fileprivate let movie: Movie
+    fileprivate let authenticationManager: AuthenticationManagerProtocol
     
-    init(view: MovieDetailView, router: MovieDetailRouterProtocol, movie: Movie) {
+    init(view: MovieDetailView, router: MovieDetailRouterProtocol, movie: Movie, authenticationManager: AuthenticationManagerProtocol = AuthenticationManager.shared) {
         self.view = view
         self.router = router
         self.movie = movie
+        self.authenticationManager = authenticationManager
     }
     
     func onViewLoad() {
-        let movieViewModel = MovieViewModel(title: movie.title, imagePath: "", overview: movie.overview)
+        let movieViewModel = MovieViewModel(title: movie.title, imagePath: movie.imagePath, overview: movie.overview)
         view?.display(movieViewModel)
     }
     
     func buyTickets() {
         guard let view = view else { return }
-        AuthenticationManager.shared.delegate = self
-        AuthenticationManager.shared.requestLoginWithGoogle(from: view)
+        authenticationManager.delegate = self
+        authenticationManager.requestLoginWithGoogle(from: view)
     }
 }
 
 // MARK: - Authentication Manager delegate
 extension MovieDetailPresenter: AuthenticationManagerDelegate {
-    func authenticationManager(_ manager: AuthenticationManager, didLoginWith user: User) {
+    func authenticationManager(_ manager: AuthenticationManagerProtocol, didLoginWith user: User) {
         router.presentBuyingOptions(for: user, and: movie)
     }
 }
