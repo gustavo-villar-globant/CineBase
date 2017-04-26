@@ -69,7 +69,7 @@ extension AuthenticationManager: GIDSignInDelegate, GIDSignInUIDelegate {
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         
-        guard let authentication = user.authentication else {
+        guard let authentication = user?.authentication else {
             self.delegate?.authenticationManager(self, didFailLoginWith: error!)
             return
         }
