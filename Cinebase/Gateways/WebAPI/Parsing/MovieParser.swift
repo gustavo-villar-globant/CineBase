@@ -11,11 +11,15 @@ import Foundation
 class MovieParser: ModelParser {
     typealias Model = Movie
     
+    /// Base path for URL attributes
+    var baseURL: String
+    
+    init(baseURL: String) {
+        self.baseURL = baseURL
+    }
+    
     func parse(fromJSON json: [String : Any]) -> Result<Movie> {
-        
-//        self.movieID = json["id"] as? NSNumber ?? NSNumber(value: 0)
-//        self.title = json["title"] as? String ?? ""
-        
+ 
         guard let movieID = json["id"] as? Int,
             let title = json["title"] as? String,
             let imagePath = json["poster_path"] as? String,
@@ -24,7 +28,7 @@ class MovieParser: ModelParser {
                 return .failure(parsingError)
         }
         
-        let imageURL = WebAPIClient.imageBaseURL + imagePath
+        let imageURL = baseURL + imagePath
         
         let movie = Movie(movieID: movieID, title: title, overview: overview, imagePath: imageURL)
         return .success(movie)

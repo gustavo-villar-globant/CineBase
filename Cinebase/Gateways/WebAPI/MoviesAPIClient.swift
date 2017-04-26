@@ -28,7 +28,7 @@ class MoviesAPIClient {
                         return
                 }
                 
-                let movieParser = MovieParser()
+                let movieParser = MovieParser(baseURL: WebAPIClient.imageBaseURL)
                 let parseResult = movieParser.parseArray(fromJSONArray: movieJSONArray)
                 completion(parseResult)
                 

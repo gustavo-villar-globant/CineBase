@@ -21,8 +21,8 @@ enum HTTPMethod: String {
 
 /**
  It is a networking wrapper class to avoid direct
- dependencies with Alamofire. It is responsible for 
- creating requests to the Web API.
+ dependencies with the underlying HTTP library. It is 
+ responsible for creating requests to the Web API.
 */
 class WebAPIClient {
     
