@@ -30,6 +30,7 @@ class MovieParser: ModelParser {
         }
         
         let imageURL = baseURL + imagePath
+        let backdropURL = baseURL + backdropPath
         
         let movie = Movie(movieID: movieID, title: title, overview: overview, imagePath: imageURL, backdropPath: backdropURL)
         return .success(movie)

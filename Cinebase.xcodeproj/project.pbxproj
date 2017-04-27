@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F98A6F3E053541C1D703B2B /* Pods_Cinebase_CinebaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F51BCFFB909DEE3C38D47B /* Pods_Cinebase_CinebaseTests.framework */; };
+		3A9982C473258488E3E8E0A8 /* Pods_Cinebase_CinebaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7141A01432CB59747297F08E /* Pods_Cinebase_CinebaseTests.framework */; };
 		8B32A7701EAE58C500EE9BEB /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B32A76F1EAE58C500EE9BEB /* UIImageView+URL.swift */; };
 		8B32A7731EAE67D100EE9BEB /* NowPlayingRouterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B32A7721EAE67D100EE9BEB /* NowPlayingRouterSpec.swift */; };
 		8B5227BF1EA69F9800C72873 /* MovieDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5227BE1EA69F9800C72873 /* MovieDetailRouter.swift */; };
@@ -115,9 +115,9 @@
 		A1E1F3C71EAD697E00B41C67 /* NowPlayingViewController + UICollectionView delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NowPlayingViewController + UICollectionView delegates.swift"; sourceTree = "<group>"; };
 		A1E1F3C91EAD6C1500B41C67 /* NowPlayingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NowPlayingCell.xib; sourceTree = "<group>"; };
 		A1E1F3CB1EAD6CD600B41C67 /* NowPlayingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingCell.swift; sourceTree = "<group>"; };
-		CE904512BB970A51D34177A4 /* Pods-Cinebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinebase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cinebase/Pods-Cinebase.debug.xcconfig"; sourceTree = "<group>"; };
-		D332E963C17B2CE0638948AA /* Pods-Cinebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cinebase/Pods-Cinebase.release.xcconfig"; sourceTree = "<group>"; };
-		F2F51BCFFB909DEE3C38D47B /* Pods_Cinebase_CinebaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cinebase_CinebaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA5EFCEF9EACBF7DA8FA3330 /* Pods-Cinebase-CinebaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinebase-CinebaseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cinebase-CinebaseTests/Pods-Cinebase-CinebaseTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E33E706DF76366A43E76DED5 /* Pods-Cinebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cinebase/Pods-Cinebase.release.xcconfig"; sourceTree = "<group>"; };
+		FD60F1B9300BAF822E9473E0 /* Pods-Cinebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinebase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cinebase/Pods-Cinebase.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F98A6F3E053541C1D703B2B /* Pods_Cinebase_CinebaseTests.framework in Frameworks */,
+				3A9982C473258488E3E8E0A8 /* Pods_Cinebase_CinebaseTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
