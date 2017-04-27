@@ -40,7 +40,8 @@ class MovieParserSpec: QuickSpec {
                     json = [
                         "title": "Some title",
                         "overview": "Not recommended",
-                        "poster_path": "/some_movie_poster.jpeg"
+                        "poster_path": "/some_movie_poster.jpeg",
+                        "backdrop_path": "/some_movie_backdrop.png"
                     ]
                 }
                 it("should fail") {
@@ -54,7 +55,8 @@ class MovieParserSpec: QuickSpec {
                     json = [
                         "id": 123456,
                         "overview": "Not recommended",
-                        "poster_path": "/some_movie_poster.jpeg"
+                        "poster_path": "/some_movie_poster.jpeg",
+                        "backdrop_path": "/some_movie_backdrop.png"
                     ]
                 }
                 it("should fail") {
@@ -62,13 +64,14 @@ class MovieParserSpec: QuickSpec {
                 }
             }
             
-            context("when it parses a json with no id") {
+            context("when it parses a json with no overview") {
                 var json: [String: Any]!
                 beforeEach {
                     json = [
                         "id": 123456,
                         "title": "Some title",
-                        "poster_path": "/some_movie_poster.jpeg"
+                        "poster_path": "/some_movie_poster.jpeg",
+                        "backdrop_path": "/some_movie_backdrop.png"
                     ]
                 }
                 it("should fail") {
