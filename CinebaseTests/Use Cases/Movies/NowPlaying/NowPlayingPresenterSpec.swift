@@ -55,7 +55,7 @@ class NowPlayingPresenterSpec: QuickSpec {
                 context("when the request completes successfully") {
                     var movie: Movie!
                     beforeEach {
-                        movie = Movie(movieID: 1, title: "First movie", overview: "Great movie. Recommended.", imagePath: "/first_image.png")
+                        movie = Movie(movieID: 1, title: "First movie", overview: "Great movie. Recommended.", imagePath: "/first_image.png", backdropPath: "/first_backdrop.png")
                         mockAPIClient.completeFetching(with: .success([movie]))
                     }
                     it("should display the movie cells") {

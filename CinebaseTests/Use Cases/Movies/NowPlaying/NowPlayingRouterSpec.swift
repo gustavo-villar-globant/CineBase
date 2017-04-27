@@ -27,7 +27,7 @@ class NowPlayingRouterSpec: QuickSpec {
             context("when show detail of movie is called") {
                 var movie: Movie!
                 beforeEach {
-                    movie = Movie(movieID: 1, title: "Some movie", overview: "Great movie. Recommended.", imagePath: "/image.png")
+                    movie = Movie(movieID: 1, title: "Some movie", overview: "Great movie. Recommended.", imagePath: "/image.png", backdropPath: "/backdrop.png")
                     sut.showDetail(of: movie)
                 }
                 
