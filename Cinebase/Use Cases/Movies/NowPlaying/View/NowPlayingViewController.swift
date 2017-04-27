@@ -40,11 +40,11 @@ class NowPlayingViewController: UIViewController {
     }
     
     private func setupSubviews() {
-        setupNagivationItem()
+        setupNavigationItem()
         setupCollectionView()
     }
     
-    private func setupNagivationItem() {
+    private func setupNavigationItem() {
         title = "Now Playing"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
