@@ -11,14 +11,13 @@ import Foundation
 class NowPlayingPresenter {
     
     weak var view: NowPlayingView?
-    let router: NowPlayingRouterProtocol
     private let moviesAPIClient: MoviesAPIClient
     private weak var fetchMoviesRequest: WebAPIRequestProtocol?
     private var movies: [Movie] = []
+    var showDetail: ((Movie) -> Void)?
     
-    init(view: NowPlayingView, router: NowPlayingRouterProtocol, moviesAPIClient: MoviesAPIClient = MoviesAPIClient()) {
+    init(view: NowPlayingView, moviesAPIClient: MoviesAPIClient = MoviesAPIClient()) {
         self.view = view
-        self.router = router
         self.moviesAPIClient = moviesAPIClient
     }
     
@@ -47,9 +46,10 @@ class NowPlayingPresenter {
         }
         
         let movie = movies[index]
-        router.showDetail(of: movie)
+        showDetail?(movie)
         
     }
+    
     
     deinit {
         fetchMoviesRequest?.cancel()

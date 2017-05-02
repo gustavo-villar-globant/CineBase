@@ -14,7 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
-        window = MainRouter.makeWindow()
+        let windowBuilder = WindowBuilder()
+        window = windowBuilder.makeWindow()
         return true
     }
 

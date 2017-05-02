@@ -12,13 +12,12 @@ import Foundation
 class MovieDetailPresenter {
     
     weak var view: MovieDetailView?
-    fileprivate let router: MovieDetailRouterProtocol
     fileprivate let movie: Movie
     fileprivate let authenticationManager: AuthenticationManagerProtocol
+    var presentBuyingOptions: ((User, Movie) -> Void)?
     
-    init(view: MovieDetailView, router: MovieDetailRouterProtocol, movie: Movie, authenticationManager: AuthenticationManagerProtocol = AuthenticationManager.shared) {
+    init(view: MovieDetailView, movie: Movie, authenticationManager: AuthenticationManagerProtocol = AuthenticationManager.shared) {
         self.view = view
-        self.router = router
         self.movie = movie
         self.authenticationManager = authenticationManager
     }
@@ -39,6 +38,6 @@ class MovieDetailPresenter {
 // MARK: - Authentication Manager delegate
 extension MovieDetailPresenter: AuthenticationManagerDelegate {
     func authenticationManager(_ manager: AuthenticationManagerProtocol, didLoginWith user: User) {
-        router.presentBuyingOptions(for: user, and: movie)
+        presentBuyingOptions?(user, movie)
     }
 }

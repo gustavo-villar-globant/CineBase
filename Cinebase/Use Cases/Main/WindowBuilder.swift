@@ -1,5 +1,5 @@
 //
-//  MainRouter.swift
+//  WindowBuilder.swift
 //  Cinebase
 //
 //  Created by Gustavo Villar on 4/18/17.
@@ -9,12 +9,18 @@
 import Foundation
 import UIKit
 
-struct MainRouter {
+struct WindowBuilder {
     
-    static func makeWindow() -> UIWindow {
+    private let nowPlayingBuilder: NowPlayingBuilder
+    
+    init(nowPlayingBuilder: NowPlayingBuilder = NowPlayingBuilder()) {
+        self.nowPlayingBuilder = nowPlayingBuilder
+    }
+    
+    func makeWindow() -> UIWindow {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
-        let nowPlayingViewController = NowPlayingRouter.makeScene()
+        let nowPlayingViewController = nowPlayingBuilder.makeScene()
         let navigationController = UINavigationController(rootViewController: nowPlayingViewController)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
