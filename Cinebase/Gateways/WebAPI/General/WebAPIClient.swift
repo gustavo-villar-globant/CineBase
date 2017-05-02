@@ -29,6 +29,7 @@ class WebAPIClient {
     private static let baseURL = "https://api.themoviedb.org/3"
     static let imageBaseURL =  "https://image.tmdb.org/t/p/w500"
     private static let apiKey = "1f4d7de5836b788bdfd897c3e0d0a24b"
+    static let videoBaseURL = "https://www.youtube.com/watch?v="
     
     let sessionManager: SessionManager
     

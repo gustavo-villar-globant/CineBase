@@ -15,12 +15,15 @@ class MovieDetailPresenter {
     fileprivate let router: MovieDetailRouterProtocol
     fileprivate let movie: Movie
     fileprivate let authenticationManager: AuthenticationManagerProtocol
+    private let moviesAPIClient: MoviesAPIClient
+    private weak var fetchTrailerRequest: WebAPIRequestProtocol?
     
-    init(view: MovieDetailView, router: MovieDetailRouterProtocol, movie: Movie, authenticationManager: AuthenticationManagerProtocol = AuthenticationManager.shared) {
+    init(view: MovieDetailView, router: MovieDetailRouterProtocol, movie: Movie, authenticationManager: AuthenticationManagerProtocol = AuthenticationManager.shared, moviesAPIClient: MoviesAPIClient = MoviesAPIClient() ) {
         self.view = view
         self.router = router
         self.movie = movie
         self.authenticationManager = authenticationManager
+        self.moviesAPIClient = moviesAPIClient
     }
     
     func onViewLoad() {
@@ -34,6 +37,13 @@ class MovieDetailPresenter {
         authenticationManager.delegate = self
         authenticationManager.requestLoginWithGoogle(from: view)
     }
+    
+    func playTrailer() {
+        fetchTrailerRequest = moviesAPIClient.fetchTrailersOfMovieWithID(movie.movieID, completion: { (result) in
+            print(result)
+        })
+    }
+    
 }
 
 // MARK: - Authentication Manager delegate
