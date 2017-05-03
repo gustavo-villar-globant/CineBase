@@ -20,15 +20,18 @@ class MovieDetailPresenterSpec: QuickSpec {
             
             var sut: MovieDetailPresenter!
             var mockView: MockMovieDetailView!
-            var mockRouter: MockMovieDetailRouter!
+            var mockRouter: MockRouter!
             var mockAuthenticationManager: MockAuthenticationManager!
             var movie: Movie!
             beforeEach {
                 mockView = MockMovieDetailView()
-                mockRouter = MockMovieDetailRouter()
+                mockRouter = MockRouter()
                 movie = Movie(movieID: 1, title: "Movie with detail", overview: "Amazing movie review detail", imagePath: "/awesome.png", backdropPath: "/backdrop.png")
                 mockAuthenticationManager = MockAuthenticationManager()
-                sut = MovieDetailPresenter(view: mockView, router: mockRouter, movie: movie, authenticationManager: mockAuthenticationManager)
+                sut = MovieDetailPresenter(view: mockView, movie: movie, authenticationManager: mockAuthenticationManager)
+                sut.presentBuyingOptions = { _ in
+                    mockRouter.isPresentingBuyingOptions = true
+                }
             }
             
             context("when the view is loaded") {
@@ -79,11 +82,8 @@ extension MovieDetailPresenterSpec {
         }
     }
     
-    class MockMovieDetailRouter: MovieDetailRouterProtocol {
-        private(set) var isPresentingBuyingOptions = false
-        func presentBuyingOptions(for user: User, and movie: Movie) {
-            isPresentingBuyingOptions = true
-        }
+    class MockRouter {
+        var isPresentingBuyingOptions = false
     }
 
 }

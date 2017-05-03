@@ -21,14 +21,17 @@ class NowPlayingPresenterSpec: QuickSpec {
             
             var sut: NowPlayingPresenter!
             var mockView: MockNowPlayingView!
-            var mockRouter: MockNowPlayingRouter!
+            var mockRouter: MockRouter!
             var mockAPIClient: MockMoviesAPIClient!
             
             beforeEach {
                 mockView = MockNowPlayingView()
-                mockRouter = MockNowPlayingRouter()
+                mockRouter = MockRouter()
                 mockAPIClient = MockMoviesAPIClient()
-                sut = NowPlayingPresenter(view: mockView, router: mockRouter, moviesAPIClient: mockAPIClient)
+                sut = NowPlayingPresenter(view: mockView, moviesAPIClient: mockAPIClient)
+                sut.showDetail = { _ in
+                    mockRouter.isShowingDetail = true
+                }
             }
             
             context("when the view is loaded") {
@@ -104,11 +107,8 @@ extension NowPlayingPresenterSpec {
         }
     }
     
-    class MockNowPlayingRouter: NowPlayingRouterProtocol {
-        private(set) var isShowingDetail = false
-        func showDetail(of movie: Movie) {
-            isShowingDetail = true
-        }
+    class MockRouter {
+        var isShowingDetail = false
     }
     
     class MockMoviesAPIClient: MoviesAPIClient {
