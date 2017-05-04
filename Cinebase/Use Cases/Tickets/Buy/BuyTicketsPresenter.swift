@@ -11,15 +11,15 @@ import Foundation
 class BuyTicketsPresenter {
     
     weak var view: BuyTicketsView?
-    private let router: BuyTicketsRouterProtocol
     
-    init(view: BuyTicketsView, router: BuyTicketsRouterProtocol) {
+    init(view: BuyTicketsView) {
         self.view = view
-        self.router = router
     }
     
+    var dismiss: (() -> Void)?
+    
     func onCancelTouched() {
-        router.dismiss()
+        dismiss?()
     }
     
 }
