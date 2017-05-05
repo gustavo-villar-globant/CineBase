@@ -49,6 +49,12 @@ class MovieDetailViewController: UIViewController, MovieDetailView {
     @IBAction func buyTickets(_ sender: Any) {
         presenter.buyTickets()
     }
+    
+    @IBAction func handlePlayTrailer(_ sender: Any) {
+        presenter.playTrailer()
+    }
+    
+    
 }
 
 // MARK: - Login View

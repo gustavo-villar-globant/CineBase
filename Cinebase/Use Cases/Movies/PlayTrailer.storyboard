@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Play Trailer View Controller-->
+        <scene sceneID="MXC-Yn-9Tx">
+            <objects>
+                <viewController storyboardIdentifier="PlayTrailerViewController" id="GWz-CU-OVe" customClass="PlayTrailerViewController" customModule="Cinebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eka-pI-VDp"/>
+                        <viewControllerLayoutGuide type="bottom" id="NjT-Cb-PsL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Geg-zn-Mug">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eL5-lE-GpX" customClass="YTPlayerView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eL5-lE-GpX" firstAttribute="top" secondItem="eka-pI-VDp" secondAttribute="bottom" constant="-64" id="4h0-1s-PvF"/>
+                            <constraint firstAttribute="trailing" secondItem="eL5-lE-GpX" secondAttribute="trailing" id="c8z-Lf-tIB"/>
+                            <constraint firstItem="NjT-Cb-PsL" firstAttribute="top" secondItem="eL5-lE-GpX" secondAttribute="bottom" id="cWB-xt-Jy4"/>
+                            <constraint firstItem="eL5-lE-GpX" firstAttribute="leading" secondItem="Geg-zn-Mug" secondAttribute="leading" id="pRW-J0-u4S"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="playerView" destination="eL5-lE-GpX" id="jsv-da-p2k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uUO-EP-y3q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-231.19999999999999" y="-209.14542728635683"/>
+        </scene>
+    </scenes>
+</document>

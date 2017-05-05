@@ -63,6 +63,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Wr-7w-r8L">
+                                <rect key="frame" x="154" y="136" width="66" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="Mg0-7D-cqZ"/>
+                                    <constraint firstAttribute="width" constant="66" id="nXg-Nf-0Cc"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="play-white"/>
+                                <connections>
+                                    <action selector="handlePlayTrailer:" destination="vbI-vv-CLs" eventType="touchUpInside" id="RVn-k5-CMW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -73,7 +84,9 @@
                             <constraint firstItem="mco-k6-YK2" firstAttribute="top" secondItem="WWL-3Q-9Xv" secondAttribute="bottom" constant="50" id="agl-KG-4jn"/>
                             <constraint firstItem="A1m-Vh-b9O" firstAttribute="top" secondItem="Jmq-1o-jlD" secondAttribute="bottom" id="bfZ-Sp-all"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LKT-Td-Mge" secondAttribute="trailing" constant="5" id="c29-42-vUb"/>
+                            <constraint firstItem="5Wr-7w-r8L" firstAttribute="centerX" secondItem="A1m-Vh-b9O" secondAttribute="centerX" id="e5b-uD-3aL"/>
                             <constraint firstAttribute="trailing" secondItem="A1m-Vh-b9O" secondAttribute="trailing" id="iJT-rV-kAR"/>
+                            <constraint firstItem="5Wr-7w-r8L" firstAttribute="centerY" secondItem="A1m-Vh-b9O" secondAttribute="centerY" id="icn-75-Qyh"/>
                             <constraint firstItem="SVr-Tg-Drm" firstAttribute="leading" secondItem="LW0-hr-Mlk" secondAttribute="leadingMargin" constant="5" id="lfZ-8o-a9h"/>
                             <constraint firstItem="6Pw-Ts-edq" firstAttribute="trailing" secondItem="WWL-3Q-9Xv" secondAttribute="trailing" id="oUe-31-Zqe"/>
                             <constraint firstItem="LKT-Td-Mge" firstAttribute="top" secondItem="A1m-Vh-b9O" secondAttribute="bottom" constant="21" id="pzx-Nw-vGc"/>
@@ -95,4 +108,7 @@
             <point key="canvasLocation" x="296.80000000000001" y="-210.04497751124438"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="play-white" width="22" height="22"/>
+    </resources>
 </document>
