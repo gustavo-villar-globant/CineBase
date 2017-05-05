@@ -12,13 +12,14 @@ target 'Cinebase' do
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
   pod 'Kingfisher', '~> 3.0'
+  pod 'RealmSwift', '~> 2.7.0'
   
   target 'CinebaseTests' do
-#      inherit! :search_paths
+    # inherit! :search_paths
 
-      # Pods for Cinebase Tests
-      pod 'Nimble'
-      pod 'Quick'
+    # Pods for Cinebase Tests
+    pod 'Nimble'
+    pod 'Quick'
   end
   
 end
