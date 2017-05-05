@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0120E2401EBD15A000FF197B /* MovieEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120E23F1EBD15A000FF197B /* MovieEntity.swift */; };
+		0120E2441EBD1A3F00FF197B /* MovieEntitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120E2431EBD1A3F00FF197B /* MovieEntitySpec.swift */; };
 		3A9982C473258488E3E8E0A8 /* Pods_Cinebase_CinebaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7141A01432CB59747297F08E /* Pods_Cinebase_CinebaseTests.framework */; };
 		8B32A7701EAE58C500EE9BEB /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B32A76F1EAE58C500EE9BEB /* UIImageView+URL.swift */; };
 		8B5227BF1EA69F9800C72873 /* MovieDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5227BE1EA69F9800C72873 /* MovieDetailBuilder.swift */; };
@@ -63,6 +65,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0120E23F1EBD15A000FF197B /* MovieEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieEntity.swift; sourceTree = "<group>"; };
+		0120E2431EBD1A3F00FF197B /* MovieEntitySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieEntitySpec.swift; sourceTree = "<group>"; };
 		6E109F99AC644C75D8286D89 /* Pods-Cinebase-CinebaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinebase-CinebaseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cinebase-CinebaseTests/Pods-Cinebase-CinebaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		7141A01432CB59747297F08E /* Pods_Cinebase_CinebaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cinebase_CinebaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B34697464F8D96C18694CBF /* Pods_Cinebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cinebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +140,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0120E23D1EBD155B00FF197B /* Local Storage */ = {
+			isa = PBXGroup;
+			children = (
+				0120E23E1EBD159800FF197B /* Entities */,
+			);
+			path = "Local Storage";
+			sourceTree = "<group>";
+		};
+		0120E23E1EBD159800FF197B /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				0120E23F1EBD15A000FF197B /* MovieEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		0120E2411EBD1A3300FF197B /* Local Storage */ = {
+			isa = PBXGroup;
+			children = (
+				0120E2421EBD1A3300FF197B /* Entities */,
+			);
+			path = "Local Storage";
+			sourceTree = "<group>";
+		};
+		0120E2421EBD1A3300FF197B /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				0120E2431EBD1A3F00FF197B /* MovieEntitySpec.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		2E9E34484DB55D0E2284948A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +341,7 @@
 		8B8451071EAA765000F2E4A8 /* Gateways */ = {
 			isa = PBXGroup;
 			children = (
+				0120E2411EBD1A3300FF197B /* Local Storage */,
 				8B8451081EAA765000F2E4A8 /* WebAPI */,
 				8B84BACB1EAEAA8600F377A5 /* MockAuthenticationManager.swift */,
 			);
@@ -385,6 +422,7 @@
 		8BC3C3E01EA560C20001184A /* Gateways */ = {
 			isa = PBXGroup;
 			children = (
+				0120E23D1EBD155B00FF197B /* Local Storage */,
 				8BC3C3F71EA564200001184A /* WebAPI */,
 				8B5227CB1EA6C39F00C72873 /* AuthenticationManager.swift */,
 			);
@@ -691,6 +729,7 @@
 				8B7A7EDA1EA64FA100572F50 /* NowPlayingPresenter.swift in Sources */,
 				8B32A7701EAE58C500EE9BEB /* UIImageView+URL.swift in Sources */,
 				8B5227C21EA6A03600C72873 /* MovieDetailViewController.swift in Sources */,
+				0120E2401EBD15A000FF197B /* MovieEntity.swift in Sources */,
 				8BC3C4001EA564200001184A /* WebAPIRequest.swift in Sources */,
 				8B660C881EA7CC6A0099626B /* User.swift in Sources */,
 			);
@@ -704,6 +743,7 @@
 				8BC136BA1EB10377006F306C /* MovieParserSpec.swift in Sources */,
 				8B84BACC1EAEAA8600F377A5 /* MockAuthenticationManager.swift in Sources */,
 				8B84BACA1EAEA56400F377A5 /* MovieDetailPresenterSpec.swift in Sources */,
+				0120E2441EBD1A3F00FF197B /* MovieEntitySpec.swift in Sources */,
 				8BC136BC1EB10409006F306C /* JSONFileReader.swift in Sources */,
 				8B8451101EAA765000F2E4A8 /* NowPlayingPresenterSpec.swift in Sources */,
 			);

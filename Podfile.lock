@@ -52,7 +52,7 @@ PODS:
   - Timberjack (0.0.3)
 
 DEPENDENCIES:
-  - Alamofire
+  - Alamofire (~> 4.4)
   - Firebase (~> 3.15.0)
   - Firebase/Auth
   - GoogleSignIn
@@ -92,6 +92,6 @@ SPEC CHECKSUMS:
   RealmSwift: 6d06425d3900c86473c4f323bf6949b43fca22bc
   Timberjack: 20de84a2c135134de6821d1ea90cd57709567e2d
 
-PODFILE CHECKSUM: d5dd5010cf1e8265bcd9c0106df2f0ec8ee86a00
+PODFILE CHECKSUM: 371d013b127441242458429308ae54436ffa119f
 
 COCOAPODS: 1.2.1

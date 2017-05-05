@@ -6,7 +6,7 @@ target 'Cinebase' do
   use_frameworks!
 
   # Pods for Cinebase
-  pod 'Alamofire'#, '~> 4.4'
+  pod 'Alamofire', '~> 4.4.0'
   pod 'Timberjack', git: 'https://github.com/andysmart/Timberjack.git', branch: 'master', tag: 'v0.0.3'
   pod 'Firebase', '~> 3.15.0'
   pod 'Firebase/Auth'
