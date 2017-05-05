@@ -10,13 +10,13 @@
 		3A9982C473258488E3E8E0A8 /* Pods_Cinebase_CinebaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7141A01432CB59747297F08E /* Pods_Cinebase_CinebaseTests.framework */; };
 		5060B5DD1EBBAF7D00F8D202 /* PlayTrailer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5060B5DC1EBBAF7D00F8D202 /* PlayTrailer.storyboard */; };
 		5060B5DF1EBBB08200F8D202 /* PlayTrailerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5060B5DE1EBBB08200F8D202 /* PlayTrailerViewController.swift */; };
-		5060B5E11EBBB26900F8D202 /* PlayTrailerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5060B5E01EBBB26900F8D202 /* PlayTrailerRouter.swift */; };
 		509920241EB9082F00644648 /* TrailerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509920231EB9082F00644648 /* TrailerParser.swift */; };
 		509920261EB9085E00644648 /* Trailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509920251EB9085E00644648 /* Trailer.swift */; };
 		50E8A9261EBCB88000A64494 /* UpcomingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E8A9251EBCB88000A64494 /* UpcomingCell.xib */; };
 		50E8A9281EBCDB8E00A64494 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E8A9271EBCDB8E00A64494 /* Appearance.swift */; };
 		50E8A92A1EBCE37500A64494 /* UIColor-Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E8A9291EBCE37500A64494 /* UIColor-Utils.swift */; };
 		50E8A92C1EBD074900A64494 /* NowPlayingBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E8A92B1EBD074900A64494 /* NowPlayingBuilder.swift */; };
+		50E8A92E1EBD0D5400A64494 /* PlayTrailerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E8A92D1EBD0D5400A64494 /* PlayTrailerBuilder.swift */; };
 		8B32A7701EAE58C500EE9BEB /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B32A76F1EAE58C500EE9BEB /* UIImageView+URL.swift */; };
 		8B5227BF1EA69F9800C72873 /* MovieDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5227BE1EA69F9800C72873 /* MovieDetailBuilder.swift */; };
 		8B5227C21EA6A03600C72873 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5227C11EA6A03600C72873 /* MovieDetailViewController.swift */; };
@@ -73,13 +73,13 @@
 /* Begin PBXFileReference section */
 		5060B5DC1EBBAF7D00F8D202 /* PlayTrailer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlayTrailer.storyboard; sourceTree = "<group>"; };
 		5060B5DE1EBBB08200F8D202 /* PlayTrailerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayTrailerViewController.swift; sourceTree = "<group>"; };
-		5060B5E01EBBB26900F8D202 /* PlayTrailerRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayTrailerRouter.swift; sourceTree = "<group>"; };
 		509920231EB9082F00644648 /* TrailerParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailerParser.swift; sourceTree = "<group>"; };
 		509920251EB9085E00644648 /* Trailer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trailer.swift; sourceTree = "<group>"; };
 		50E8A9251EBCB88000A64494 /* UpcomingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpcomingCell.xib; sourceTree = "<group>"; };
 		50E8A9271EBCDB8E00A64494 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		50E8A9291EBCE37500A64494 /* UIColor-Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Utils.swift"; sourceTree = "<group>"; };
 		50E8A92B1EBD074900A64494 /* NowPlayingBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingBuilder.swift; sourceTree = "<group>"; };
+		50E8A92D1EBD0D5400A64494 /* PlayTrailerBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayTrailerBuilder.swift; sourceTree = "<group>"; };
 		6E109F99AC644C75D8286D89 /* Pods-Cinebase-CinebaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinebase-CinebaseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cinebase-CinebaseTests/Pods-Cinebase-CinebaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		7141A01432CB59747297F08E /* Pods_Cinebase_CinebaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cinebase_CinebaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B34697464F8D96C18694CBF /* Pods_Cinebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cinebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,7 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				5060B5D91EBBAD0100F8D202 /* View */,
-				5060B5E01EBBB26900F8D202 /* PlayTrailerRouter.swift */,
+				50E8A92D1EBD0D5400A64494 /* PlayTrailerBuilder.swift */,
 			);
 			name = PlayTrailer;
 			sourceTree = "<group>";
@@ -715,13 +715,13 @@
 				8B5227BF1EA69F9800C72873 /* MovieDetailBuilder.swift in Sources */,
 				8BC3C3FF1EA564200001184A /* WebAPIClient.swift in Sources */,
 				8BC3C4051EA569B00001184A /* MoviesAPIClient.swift in Sources */,
+				50E8A92E1EBD0D5400A64494 /* PlayTrailerBuilder.swift in Sources */,
 				8B660C8D1EA7D0920099626B /* BuyTicketsViewController.swift in Sources */,
 				8B7A7ED41EA64D9F00572F50 /* NowPlayingViewController.swift in Sources */,
 				8B5227C61EA6AB1600C72873 /* MovieDetailPresenter.swift in Sources */,
 				8BC3C4021EA564200001184A /* ModelParser.swift in Sources */,
 				5060B5DF1EBBB08200F8D202 /* PlayTrailerViewController.swift in Sources */,
 				8BC3C40A1EA56C180001184A /* MovieParser.swift in Sources */,
-				5060B5E11EBBB26900F8D202 /* PlayTrailerRouter.swift in Sources */,
 				509920261EB9085E00644648 /* Trailer.swift in Sources */,
 				8B76BEFD1E9D1096003074DD /* AppDelegate.swift in Sources */,
 				8BC3C3DE1EA55F060001184A /* Result.swift in Sources */,
