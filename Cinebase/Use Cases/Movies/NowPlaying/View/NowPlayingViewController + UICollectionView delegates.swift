@@ -41,8 +41,8 @@ extension NowPlayingViewController: UICollectionViewDelegate {
 extension NowPlayingViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = view.bounds.width / 3 - 20
-        let height = width * 1.8
+        let width = view.bounds.width / 3
+        let height = width * 1.5
         
         return CGSize(width: width, height: height)
         
