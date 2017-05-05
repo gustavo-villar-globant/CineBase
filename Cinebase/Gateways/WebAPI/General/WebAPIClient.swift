@@ -34,7 +34,9 @@ class WebAPIClient {
     let sessionManager: SessionManager
     
     init() {
-        let configuration = Timberjack.defaultSessionConfiguration()
+        //let configuration = Timberjack.defaultSessionConfiguration()
+        
+        let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 10 // seconds
         configuration.timeoutIntervalForResource = 10 // seconds
         sessionManager = SessionManager(configuration: configuration)

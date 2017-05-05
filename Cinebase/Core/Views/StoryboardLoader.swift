@@ -10,6 +10,7 @@ import UIKit
 
 extension UIStoryboard {
     static let movieDetail = UIStoryboard(name: "MovieDetail", bundle: nil)
+    static let playTrailer = UIStoryboard(name: "PlayTrailer", bundle: nil)
     
     open func instantiate<T: UIViewController>(_ type: T.Type, named name: String? = nil) -> T {
         let identifier = name ?? String(describing: T.self)

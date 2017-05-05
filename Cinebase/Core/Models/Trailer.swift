@@ -9,6 +9,7 @@
 import Foundation
 
 struct Trailer {
+    let videoPath: String
     let key: String
     let movieID: Int
     let size: Int

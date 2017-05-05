@@ -12,6 +12,7 @@ target 'Cinebase' do
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
   pod 'Kingfisher', '~> 3.0'
+  pod 'youtube-ios-player-helper', '~> 0.1.4'
   
   target 'CinebaseTests' do
 #      inherit! :search_paths

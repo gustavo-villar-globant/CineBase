@@ -1,5 +1,5 @@
 //
-//  PlayerTrailerViewController.swift
+//  PlayTrailerViewController.swift
 //  Cinebase
 //
 //  Created by Charles Moncada on 5/4/17.
@@ -7,22 +7,27 @@
 //
 
 import UIKit
+import youtube_ios_player_helper
 
-class PlayerTrailerViewController: UIViewController {
+class PlayTrailerViewController: UIViewController {
     
     
-    let id: String
+    var id: String!
     
-    @IBOutlet weak var playerWebView: UIWebView!
+    @IBOutlet weak var playerView: YTPlayerView!
     
-    init(id: String) {
+    override func viewDidLoad() {
+        
+        playerView.load(withVideoId: id)
         
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return .landscape
     }
-    
-    
+
+    override var shouldAutorotate: Bool {
+        return true
+    }
     
 }

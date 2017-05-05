@@ -7,10 +7,14 @@
 //
 
 import Foundation
+import AVFoundation
 import UIKit
+import AVKit
+import youtube_ios_player_helper
 
 protocol MovieDetailRouterProtocol: class {
     func presentBuyingOptions(for user: User, and movie: Movie)
+    func playYoutubeVideo(withKey key: String)
 }
 
 class MovieDetailRouter: MovieDetailRouterProtocol {
@@ -41,5 +45,23 @@ class MovieDetailRouter: MovieDetailRouterProtocol {
         movieDetailViewController?.present(navigationController, animated: true)
         
     }
+    
+    func playYoutubeVideo(withKey key: String) {
+        
+//        let playerViewController = UIViewController()
+//        
+//        let playerView = YTPlayerView(frame: playerViewController.view.frame)
+//        
+//        playerViewController.view.addSubview(playerView)
+//        
+//        playerView.load(withVideoId: key)
+        
+        let vc = PlayTrailerRouter.makeScene(with: key)
+        
+        let nc = movieDetailViewController?.navigationController
+        
+        nc?.pushViewController(vc, animated: true)
+    }
+    
     
 }

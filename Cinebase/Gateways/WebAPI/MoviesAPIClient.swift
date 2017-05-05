@@ -55,7 +55,7 @@ class MoviesAPIClient {
                 }
                 
                 let trailerParser = TrailerParser(baseURL: WebAPIClient.videoBaseURL, movieID: id)
-                let parseResult = trailerParser.parseArray(fromJSONArray: trailerJSONArray)
+                let parseResult = trailerParser.parseArray(fromJSONArray: trailerJSONArray, withFilter: "Trailer")
                 completion(parseResult)
                 
             }

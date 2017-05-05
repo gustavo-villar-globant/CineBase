@@ -21,27 +21,20 @@ class TrailerParser: ModelParser {
         self.movieID = movieID
     }
     
-    func parseArray(fromJSONArray jsonArray: [[String: Any]]) -> Result<[Model]> {
+    func parseArray(fromJSONArray jsonArray: [[String: Any]], withFilter filter: String) -> Result<[Model]> {
         
-        var modelArray = [Model]()
+        var jsonArrayToParse = [[String: Any]]()
         
         for json in jsonArray {
-            
             if (json["type"] as? String) == "Trailer" {
-                let parseResult = parse(fromJSON: json)
-                switch parseResult {
-                case .failure(let error):
-                    return .failure(error)
-                case .success(let model):
-                    modelArray.append(model)
-                }
+                jsonArrayToParse.append(json)
             }
-            
         }
         
-        return .success(modelArray)
+        return parseArray(fromJSONArray: jsonArrayToParse)
         
     }
+    
     
     func parse(fromJSON json: [String : Any]) -> Result<Model> {
         
@@ -51,7 +44,9 @@ class TrailerParser: ModelParser {
                 return .failure(parsingError)
         }
         
-        let trailer = Trailer(key: key, movieID: movieID, size: size)
+        let videoURL = baseURL + key
+        
+        let trailer = Trailer(videoPath: videoURL,key: key, movieID: movieID, size: size)
         
         return .success(trailer)
         
