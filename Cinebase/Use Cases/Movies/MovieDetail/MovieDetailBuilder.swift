@@ -26,11 +26,16 @@ class MovieDetailBuilder {
         let viewController = UIStoryboard.movieDetail.instantiate(MovieDetailViewController.self)
         let presenter = MovieDetailPresenter(view: viewController, movie: movie)
         viewController.presenter = presenter
+        
         presenter.presentBuyingOptions = { [buyTicketsBuilder] (user, movie) in
             
             let buyTicketVC = buyTicketsBuilder.makeScene(user: user, movie: movie)
             let navigationController = UINavigationController(rootViewController: buyTicketVC)
             viewController.present(navigationController, animated: true)
+            
+        }
+        
+        presenter.playYoutubeVideoWithKey = { (key) in
             
         }
         

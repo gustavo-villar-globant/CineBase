@@ -45,6 +45,7 @@ PODS:
   - Nimble (6.1.0)
   - Quick (1.1.0)
   - Timberjack (0.0.3)
+  - youtube-ios-player-helper (0.1.6)
 
 DEPENDENCIES:
   - Alamofire
@@ -55,6 +56,7 @@ DEPENDENCIES:
   - Nimble
   - Quick
   - Timberjack (from `https://github.com/andysmart/Timberjack.git`, branch `master`, tag `v0.0.3`)
+  - youtube-ios-player-helper (~> 0.1.4)
 
 EXTERNAL SOURCES:
   Timberjack:
@@ -83,7 +85,8 @@ SPEC CHECKSUMS:
   Nimble: c53e6903fee94041b90ded74f135820437d8bf59
   Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
   Timberjack: 20de84a2c135134de6821d1ea90cd57709567e2d
+  youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: 48f19a334db4b00608ce4b5441288e77e91ba02d
+PODFILE CHECKSUM: d1b79862c815ebceef3a930a6b66f3e932c725e9
 
 COCOAPODS: 1.2.1

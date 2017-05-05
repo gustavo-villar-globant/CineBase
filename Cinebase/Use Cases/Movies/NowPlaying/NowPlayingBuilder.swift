@@ -25,6 +25,7 @@ class NowPlayingBuilder {
         let viewController = NowPlayingViewController()
         let presenter = NowPlayingPresenter(view: viewController)
         viewController.presenter = presenter
+        
         presenter.showDetail = { [movieDetailBuilder] movie in
             let detailVC = movieDetailBuilder.makeScene(with: movie)
             viewController.show(detailVC, sender: nil)
