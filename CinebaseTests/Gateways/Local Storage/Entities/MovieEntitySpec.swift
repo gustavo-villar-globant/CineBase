@@ -19,6 +19,8 @@ class MovieEntitySpec: QuickSpec {
         describe("a Movie Entity") {
             
             var sut: MovieEntity!
+            var realm: Realm!
+            
             beforeEach {
                 sut = MovieEntity()
                 sut.movieID = -1234
@@ -26,17 +28,26 @@ class MovieEntitySpec: QuickSpec {
                 sut.overview = "Set to the backdrop of Awesome Mixtape #2, 'Guardians of the Galaxy Vol. 2' continues the team's adventures as they unravel the mystery of Peter Quill's true parentage."
                 sut.imagePath = "/guardians_poster.jpeg"
                 sut.backdropPath = "/backdrop_guardians.png"
+                
+                let cachePath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first!
+                let url = URL(fileURLWithPath: cachePath).appendingPathComponent("Tests.realm")
+                let configuration = Realm.Configuration(fileURL: url)
+                realm = try! Realm(configuration: configuration)
+            }
+            
+            it("should be different than other movies") {
+                let otherMovie = MovieEntity()
+                expect(sut).toNot(equal(otherMovie))
             }
             
             context("when is saved") {
                 beforeEach {
-                    let realm = try! Realm()
                     try! realm.write {
+                        realm.deleteAll()
                         realm.add(sut)
                     }
                 }
                 it("should retrieve the same values") {
-                    let realm = try! Realm()
                     let retrievedMovie = realm.objects(MovieEntity.self).filter("movieID == -1234").first
                     expect(sut).to(equal(retrievedMovie))
                 }
