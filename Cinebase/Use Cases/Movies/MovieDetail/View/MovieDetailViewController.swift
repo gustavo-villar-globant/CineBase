@@ -10,6 +10,7 @@ import UIKit
 
 struct MovieViewModel: Equatable {
     var title: String
+    var movieID: Int
     var backdropPath: String
     var overview: String
     
@@ -32,6 +33,8 @@ class MovieDetailViewController: UIViewController, MovieDetailView {
     @IBOutlet weak var overviewTextView: UITextView!
     @IBOutlet weak var backdropImageView: UIImageView!
     
+    var movieID: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        edgesForExtendedLayout = []
@@ -40,6 +43,7 @@ class MovieDetailViewController: UIViewController, MovieDetailView {
     
     func display(_ movieViewModel: MovieViewModel) {
         title = movieViewModel.title
+        movieID = movieViewModel.movieID
         overviewTextView.text = movieViewModel.overview
         let url = URL(string: movieViewModel.backdropPath)
         backdropImageView.setImage(with: url)
@@ -51,7 +55,9 @@ class MovieDetailViewController: UIViewController, MovieDetailView {
     }
     
     @IBAction func handlePlayTrailer(_ sender: Any) {
-        presenter.playTrailer()
+        if let movieID = movieID {
+            presenter.playTrailerwithID(movieID)
+        }
     }
     
     
