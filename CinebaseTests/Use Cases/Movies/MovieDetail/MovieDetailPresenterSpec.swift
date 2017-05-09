@@ -34,6 +34,9 @@ class MovieDetailPresenterSpec: QuickSpec {
                 sut.presentBuyingOptions = { _ in
                     mockRouter.isPresentingBuyingOptions = true
                 }
+                sut.playYoutubeVideoWithKey = { _ in
+                    mockRouter.isShowingTrailer = true
+                }
             }
             
             context("when the view is loaded") {
@@ -41,7 +44,7 @@ class MovieDetailPresenterSpec: QuickSpec {
                     sut.onViewLoad()
                 }
                 it("should display the movie details") {
-                    let movieViewModel = MovieViewModel(title: "Movie with detail", movieID: 1, backdropPath: "/backdrop.png", overview: "Amazing movie review detail")
+                    let movieViewModel = MovieViewModel(title: "Movie with detail", backdropPath: "/backdrop.png", overview: "Amazing movie review detail")
                     expect(mockView.displayedMovieViewModel).to(equal(movieViewModel))
                 }
                 
@@ -64,15 +67,27 @@ class MovieDetailPresenterSpec: QuickSpec {
                     }
                 }
                 
-                context("when play trailer is touched") {
+                context("when play trailer button is pressed") {
                     beforeEach {
-                        sut.playTrailerwithID(movie.movieID)
+                        sut.onPlayTrailerButtonPressed()
                     }
                     it("should fetch trailer info") {
                         expect(mockAPIClient.isFetchingTrailersOfMovie).to(beTrue())
                     }
                 }
                 
+                context("when the request completes succesfully") {
+                    var trailer: Trailer!
+                    beforeEach {
+                        trailer = Trailer(videoPath: "/key", key: "key", movieID: 1, size: 720)
+                        if let key = mockAPIClient.completeFetching(with: .success([trailer])) {
+                            sut.playYoutubeVideoWithKey(key)
+                        }
+                    }
+                    it("should show trailer") {
+                        expect(mockRouter.isShowingTrailer).to(beTrue())
+                    }
+                }
             }
         }
     }
@@ -95,6 +110,7 @@ extension MovieDetailPresenterSpec {
     
     class MockRouter {
         var isPresentingBuyingOptions = false
+        var isShowingTrailer = false
     }
     
     class MockTrailersAPIClient: MoviesAPIClient {
@@ -106,6 +122,13 @@ extension MovieDetailPresenterSpec {
             isFetchingTrailersOfMovie = true
             fetchTrailersOfMovieWithIDCompletion = completion
             return MockWebAPIRequest()
+        }
+        
+        func completeFetching(with result: Result<[Trailer]>) -> String? {
+            if let video = result.value?[(result.value?.count)! - 1] {
+                return (video.key)
+            }
+            return nil
         }
         
     }

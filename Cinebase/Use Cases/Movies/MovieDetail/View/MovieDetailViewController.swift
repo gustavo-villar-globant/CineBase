@@ -10,7 +10,6 @@ import UIKit
 
 struct MovieViewModel: Equatable {
     var title: String
-    var movieID: Int
     var backdropPath: String
     var overview: String
     
@@ -29,11 +28,8 @@ class MovieDetailViewController: UIViewController, MovieDetailView {
     
     var presenter: MovieDetailPresenter!
     
-    
     @IBOutlet weak var overviewTextView: UITextView!
     @IBOutlet weak var backdropImageView: UIImageView!
-    
-    var movieID: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +39,6 @@ class MovieDetailViewController: UIViewController, MovieDetailView {
     
     func display(_ movieViewModel: MovieViewModel) {
         title = movieViewModel.title
-        movieID = movieViewModel.movieID
         overviewTextView.text = movieViewModel.overview
         let url = URL(string: movieViewModel.backdropPath)
         backdropImageView.setImage(with: url)
@@ -55,11 +50,8 @@ class MovieDetailViewController: UIViewController, MovieDetailView {
     }
     
     @IBAction func handlePlayTrailer(_ sender: Any) {
-        if let movieID = movieID {
-            presenter.playTrailerwithID(movieID)
-        }
+        presenter.onPlayTrailerButtonPressed()
     }
-    
     
 }
 

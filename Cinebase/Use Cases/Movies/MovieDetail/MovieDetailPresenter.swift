@@ -30,7 +30,7 @@ class MovieDetailPresenter {
     
     func onViewLoad() {
 
-        let movieViewModel = MovieViewModel(title: movie.title, movieID: movie.movieID, backdropPath: movie.backdropPath, overview: movie.overview)
+        let movieViewModel = MovieViewModel(title: movie.title, backdropPath: movie.backdropPath, overview: movie.overview)
         view?.display(movieViewModel)
     }
     
@@ -40,11 +40,10 @@ class MovieDetailPresenter {
         authenticationManager.requestLoginWithGoogle(from: view)
     }
     
-    func playTrailerwithID(_ id: Int) {
-        fetchTrailerRequest = moviesAPIClient.fetchTrailersOfMovieWithID(id, completion: { (result) in
+    func onPlayTrailerButtonPressed() {
+        fetchTrailerRequest = moviesAPIClient.fetchTrailersOfMovieWithID(movie.movieID, completion: { (result) in
             if let video = result.value?[(result.value?.count)! - 1] {
                 self.playYoutubeVideoWithKey(video.key)
-//                self.router.playYoutubeVideo(withKey: video.key)
             }
         })
     }

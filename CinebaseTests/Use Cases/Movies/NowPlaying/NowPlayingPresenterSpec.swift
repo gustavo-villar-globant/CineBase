@@ -28,7 +28,7 @@ class NowPlayingPresenterSpec: QuickSpec {
                 mockView = MockNowPlayingView()
                 mockRouter = MockRouter()
                 mockAPIClient = MockMoviesAPIClient()
-sut = NowPlayingPresenter(view: mockView, moviesAPIClient: mockAPIClient)
+                sut = NowPlayingPresenter(view: mockView, moviesAPIClient: mockAPIClient)
                 sut.showDetail = { _ in
                     mockRouter.isShowingDetail = true
                 }
