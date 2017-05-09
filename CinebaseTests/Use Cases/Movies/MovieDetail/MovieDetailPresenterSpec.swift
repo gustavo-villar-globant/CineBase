@@ -116,7 +116,7 @@ extension MovieDetailPresenterSpec {
         private(set) var isFetchingTrailersOfMovie = false
         private(set) var fetchTrailersOfMovieWithIDCompletion: ((Result<[Trailer]>) -> Void)?
         
-        override func fetchTrailersOfMovieWithID(_ id: Int, completion: @escaping (Result<[Trailer]>) -> Void) -> WebAPIRequestProtocol {
+        override func fetchTrailers(of movie: Movie, completion: @escaping (Result<[Trailer]>) -> Void) -> WebAPIRequestProtocol {
             isFetchingTrailersOfMovie = true
             fetchTrailersOfMovieWithIDCompletion = completion
             return MockWebAPIRequest()
