@@ -34,6 +34,7 @@
 		8B8451101EAA765000F2E4A8 /* NowPlayingPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84510E1EAA765000F2E4A8 /* NowPlayingPresenterSpec.swift */; };
 		8B84BACA1EAEA56400F377A5 /* MovieDetailPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84BAC91EAEA56400F377A5 /* MovieDetailPresenterSpec.swift */; };
 		8B84BACC1EAEAA8600F377A5 /* MockAuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84BACB1EAEAA8600F377A5 /* MockAuthenticationManager.swift */; };
+		8B97AEE81EC21F76004D05AA /* MovieContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B97AEE71EC21F76004D05AA /* MovieContainer.swift */; };
 		8BC136B81EB10338006F306C /* NowPlaying.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BC136B71EB10338006F306C /* NowPlaying.json */; };
 		8BC136BA1EB10377006F306C /* MovieParserSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC136B91EB10377006F306C /* MovieParserSpec.swift */; };
 		8BC136BC1EB10409006F306C /* JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC136BB1EB10409006F306C /* JSONFileReader.swift */; };
@@ -98,6 +99,7 @@
 		8B84510E1EAA765000F2E4A8 /* NowPlayingPresenterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingPresenterSpec.swift; sourceTree = "<group>"; };
 		8B84BAC91EAEA56400F377A5 /* MovieDetailPresenterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailPresenterSpec.swift; sourceTree = "<group>"; };
 		8B84BACB1EAEAA8600F377A5 /* MockAuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAuthenticationManager.swift; sourceTree = "<group>"; };
+		8B97AEE71EC21F76004D05AA /* MovieContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieContainer.swift; sourceTree = "<group>"; };
 		8BC136B71EB10338006F306C /* NowPlaying.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NowPlaying.json; sourceTree = "<group>"; };
 		8BC136B91EB10377006F306C /* MovieParserSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieParserSpec.swift; sourceTree = "<group>"; };
 		8BC136BB1EB10409006F306C /* JSONFileReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONFileReader.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		0120E23D1EBD155B00FF197B /* Container */ = {
 			isa = PBXGroup;
 			children = (
+				8B97AEE71EC21F76004D05AA /* MovieContainer.swift */,
 				0120E23E1EBD159800FF197B /* Entities */,
 			);
 			path = Container;
@@ -713,6 +716,7 @@
 				8BC3C4051EA569B00001184A /* MoviesAPIClient.swift in Sources */,
 				8B660C8D1EA7D0920099626B /* BuyTicketsViewController.swift in Sources */,
 				8B7A7ED41EA64D9F00572F50 /* NowPlayingViewController.swift in Sources */,
+				8B97AEE81EC21F76004D05AA /* MovieContainer.swift in Sources */,
 				8B5227C61EA6AB1600C72873 /* MovieDetailPresenter.swift in Sources */,
 				8BC3C4021EA564200001184A /* ModelParser.swift in Sources */,
 				8BC3C40A1EA56C180001184A /* MovieParser.swift in Sources */,
