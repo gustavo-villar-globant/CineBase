@@ -140,12 +140,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0120E23D1EBD155B00FF197B /* Local Storage */ = {
+		0120E23D1EBD155B00FF197B /* Container */ = {
 			isa = PBXGroup;
 			children = (
 				0120E23E1EBD159800FF197B /* Entities */,
 			);
-			path = "Local Storage";
+			path = Container;
 			sourceTree = "<group>";
 		};
 		0120E23E1EBD159800FF197B /* Entities */ = {
@@ -422,7 +422,7 @@
 		8BC3C3E01EA560C20001184A /* Gateways */ = {
 			isa = PBXGroup;
 			children = (
-				0120E23D1EBD155B00FF197B /* Local Storage */,
+				0120E23D1EBD155B00FF197B /* Container */,
 				8BC3C3F71EA564200001184A /* WebAPI */,
 				8B5227CB1EA6C39F00C72873 /* AuthenticationManager.swift */,
 			);
