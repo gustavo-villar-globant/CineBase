@@ -161,12 +161,12 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		0120E2411EBD1A3300FF197B /* Local Storage */ = {
+		0120E2411EBD1A3300FF197B /* Containers */ = {
 			isa = PBXGroup;
 			children = (
 				0120E2421EBD1A3300FF197B /* Entities */,
 			);
-			path = "Local Storage";
+			path = Containers;
 			sourceTree = "<group>";
 		};
 		0120E2421EBD1A3300FF197B /* Entities */ = {
@@ -346,7 +346,7 @@
 		8B8451071EAA765000F2E4A8 /* Gateways */ = {
 			isa = PBXGroup;
 			children = (
-				0120E2411EBD1A3300FF197B /* Local Storage */,
+				0120E2411EBD1A3300FF197B /* Containers */,
 				8B8451081EAA765000F2E4A8 /* WebAPI */,
 				8B84BACB1EAEAA8600F377A5 /* MockAuthenticationManager.swift */,
 			);
