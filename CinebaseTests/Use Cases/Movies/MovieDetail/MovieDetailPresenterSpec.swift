@@ -74,20 +74,18 @@ class MovieDetailPresenterSpec: QuickSpec {
                     it("should fetch trailer info") {
                         expect(mockAPIClient.isFetchingTrailersOfMovie).to(beTrue())
                     }
-                }
-                
-                context("when the request completes succesfully") {
-                    var trailer: Trailer!
-                    beforeEach {
-                        trailer = Trailer(videoPath: "/key", key: "key", movieID: 1, size: 720)
-                        if let key = mockAPIClient.completeFetching(with: .success([trailer])) {
-                            sut.playYoutubeVideoWithKey(key)
+                    context("when the request completes succesfully") {
+                        var trailer: Trailer!
+                        beforeEach {
+                            trailer = Trailer(videoPath: "/key", key: "key", movieID: 1, size: 720)
+                            mockAPIClient.completeFetching(with: .success([trailer]))
+                        }
+                        it("should show trailer") {
+                            expect(mockRouter.isShowingTrailer).to(beTrue())
                         }
                     }
-                    it("should show trailer") {
-                        expect(mockRouter.isShowingTrailer).to(beTrue())
-                    }
                 }
+                
             }
         }
     }
@@ -124,11 +122,9 @@ extension MovieDetailPresenterSpec {
             return MockWebAPIRequest()
         }
         
-        func completeFetching(with result: Result<[Trailer]>) -> String? {
-            if let video = result.value?[(result.value?.count)! - 1] {
-                return (video.key)
-            }
-            return nil
+        func completeFetching(with result: Result<[Trailer]>){
+            fetchTrailersOfMovieWithIDCompletion?(result)
+            fetchTrailersOfMovieWithIDCompletion = nil
         }
         
     }

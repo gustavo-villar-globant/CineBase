@@ -42,7 +42,7 @@ class MovieDetailPresenter {
     
     func onPlayTrailerButtonPressed() {
         fetchTrailerRequest = moviesAPIClient.fetchTrailersOfMovieWithID(movie.movieID, completion: { (result) in
-            if let video = result.value?[(result.value?.count)! - 1] {
+            if let video = result.value?.last {
                 self.playYoutubeVideoWithKey(video.key)
             }
         })
