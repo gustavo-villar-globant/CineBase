@@ -36,6 +36,7 @@
 		8B84BACC1EAEAA8600F377A5 /* MockAuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84BACB1EAEAA8600F377A5 /* MockAuthenticationManager.swift */; };
 		8B97AEE81EC21F76004D05AA /* MoviesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B97AEE71EC21F76004D05AA /* MoviesContainer.swift */; };
 		8B97AEEA1EC23CFB004D05AA /* MoviesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B97AEE91EC23CFB004D05AA /* MoviesManager.swift */; };
+		8B97AEEC1EC26C35004D05AA /* MoviesManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B97AEEB1EC26C35004D05AA /* MoviesManagerSpec.swift */; };
 		8BC136B81EB10338006F306C /* NowPlaying.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BC136B71EB10338006F306C /* NowPlaying.json */; };
 		8BC136BA1EB10377006F306C /* MovieParserSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC136B91EB10377006F306C /* MovieParserSpec.swift */; };
 		8BC136BC1EB10409006F306C /* JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC136BB1EB10409006F306C /* JSONFileReader.swift */; };
@@ -102,6 +103,7 @@
 		8B84BACB1EAEAA8600F377A5 /* MockAuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAuthenticationManager.swift; sourceTree = "<group>"; };
 		8B97AEE71EC21F76004D05AA /* MoviesContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesContainer.swift; sourceTree = "<group>"; };
 		8B97AEE91EC23CFB004D05AA /* MoviesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesManager.swift; sourceTree = "<group>"; };
+		8B97AEEB1EC26C35004D05AA /* MoviesManagerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesManagerSpec.swift; sourceTree = "<group>"; };
 		8BC136B71EB10338006F306C /* NowPlaying.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NowPlaying.json; sourceTree = "<group>"; };
 		8BC136B91EB10377006F306C /* MovieParserSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieParserSpec.swift; sourceTree = "<group>"; };
 		8BC136BB1EB10409006F306C /* JSONFileReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONFileReader.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				0120E2411EBD1A3300FF197B /* Containers */,
 				8B8451081EAA765000F2E4A8 /* WebAPI */,
 				8B84BACB1EAEAA8600F377A5 /* MockAuthenticationManager.swift */,
+				8B97AEEB1EC26C35004D05AA /* MoviesManagerSpec.swift */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -750,6 +753,7 @@
 				8B84510F1EAA765000F2E4A8 /* MockWebAPIRequest.swift in Sources */,
 				8BC136BA1EB10377006F306C /* MovieParserSpec.swift in Sources */,
 				8B84BACC1EAEAA8600F377A5 /* MockAuthenticationManager.swift in Sources */,
+				8B97AEEC1EC26C35004D05AA /* MoviesManagerSpec.swift in Sources */,
 				8B84BACA1EAEA56400F377A5 /* MovieDetailPresenterSpec.swift in Sources */,
 				0120E2441EBD1A3F00FF197B /* MovieEntitySpec.swift in Sources */,
 				8BC136BC1EB10409006F306C /* JSONFileReader.swift in Sources */,
