@@ -40,11 +40,10 @@ class MovieDetailPresenter {
         authenticationManager.requestLoginWithGoogle(from: view)
     }
     
-    func playTrailer() {
-        fetchTrailerRequest = moviesAPIClient.fetchTrailersOfMovieWithID(movie.movieID, completion: { (result) in
-            if let video = result.value?[(result.value?.count)! - 1] {
+    func onPlayTrailerButtonPressed() {
+        fetchTrailerRequest = moviesAPIClient.fetchTrailers(of: movie, completion: { (result) in
+            if let video = result.value?.last {
                 self.playYoutubeVideoWithKey(video.key)
-//                self.router.playYoutubeVideo(withKey: video.key)
             }
         })
     }

@@ -38,9 +38,9 @@ class MoviesAPIClient {
         
     }
     
-    func fetchTrailersOfMovieWithID(_ id: Int, completion: @escaping (Result<[Trailer]>) -> Void) -> WebAPIRequestProtocol {
+    func fetchTrailers(of movie: Movie, completion: @escaping (Result<[Trailer]>) -> Void) -> WebAPIRequestProtocol {
         
-        return webAPIClient.request(.get, path: "/movie/\(id)/videos") { result in
+        return webAPIClient.request(.get, path: "/movie/\(movie.movieID)/videos") { result in
             
             switch result {
             case .failure(let error):
@@ -54,7 +54,7 @@ class MoviesAPIClient {
                         return
                 }
                 
-                let trailerParser = TrailerParser(baseURL: WebAPIClient.videoBaseURL, movieID: id)
+                let trailerParser = TrailerParser(baseURL: WebAPIClient.videoBaseURL, movieID: movie.movieID)
                 let parseResult = trailerParser.parseArray(fromJSONArray: trailerJSONArray, withFilter: "Trailer")
                 completion(parseResult)
                 

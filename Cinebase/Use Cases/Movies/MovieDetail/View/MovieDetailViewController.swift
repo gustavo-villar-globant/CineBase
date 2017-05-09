@@ -28,7 +28,6 @@ class MovieDetailViewController: UIViewController, MovieDetailView {
     
     var presenter: MovieDetailPresenter!
     
-    
     @IBOutlet weak var overviewTextView: UITextView!
     @IBOutlet weak var backdropImageView: UIImageView!
     
@@ -51,9 +50,8 @@ class MovieDetailViewController: UIViewController, MovieDetailView {
     }
     
     @IBAction func handlePlayTrailer(_ sender: Any) {
-        presenter.playTrailer()
+        presenter.onPlayTrailerButtonPressed()
     }
-    
     
 }
 
