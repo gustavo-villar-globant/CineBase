@@ -30,4 +30,26 @@ class MovieEntity: Object {
         
     }
     
+    convenience init(movie: Movie) {
+        self.init()
+        self.movieID = movie.movieID
+        self.title = movie.title
+        self.overview = movie.overview
+        self.imagePath = movie.imagePath
+        self.backdropPath = movie.backdropPath
+    }
+    
+}
+
+// MARK: Movie from MovieEntity
+extension Movie {
+    init(movieEntity: MovieEntity) {
+        self = Movie(
+            movieID: movieEntity.movieID,
+            title: movieEntity.title,
+            overview: movieEntity.overview,
+            imagePath: movieEntity.imagePath,
+            backdropPath: movieEntity.backdropPath
+        )
+    }
 }
