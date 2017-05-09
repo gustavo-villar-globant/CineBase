@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class MovieContainer {
+class MoviesContainer {
     
     func fetchNowPlaying(completion: @escaping (Result<[Movie]>) -> Void) {
         

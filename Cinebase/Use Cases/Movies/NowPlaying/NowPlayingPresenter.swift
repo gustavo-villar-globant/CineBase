@@ -11,32 +11,45 @@ import Foundation
 class NowPlayingPresenter {
     
     weak var view: NowPlayingView?
-    private let moviesAPIClient: MoviesAPIClient
-    private weak var fetchMoviesRequest: WebAPIRequestProtocol?
+    private let moviesManager: MoviesManager
     private var movies: [Movie] = []
     var showDetail: ((Movie) -> Void)?
     
-    init(view: NowPlayingView, moviesAPIClient: MoviesAPIClient = MoviesAPIClient()) {
+    init(view: NowPlayingView, moviesManager: MoviesManager = MoviesManager()) {
         self.view = view
-        self.moviesAPIClient = moviesAPIClient
+        self.moviesManager = moviesManager
     }
     
     func onViewLoad() {
         view?.startLoading()
-        fetchMoviesRequest = moviesAPIClient.fetchNowPlaying { [weak self] result in
+        fetchNowPlaying()
+    }
+    
+    private func fetchNowPlaying() {
+        moviesManager.fetchNowPlaying { [weak self] (result) in
             
-            self?.view?.stopLoading()
-            
-            switch result {
-            case .failure(let error):
-                self?.view?.display(error)
-            case .success(let movies):
-                self?.movies = movies
-                let movieCells = movies.map { MovieCellModel(title: $0.title, imagePath: $0.imagePath) }
-                self?.view?.displayMovies(movieCells)
+            DispatchQueue.main.async {
+                
+                guard let presenter = self else { return }
+                
+                presenter.view?.stopLoading()
+                
+                switch result {
+                case .failure(let error):
+                    presenter.view?.display(error)
+                case .success(let movies):
+                    presenter.movies = movies
+                    let movieCells = movies.map { MovieCellModel(title: $0.title, imagePath: $0.imagePath) }
+                    if presenter.view?.movieCellModels.isEmpty == true {
+                        presenter.view?.displayMovies(movieCells)
+                    } else {
+                        presenter.view?.updateMovies(movieCells)
+                    }
+                }
+                
             }
-            
         }
+
     }
     
     func onItemSelected(at index: Int) {
@@ -49,10 +62,6 @@ class NowPlayingPresenter {
         showDetail?(movie)
         
     }
-    
-    
-    deinit {
-        fetchMoviesRequest?.cancel()
-    }
+
     
 }

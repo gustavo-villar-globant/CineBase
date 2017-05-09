@@ -20,7 +20,9 @@ struct MovieCellModel: Equatable {
 protocol NowPlayingView: class {
     func startLoading()
     func stopLoading()
+    var movieCellModels: [MovieCellModel] { get }
     func displayMovies(_ movieCellModels: [MovieCellModel])
+    func updateMovies(_ movieCellModels: [MovieCellModel])
     func display(_ error: Error)
 }
 
@@ -28,7 +30,7 @@ class NowPlayingViewController: UIViewController {
     
     var presenter: NowPlayingPresenter!
     
-    var movieCellModels: [MovieCellModel] = []
+    fileprivate(set) var movieCellModels: [MovieCellModel] = []
     let movieCellIdentifier = "MovieCell"
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -105,11 +107,18 @@ extension NowPlayingViewController: NowPlayingView {
     }
     
     func displayMovies(_ movieCellModels: [MovieCellModel]) {
+        
         self.movieCellModels = movieCellModels
+        
         collectionView.reloadData()
         UIView.animate(withDuration: 0.3) { [weak self] in
             self?.collectionView.alpha = 1
         }
+    }
+    
+    func updateMovies(_ movieCellModels: [MovieCellModel]) {
+        self.movieCellModels = movieCellModels
+        collectionView.reloadSections([0])
     }
     
     func display(_ error: Error) {
