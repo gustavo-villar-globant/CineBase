@@ -50,7 +50,7 @@ class MoviesManager {
             switch webResult {
             case .failure(let error):
                 
-                if localResult.error != nil && localResult.value?.count == 0 {
+                if localResult.error != nil || localResult.value?.count == 0 {
                     // If the container fetch also failed, finish with an error
                     completion(.failure(error))
                 } else {
