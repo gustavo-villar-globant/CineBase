@@ -49,6 +49,7 @@ class NowPlayingViewController: UIViewController {
     private func setupNavigationItem() {
         title = "Now Playing"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.isTranslucent = false
     }
     
     private func setupCollectionView() {

@@ -10,8 +10,13 @@ import UIKit
 
 class NowPlayingCell: UICollectionViewCell {
     
-    @IBOutlet weak var movieImageView: UIImageView!
-    @IBOutlet weak var movieLabel: UILabel!
+    @IBOutlet weak var movieImageView: UIImageView! {
+        didSet {
+            movieImageView.layer.shadowRadius = 4.0
+            movieImageView.layer.shadowOpacity = 0.5
+            movieImageView.layer.shadowOffset = CGSize.zero
+        }
+    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -19,7 +24,7 @@ class NowPlayingCell: UICollectionViewCell {
     
     func presentWith(_ model: MovieCellModel) {
         
-        self.movieLabel.text = model.title
+        //self.movieLabel.text = model.title
         let url = URL(string: model.imagePath)
         movieImageView.setImage(with: url)
         

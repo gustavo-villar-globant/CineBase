@@ -14,12 +14,18 @@ class MovieDetailPresenter {
     weak var view: MovieDetailView?
     fileprivate let movie: Movie
     fileprivate let authenticationManager: AuthenticationManagerProtocol
+    private let moviesAPIClient: MoviesAPIClient
+    private weak var fetchTrailerRequest: WebAPIRequestProtocol?
+    var playYoutubeVideoWithKey: (String) -> Void = {_ in }
+
     var presentBuyingOptions: ((User, Movie) -> Void)?
     
-    init(view: MovieDetailView, movie: Movie, authenticationManager: AuthenticationManagerProtocol = AuthenticationManager.shared) {
+    init(view: MovieDetailView, movie: Movie, authenticationManager: AuthenticationManagerProtocol = AuthenticationManager.shared, moviesAPIClient: MoviesAPIClient = MoviesAPIClient()) {
+
         self.view = view
         self.movie = movie
         self.authenticationManager = authenticationManager
+        self.moviesAPIClient = moviesAPIClient
     }
     
     func onViewLoad() {
@@ -33,6 +39,15 @@ class MovieDetailPresenter {
         authenticationManager.delegate = self
         authenticationManager.requestLoginWithGoogle(from: view)
     }
+    
+    func onPlayTrailerButtonPressed() {
+        fetchTrailerRequest = moviesAPIClient.fetchTrailers(of: movie, completion: { (result) in
+            if let video = result.value?.last {
+                self.playYoutubeVideoWithKey(video.key)
+            }
+        })
+    }
+    
 }
 
 // MARK: - Authentication Manager delegate

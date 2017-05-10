@@ -14,9 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
-        customizeAppearance()
+<<<<<<< .merge_file_7xbFke
         let windowBuilder = WindowBuilder()
         window = windowBuilder.makeWindow()
+=======
+        customizeAppearance()
+        window = MainRouter.makeWindow()
+>>>>>>> .merge_file_naUxSl
         return true
     }
 

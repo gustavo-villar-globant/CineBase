@@ -16,9 +16,11 @@ import UIKit
 class MovieDetailBuilder {
     
     private let buyTicketsBuilder: BuyTicketsBuilder
+    private let playTrailerBuilder: PlayTrailerBuilder
     
-    init(buyTicketsBuilder: BuyTicketsBuilder = BuyTicketsBuilder()) {
+    init(buyTicketsBuilder: BuyTicketsBuilder = BuyTicketsBuilder(), playTrailerBuilder: PlayTrailerBuilder = PlayTrailerBuilder() ) {
         self.buyTicketsBuilder = buyTicketsBuilder
+        self.playTrailerBuilder = playTrailerBuilder
     }
     
     func makeScene(with movie: Movie) -> MovieDetailViewController {
@@ -26,11 +28,18 @@ class MovieDetailBuilder {
         let viewController = UIStoryboard.movieDetail.instantiate(MovieDetailViewController.self)
         let presenter = MovieDetailPresenter(view: viewController, movie: movie)
         viewController.presenter = presenter
+        
         presenter.presentBuyingOptions = { [buyTicketsBuilder] (user, movie) in
             
             let buyTicketVC = buyTicketsBuilder.makeScene(user: user, movie: movie)
             let navigationController = UINavigationController(rootViewController: buyTicketVC)
             viewController.present(navigationController, animated: true)
+            
+        }
+        
+        presenter.playYoutubeVideoWithKey = { [playTrailerBuilder] (key) in
+            let playTrailerVC = playTrailerBuilder.makeScene(with: key)
+            viewController.navigationController?.pushViewController(playTrailerVC, animated: true)
             
         }
         

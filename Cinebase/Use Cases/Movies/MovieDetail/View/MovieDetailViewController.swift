@@ -28,7 +28,6 @@ class MovieDetailViewController: UIViewController, MovieDetailView {
     
     var presenter: MovieDetailPresenter!
     
-    
     @IBOutlet weak var overviewTextView: UITextView!
     @IBOutlet weak var backdropImageView: UIImageView!
     
@@ -49,6 +48,11 @@ class MovieDetailViewController: UIViewController, MovieDetailView {
     @IBAction func buyTickets(_ sender: Any) {
         presenter.buyTickets()
     }
+    
+    @IBAction func handlePlayTrailer(_ sender: Any) {
+        presenter.onPlayTrailerButtonPressed()
+    }
+    
 }
 
 // MARK: - Login View
