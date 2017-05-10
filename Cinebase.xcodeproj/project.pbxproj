@@ -76,6 +76,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5060B5DC1EBBAF7D00F8D202 /* PlayTrailer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlayTrailer.storyboard; sourceTree = "<group>"; };
+		5060B5DE1EBBB08200F8D202 /* PlayTrailerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayTrailerViewController.swift; sourceTree = "<group>"; };
+		509920231EB9082F00644648 /* TrailerParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailerParser.swift; sourceTree = "<group>"; };
+		509920251EB9085E00644648 /* Trailer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trailer.swift; sourceTree = "<group>"; };
+		50E8A9251EBCB88000A64494 /* UpcomingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpcomingCell.xib; sourceTree = "<group>"; };
+		50E8A9271EBCDB8E00A64494 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		50E8A9291EBCE37500A64494 /* UIColor-Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Utils.swift"; sourceTree = "<group>"; };
+		50E8A92B1EBD074900A64494 /* NowPlayingBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingBuilder.swift; sourceTree = "<group>"; };
+		50E8A92D1EBD0D5400A64494 /* PlayTrailerBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayTrailerBuilder.swift; sourceTree = "<group>"; };
 		0120E23F1EBD15A000FF197B /* MovieEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieEntity.swift; sourceTree = "<group>"; };
 		0120E2431EBD1A3F00FF197B /* MovieEntitySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieEntitySpec.swift; sourceTree = "<group>"; };
 		6E109F99AC644C75D8286D89 /* Pods-Cinebase-CinebaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinebase-CinebaseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cinebase-CinebaseTests/Pods-Cinebase-CinebaseTests.release.xcconfig"; sourceTree = "<group>"; };
