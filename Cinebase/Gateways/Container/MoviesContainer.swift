@@ -14,12 +14,24 @@ class MoviesContainer: LocalContainer {
     typealias Model = Movie
     typealias ModelID = Int
     
+    /// Name for the realm file.
+    /// Subclasses should override this property to
+    /// target a different container.
+    class var containerName: String {
+        return "Movies"
+    }
+    
+    private static func makeRealm() throws -> Realm {
+        let realmConfigurator = RealmConfigurator()
+        return try realmConfigurator.makeRealm(on: .cache, named: containerName)
+    }
+    
     func find(withID id: Int, completion: @escaping (Result<Model>) -> Void) {
         DispatchQueue.global(qos: .userInitiated).async {
             
             do {
                 
-                let realm = try Realm()
+                let realm = try MoviesContainer.makeRealm()
                 guard let movieEntity = realm.object(ofType: MovieEntity.self, forPrimaryKey: id) else {
                     completion(.failure(NotFoundInContainerError()))
                     return
@@ -41,7 +53,7 @@ class MoviesContainer: LocalContainer {
             
             do {
                 
-                let realm = try Realm()
+                let realm = try MoviesContainer.makeRealm()
                 let movieEntity = MovieEntity(movie: movie)
                 
                 try realm.write {
@@ -65,7 +77,7 @@ class MoviesContainer: LocalContainer {
             
             do {
                 
-                let realm = try Realm()
+                let realm = try MoviesContainer.makeRealm()
                 guard let movieEntity = realm.object(ofType: MovieEntity.self, forPrimaryKey: movie.movieID) else {
                     completion(.failure(NotFoundInContainerError()))
                     return
@@ -92,7 +104,7 @@ class MoviesContainer: LocalContainer {
             
             do {
                 
-                let realm = try Realm()
+                let realm = try MoviesContainer.makeRealm()
                 guard let movieEntity = realm.object(ofType: MovieEntity.self, forPrimaryKey: movie.movieID) else {
                     // Not sure if this should be success or failure
                     completion(.failure(NotFoundInContainerError()))
@@ -120,7 +132,7 @@ class MoviesContainer: LocalContainer {
             
             do {
                 
-                let realm = try Realm()
+                let realm = try MoviesContainer.makeRealm()
                 let movieEntities = realm.objects(MovieEntity.self)
                 
                 var movies = [Movie]()
@@ -149,7 +161,7 @@ class MoviesContainer: LocalContainer {
             
             do {
                 
-                let realm = try Realm()
+                let realm = try MoviesContainer.makeRealm()
                 let oldMovieEntities = realm.objects(MovieEntity.self)
                 let newMovieEntities = movies.map { MovieEntity(movie: $0) }
                 
@@ -179,7 +191,7 @@ class MoviesContainer: LocalContainer {
             
             do {
                 
-                let realm = try Realm()
+                let realm = try MoviesContainer.makeRealm()
                 let oldMovieEntities = realm.objects(MovieEntity.self)
                 
                 try realm.write {
@@ -195,6 +207,24 @@ class MoviesContainer: LocalContainer {
             
         }
 
+    }
+    
+}
+
+// MARK: - Subclasses
+
+class NowPlayingMoviesContainer: MoviesContainer {
+    
+    override class var containerName: String {
+        return "NowPlayingMovies"
+    }
+    
+}
+
+class ComingSoonMoviesContainer: MoviesContainer {
+    
+    override class var containerName: String {
+        return "ComingSoonMovies"
     }
     
 }

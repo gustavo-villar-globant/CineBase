@@ -12,10 +12,12 @@ protocol LocalContainer: class {
     
     associatedtype Model
     associatedtype ModelID
+    
     func find(withID id: ModelID, completion: @escaping (Result<Model>) -> Void)
     func add(_ model: Model, completion: @escaping (Result<Void>) -> Void)
     func update(_ model: Model, completion: @escaping (Result<Void>) -> Void)
     func delete(_ model: Model, completion: @escaping (Result<Void>) -> Void)
+    
     func fetchAll(completion: @escaping (Result<[Model]>) -> Void)
     func deleteAll(completion: @escaping (Result<Void>) -> Void)
     
