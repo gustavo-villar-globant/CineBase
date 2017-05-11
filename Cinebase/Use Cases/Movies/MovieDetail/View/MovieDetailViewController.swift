@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: MovieViewModel Definition
 struct MovieViewModel: Equatable {
     var title: String
     var backdropPath: String
@@ -20,11 +21,13 @@ struct MovieViewModel: Equatable {
     }
 }
 
+// MARK: MovieDetailView Protocol Definition
 protocol MovieDetailView: class, LoginView {
     func display(_ movieViewModel: MovieViewModel)
 }
 
-class MovieDetailViewController: UIViewController, MovieDetailView, ShowtimesViewControllerDelegate {
+// MARK: MovieDetailViewController
+class MovieDetailViewController: UIViewController {
     
     var presenter: MovieDetailPresenter!
     
@@ -35,13 +38,22 @@ class MovieDetailViewController: UIViewController, MovieDetailView, ShowtimesVie
     
     var overViewText: String!
     
+    // MARK: Lifecycle
     override func viewDidLoad() {
         
         super.viewDidLoad()
-//        edgesForExtendedLayout = []
-        
         presenter.onViewLoad()
         setupContainerView()
+    }
+    
+    // MARK: Setup
+    func setupContainerView() {
+        let vc = ShowtimesBuilder().makeScene()
+        vc.presenter.delegate = self.presenter
+        self.currentViewController = vc
+        self.currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
+        self.addChildViewController(self.currentViewController!)
+        self.addSubview(self.currentViewController!.view, toView: self.containerView)
     }
     
     // MARK: IBAction
@@ -49,8 +61,8 @@ class MovieDetailViewController: UIViewController, MovieDetailView, ShowtimesVie
     @IBAction func selectionDidChange(_ sender: UISegmentedControl) {
 
         if sender.selectedSegmentIndex == 0 {
-            let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "ShowtimesViewController") as! ShowtimesViewController
-            newViewController.delegate = self
+            let newViewController = ShowtimesBuilder().makeScene()
+            newViewController.presenter.delegate = self.presenter
             newViewController.view.translatesAutoresizingMaskIntoConstraints = false
             self.cycleFromViewController(oldViewController: self.currentViewController!, toViewController: newViewController)
             self.currentViewController = newViewController
@@ -64,24 +76,10 @@ class MovieDetailViewController: UIViewController, MovieDetailView, ShowtimesVie
 
     }
     
-    func buytickets() {
-        presenter.buyTickets()
-    }
+    
     
     @IBAction func handlePlayTrailer(_ sender: Any) {
         presenter.onPlayTrailerButtonPressed()
-    }
-    
-    // MARK: Setup
-    
-    func setupContainerView() {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ShowtimesViewController") as! ShowtimesViewController
-        vc.delegate = self
-        self.currentViewController = vc
-        self.currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
-        self.addChildViewController(self.currentViewController!)
-        //self.containerView.addSubview(self.currentViewController!.view)
-        self.addSubview(self.currentViewController!.view, toView: self.containerView)
     }
     
     // MARK: Utils Methods
@@ -115,17 +113,22 @@ class MovieDetailViewController: UIViewController, MovieDetailView, ShowtimesVie
         })
     }
     
-    // Movie Detail View Protocol
+    
+    
+}
+
+// MARK: MovieDetailView Protocol
+extension MovieDetailViewController: MovieDetailView {
     func display(_ movieViewModel: MovieViewModel) {
         title = movieViewModel.title
         overViewText = movieViewModel.overview
-        //overviewTextView.text = movieViewModel.overview
         let url = URL(string: movieViewModel.backdropPath)
         backdropImageView.setImage(with: url)
     }
 }
 
-// MARK: - Login View
+
+// MARK: Login View
 extension MovieDetailViewController {
     func presentLogin(_ loginViewController: UIViewController) {
         present(loginViewController, animated: true)

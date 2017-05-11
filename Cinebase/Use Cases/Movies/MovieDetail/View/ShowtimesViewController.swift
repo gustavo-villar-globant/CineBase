@@ -8,38 +8,25 @@
 
 import UIKit
 
-protocol ShowtimesViewControllerDelegate {
-    func buytickets()
+
+// MARK: ShowtimesView Protocol Definition
+protocol ShowtimesView: class {
+    func handleBuyTicketsButtonPressed(_ sender: UIButton)
 }
 
 class ShowtimesViewController: UIViewController {
 
-    var delegate: ShowtimesViewControllerDelegate!
+    //var delegate: ShowtimesViewControllerDelegate!
+    var presenter: ShowtimesPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+}
 
-    @IBAction func handleBuyTicketsButton(_ sender: UIButton) {
-        
-        delegate.buytickets()
+extension ShowtimesViewController: ShowtimesView {
+    @IBAction func handleBuyTicketsButtonPressed(_ sender: UIButton) {
+        presenter.onBuyTicketsButtonPressed()
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

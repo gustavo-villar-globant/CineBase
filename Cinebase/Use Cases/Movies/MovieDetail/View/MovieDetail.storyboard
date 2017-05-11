@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -89,6 +89,10 @@
         <scene sceneID="3zE-zg-75l">
             <objects>
                 <viewController storyboardIdentifier="DetailsViewController" id="yNE-kI-6nK" customClass="DetailsViewController" customModule="Cinebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YaW-Xz-xjA"/>
+                        <viewControllerLayoutGuide type="bottom" id="S8G-92-8LP"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4Ol-Wv-Gw3">
                         <rect key="frame" x="0.0" y="0.0" width="359" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,6 +126,10 @@
         <scene sceneID="PdP-OG-Htd">
             <objects>
                 <viewController storyboardIdentifier="ShowtimesViewController" id="NqJ-yo-mDy" customClass="ShowtimesViewController" customModule="Cinebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x1X-fb-zKq"/>
+                        <viewControllerLayoutGuide type="bottom" id="48i-Rb-Tta"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="M5R-Ic-wxO">
                         <rect key="frame" x="0.0" y="0.0" width="359" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,8 +142,7 @@
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="Buy tickets"/>
                                 <connections>
-                                    <action selector="buyTickets:" destination="vbI-vv-CLs" eventType="touchUpInside" id="HB7-FK-m7k"/>
-                                    <action selector="handleBuyTicketsButton:" destination="NqJ-yo-mDy" eventType="touchUpInside" id="bOV-Sn-zQ6"/>
+                                    <action selector="handleBuyTicketsButtonPressed:" destination="NqJ-yo-mDy" eventType="touchUpInside" id="7mb-I1-yf0"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(You will be asked to login)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Pw-Ts-edq">
