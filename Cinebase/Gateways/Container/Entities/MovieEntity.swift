@@ -33,6 +33,10 @@ class MovieEntity: Object {
     convenience init(movie: Movie) {
         self.init()
         self.movieID = movie.movieID
+        update(with: movie)
+    }
+    
+    func update(with movie: Movie) {
         self.title = movie.title
         self.overview = movie.overview
         self.imagePath = movie.imagePath
