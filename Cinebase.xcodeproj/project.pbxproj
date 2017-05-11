@@ -54,6 +54,8 @@
 		8BC3C4051EA569B00001184A /* MoviesAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3C4041EA569B00001184A /* MoviesAPIClient.swift */; };
 		8BC3C4081EA56A3F0001184A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3C4071EA56A3F0001184A /* Movie.swift */; };
 		8BC3C40A1EA56C180001184A /* MovieParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3C4091EA56C180001184A /* MovieParser.swift */; };
+		A105E1951EC3C36E00E5F4F4 /* ShowtimesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A105E1941EC3C36E00E5F4F4 /* ShowtimesViewController.swift */; };
+		A105E1971EC3C38E00E5F4F4 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A105E1961EC3C38D00E5F4F4 /* DetailsViewController.swift */; };
 		A1E1F3C81EAD697E00B41C67 /* NowPlayingViewController + UICollectionView delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1F3C71EAD697E00B41C67 /* NowPlayingViewController + UICollectionView delegates.swift */; };
 		A1E1F3CA1EAD6C1500B41C67 /* NowPlayingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E1F3C91EAD6C1500B41C67 /* NowPlayingCell.xib */; };
 		A1E1F3CC1EAD6CD600B41C67 /* NowPlayingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1F3CB1EAD6CD600B41C67 /* NowPlayingCell.swift */; };
@@ -124,6 +126,8 @@
 		8BC3C4041EA569B00001184A /* MoviesAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MoviesAPIClient.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8BC3C4071EA56A3F0001184A /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Movie.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8BC3C4091EA56C180001184A /* MovieParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MovieParser.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A105E1941EC3C36E00E5F4F4 /* ShowtimesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowtimesViewController.swift; sourceTree = "<group>"; };
+		A105E1961EC3C38D00E5F4F4 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		A1E1F3C71EAD697E00B41C67 /* NowPlayingViewController + UICollectionView delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NowPlayingViewController + UICollectionView delegates.swift"; sourceTree = "<group>"; };
 		A1E1F3C91EAD6C1500B41C67 /* NowPlayingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NowPlayingCell.xib; sourceTree = "<group>"; };
 		A1E1F3CB1EAD6CD600B41C67 /* NowPlayingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingCell.swift; sourceTree = "<group>"; };
@@ -205,6 +209,8 @@
 			children = (
 				8B7A15A71EAA54A800BAF207 /* MovieDetail.storyboard */,
 				8B5227C11EA6A03600C72873 /* MovieDetailViewController.swift */,
+				A105E1941EC3C36E00E5F4F4 /* ShowtimesViewController.swift */,
+				A105E1961EC3C38D00E5F4F4 /* DetailsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -708,9 +714,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A105E1951EC3C36E00E5F4F4 /* ShowtimesViewController.swift in Sources */,
 				8B7A15AB1EAA562800BAF207 /* StoryboardLoader.swift in Sources */,
 				8BC3C3DF1EA55F060001184A /* UNIXTimestamp.swift in Sources */,
 				8B7A7ED81EA64DC000572F50 /* WindowBuilder.swift in Sources */,
+				A105E1971EC3C38E00E5F4F4 /* DetailsViewController.swift in Sources */,
 				A1E1F3C81EAD697E00B41C67 /* NowPlayingViewController + UICollectionView delegates.swift in Sources */,
 				8B5227BF1EA69F9800C72873 /* MovieDetailBuilder.swift in Sources */,
 				8BC3C3FF1EA564200001184A /* WebAPIClient.swift in Sources */,

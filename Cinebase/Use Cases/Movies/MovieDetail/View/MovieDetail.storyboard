@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,22 +23,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWL-3Q-9Xv">
-                                <rect key="frame" x="37" y="579" width="300" height="38"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <state key="normal" title="Buy tickets"/>
-                                <connections>
-                                    <action selector="buyTickets:" destination="vbI-vv-CLs" eventType="touchUpInside" id="HB7-FK-m7k"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(You will be asked to login)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Pw-Ts-edq">
-                                <rect key="frame" x="37" y="617" width="300" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="0.17454663209999999" green="0.17454663209999999" blue="0.17454663209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A1m-Vh-b9O">
                                 <rect key="frame" x="0.0" y="64" width="375" height="211"/>
                                 <constraints>
@@ -52,17 +35,13 @@
                                     <constraint firstAttribute="height" constant="28" id="nex-II-fgq"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="Funciones"/>
-                                    <segment title="Detalles"/>
+                                    <segment title="Showtimes"/>
+                                    <segment title="Detail"/>
                                 </segments>
+                                <connections>
+                                    <action selector="selectionDidChange:" destination="vbI-vv-CLs" eventType="valueChanged" id="9sO-BO-hTW"/>
+                                </connections>
                             </segmentedControl>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVr-Tg-Drm">
-                                <rect key="frame" x="21" y="346" width="333" height="202"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Wr-7w-r8L">
                                 <rect key="frame" x="154" y="136" width="66" height="66"/>
                                 <constraints>
@@ -74,38 +53,107 @@
                                     <action selector="handlePlayTrailer:" destination="vbI-vv-CLs" eventType="touchUpInside" id="RVn-k5-CMW"/>
                                 </connections>
                             </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efg-if-Kqd">
+                                <rect key="frame" x="8" y="339" width="359" height="320"/>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6Pw-Ts-edq" firstAttribute="leading" secondItem="WWL-3Q-9Xv" secondAttribute="leading" id="CWc-YB-vgd"/>
-                            <constraint firstItem="WWL-3Q-9Xv" firstAttribute="width" secondItem="LW0-hr-Mlk" secondAttribute="width" multiplier="0.8" id="FGJ-e4-LeG"/>
-                            <constraint firstItem="WWL-3Q-9Xv" firstAttribute="top" secondItem="SVr-Tg-Drm" secondAttribute="bottom" constant="31" id="O8q-Rm-DgZ"/>
+                            <constraint firstItem="mco-k6-YK2" firstAttribute="top" secondItem="Efg-if-Kqd" secondAttribute="bottom" constant="8" id="OVc-C8-LAM"/>
+                            <constraint firstAttribute="trailing" secondItem="Efg-if-Kqd" secondAttribute="trailing" constant="8" id="QRb-7u-Fhl"/>
                             <constraint firstItem="LKT-Td-Mge" firstAttribute="leading" secondItem="LW0-hr-Mlk" secondAttribute="leadingMargin" constant="5" id="RQn-hT-6ds"/>
-                            <constraint firstItem="mco-k6-YK2" firstAttribute="top" secondItem="WWL-3Q-9Xv" secondAttribute="bottom" constant="50" id="agl-KG-4jn"/>
                             <constraint firstItem="A1m-Vh-b9O" firstAttribute="top" secondItem="Jmq-1o-jlD" secondAttribute="bottom" id="bfZ-Sp-all"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LKT-Td-Mge" secondAttribute="trailing" constant="5" id="c29-42-vUb"/>
                             <constraint firstItem="5Wr-7w-r8L" firstAttribute="centerX" secondItem="A1m-Vh-b9O" secondAttribute="centerX" id="e5b-uD-3aL"/>
+                            <constraint firstItem="Efg-if-Kqd" firstAttribute="leading" secondItem="LW0-hr-Mlk" secondAttribute="leading" constant="8" id="fuS-Vw-6NX"/>
                             <constraint firstAttribute="trailing" secondItem="A1m-Vh-b9O" secondAttribute="trailing" id="iJT-rV-kAR"/>
                             <constraint firstItem="5Wr-7w-r8L" firstAttribute="centerY" secondItem="A1m-Vh-b9O" secondAttribute="centerY" id="icn-75-Qyh"/>
-                            <constraint firstItem="SVr-Tg-Drm" firstAttribute="leading" secondItem="LW0-hr-Mlk" secondAttribute="leadingMargin" constant="5" id="lfZ-8o-a9h"/>
-                            <constraint firstItem="6Pw-Ts-edq" firstAttribute="trailing" secondItem="WWL-3Q-9Xv" secondAttribute="trailing" id="oUe-31-Zqe"/>
                             <constraint firstItem="LKT-Td-Mge" firstAttribute="top" secondItem="A1m-Vh-b9O" secondAttribute="bottom" constant="21" id="pzx-Nw-vGc"/>
                             <constraint firstItem="A1m-Vh-b9O" firstAttribute="leading" secondItem="LW0-hr-Mlk" secondAttribute="leading" id="qSA-BY-rER"/>
-                            <constraint firstItem="6Pw-Ts-edq" firstAttribute="top" secondItem="WWL-3Q-9Xv" secondAttribute="bottom" id="vKT-64-zTI"/>
-                            <constraint firstItem="WWL-3Q-9Xv" firstAttribute="centerX" secondItem="LW0-hr-Mlk" secondAttribute="centerX" id="wmI-gM-88M"/>
-                            <constraint firstItem="SVr-Tg-Drm" firstAttribute="top" secondItem="LKT-Td-Mge" secondAttribute="bottom" constant="22" id="y4c-yS-wYs"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="SVr-Tg-Drm" secondAttribute="trailing" constant="5" id="zXP-Xe-UGH"/>
+                            <constraint firstItem="Efg-if-Kqd" firstAttribute="top" secondItem="LKT-Td-Mge" secondAttribute="bottom" constant="15" id="s5h-8q-Mcg"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="backdropImageView" destination="A1m-Vh-b9O" id="LBi-kF-9Zf"/>
+                        <outlet property="containerView" destination="Efg-if-Kqd" id="5fT-6c-QwE"/>
                         <outlet property="overviewTextView" destination="SVr-Tg-Drm" id="jar-gS-VDT"/>
+                        <outlet property="selectViewSegmentedControl" destination="LKT-Td-Mge" id="075-I9-GI5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o5c-sN-7MZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="296.80000000000001" y="-210.04497751124438"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="3zE-zg-75l">
+            <objects>
+                <viewController storyboardIdentifier="DetailsViewController" id="yNE-kI-6nK" customClass="DetailsViewController" customModule="Cinebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Ol-Wv-Gw3">
+                        <rect key="frame" x="0.0" y="0.0" width="359" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVr-Tg-Drm">
+                                <rect key="frame" x="0.0" y="0.0" width="359" height="320"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="SVr-Tg-Drm" secondAttribute="bottom" id="AKZ-Pw-P5E"/>
+                            <constraint firstItem="SVr-Tg-Drm" firstAttribute="top" secondItem="4Ol-Wv-Gw3" secondAttribute="top" id="Ij4-rB-sgt"/>
+                            <constraint firstAttribute="trailing" secondItem="SVr-Tg-Drm" secondAttribute="trailing" id="OwY-yc-c48"/>
+                            <constraint firstItem="SVr-Tg-Drm" firstAttribute="leading" secondItem="4Ol-Wv-Gw3" secondAttribute="leading" id="qf8-YU-ufC"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="359" height="320"/>
+                    <connections>
+                        <outlet property="overviewTextView" destination="SVr-Tg-Drm" id="kX9-0o-WmK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jfh-C5-B9w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1023" y="-468"/>
+        </scene>
+        <!--Showtimes View Controller-->
+        <scene sceneID="PdP-OG-Htd">
+            <objects>
+                <viewController storyboardIdentifier="ShowtimesViewController" id="NqJ-yo-mDy" customClass="ShowtimesViewController" customModule="Cinebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M5R-Ic-wxO">
+                        <rect key="frame" x="0.0" y="0.0" width="359" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWL-3Q-9Xv">
+                                <rect key="frame" x="29" y="141" width="300" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="Buy tickets"/>
+                                <connections>
+                                    <action selector="buyTickets:" destination="vbI-vv-CLs" eventType="touchUpInside" id="HB7-FK-m7k"/>
+                                    <action selector="handleBuyTicketsButton:" destination="NqJ-yo-mDy" eventType="touchUpInside" id="bOV-Sn-zQ6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(You will be asked to login)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Pw-Ts-edq">
+                                <rect key="frame" x="29" y="222" width="300" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.17454663209999999" green="0.17454663209999999" blue="0.17454663209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="359" height="320"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f8D-qa-ihc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1022" y="-72"/>
         </scene>
     </scenes>
     <resources>

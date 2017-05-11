@@ -24,28 +24,47 @@ protocol MovieDetailView: class, LoginView {
     func display(_ movieViewModel: MovieViewModel)
 }
 
-class MovieDetailViewController: UIViewController, MovieDetailView {
+class MovieDetailViewController: UIViewController, MovieDetailView, ShowtimesViewControllerDelegate {
     
     var presenter: MovieDetailPresenter!
     
-    @IBOutlet weak var overviewTextView: UITextView!
     @IBOutlet weak var backdropImageView: UIImageView!
+    @IBOutlet weak var selectViewSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var containerView: UIView!
+    weak var currentViewController: UIViewController?
+    
+    var overViewText: String!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 //        edgesForExtendedLayout = []
-        presenter.onViewLoad()
-    }
-    
-    func display(_ movieViewModel: MovieViewModel) {
-        title = movieViewModel.title
-        overviewTextView.text = movieViewModel.overview
-        let url = URL(string: movieViewModel.backdropPath)
-        backdropImageView.setImage(with: url)
         
+        presenter.onViewLoad()
+        setupContainerView()
     }
     
-    @IBAction func buyTickets(_ sender: Any) {
+    // MARK: IBAction
+    
+    @IBAction func selectionDidChange(_ sender: UISegmentedControl) {
+
+        if sender.selectedSegmentIndex == 0 {
+            let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "ShowtimesViewController") as! ShowtimesViewController
+            newViewController.delegate = self
+            newViewController.view.translatesAutoresizingMaskIntoConstraints = false
+            self.cycleFromViewController(oldViewController: self.currentViewController!, toViewController: newViewController)
+            self.currentViewController = newViewController
+        } else {
+            let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+            newViewController.text = overViewText
+            newViewController.view.translatesAutoresizingMaskIntoConstraints = false
+            self.cycleFromViewController(oldViewController: self.currentViewController!, toViewController: newViewController)
+            self.currentViewController = newViewController
+        }
+
+    }
+    
+    func buytickets() {
         presenter.buyTickets()
     }
     
@@ -53,6 +72,57 @@ class MovieDetailViewController: UIViewController, MovieDetailView {
         presenter.onPlayTrailerButtonPressed()
     }
     
+    // MARK: Setup
+    
+    func setupContainerView() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ShowtimesViewController") as! ShowtimesViewController
+        vc.delegate = self
+        self.currentViewController = vc
+        self.currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
+        self.addChildViewController(self.currentViewController!)
+        //self.containerView.addSubview(self.currentViewController!.view)
+        self.addSubview(self.currentViewController!.view, toView: self.containerView)
+    }
+    
+    // MARK: Utils Methods
+    
+    func addSubview(_ subView:UIView, toView parentView:UIView) {
+        parentView.addSubview(subView)
+        
+        var viewBindingsDict = [String: AnyObject]()
+        viewBindingsDict["subView"] = subView
+        parentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[subView]|",
+                                                                 options: [], metrics: nil, views: viewBindingsDict))
+        parentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[subView]|",
+                                                                 options: [], metrics: nil, views: viewBindingsDict))
+    }
+    
+    func cycleFromViewController(oldViewController: UIViewController, toViewController newViewController: UIViewController) {
+        oldViewController.willMove(toParentViewController: nil)
+        self.addChildViewController(newViewController)
+        self.addSubview(newViewController.view, toView:self.containerView!)
+        newViewController.view.alpha = 0
+        newViewController.view.layoutIfNeeded()
+        UIView.animate(withDuration: 0.5,
+                       animations: {
+                        newViewController.view.alpha = 1
+                        oldViewController.view.alpha = 0
+        },
+                       completion: { finished in
+                        oldViewController.view.removeFromSuperview()
+                        oldViewController.removeFromParentViewController()
+                        newViewController.didMove(toParentViewController: self)
+        })
+    }
+    
+    // Movie Detail View Protocol
+    func display(_ movieViewModel: MovieViewModel) {
+        title = movieViewModel.title
+        overViewText = movieViewModel.overview
+        //overviewTextView.text = movieViewModel.overview
+        let url = URL(string: movieViewModel.backdropPath)
+        backdropImageView.setImage(with: url)
+    }
 }
 
 // MARK: - Login View
