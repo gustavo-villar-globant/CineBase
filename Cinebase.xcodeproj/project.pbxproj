@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0120E2401EBD15A000FF197B /* MovieEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120E23F1EBD15A000FF197B /* MovieEntity.swift */; };
 		0120E2441EBD1A3F00FF197B /* MovieEntitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120E2431EBD1A3F00FF197B /* MovieEntitySpec.swift */; };
+		018ADD921EC60B3600310F6A /* BuyTicketsPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018ADD911EC60B3600310F6A /* BuyTicketsPresenterSpec.swift */; };
 		3A9982C473258488E3E8E0A8 /* Pods_Cinebase_CinebaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7141A01432CB59747297F08E /* Pods_Cinebase_CinebaseTests.framework */; };
 		5060B5DD1EBBAF7D00F8D202 /* PlayTrailer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5060B5DC1EBBAF7D00F8D202 /* PlayTrailer.storyboard */; };
 		5060B5DF1EBBB08200F8D202 /* PlayTrailerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5060B5DE1EBBB08200F8D202 /* PlayTrailerViewController.swift */; };
@@ -80,6 +81,7 @@
 /* Begin PBXFileReference section */
 		0120E23F1EBD15A000FF197B /* MovieEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieEntity.swift; sourceTree = "<group>"; };
 		0120E2431EBD1A3F00FF197B /* MovieEntitySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieEntitySpec.swift; sourceTree = "<group>"; };
+		018ADD911EC60B3600310F6A /* BuyTicketsPresenterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyTicketsPresenterSpec.swift; sourceTree = "<group>"; };
 		01EB04841EC3BCC4008D11C2 /* Cinebase-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cinebase-Bridging-Header.h"; sourceTree = "<group>"; };
 		5060B5DC1EBBAF7D00F8D202 /* PlayTrailer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlayTrailer.storyboard; sourceTree = "<group>"; };
 		5060B5DE1EBBB08200F8D202 /* PlayTrailerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayTrailerViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +202,22 @@
 				0120E2431EBD1A3F00FF197B /* MovieEntitySpec.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		018ADD8F1EC60B1700310F6A /* Tickets */ = {
+			isa = PBXGroup;
+			children = (
+				018ADD901EC60B1700310F6A /* Buy */,
+			);
+			path = Tickets;
+			sourceTree = "<group>";
+		};
+		018ADD901EC60B1700310F6A /* Buy */ = {
+			isa = PBXGroup;
+			children = (
+				018ADD911EC60B3600310F6A /* BuyTicketsPresenterSpec.swift */,
+			);
+			path = Buy;
 			sourceTree = "<group>";
 		};
 		2E9E34484DB55D0E2284948A /* Pods */ = {
@@ -421,6 +439,7 @@
 			isa = PBXGroup;
 			children = (
 				8B84510C1EAA765000F2E4A8 /* Movies */,
+				018ADD8F1EC60B1700310F6A /* Tickets */,
 			);
 			path = "Use Cases";
 			sourceTree = "<group>";
@@ -812,6 +831,7 @@
 				8B84510F1EAA765000F2E4A8 /* MockWebAPIRequest.swift in Sources */,
 				8BC136BA1EB10377006F306C /* MovieParserSpec.swift in Sources */,
 				8B84BACC1EAEAA8600F377A5 /* MockAuthenticationManager.swift in Sources */,
+				018ADD921EC60B3600310F6A /* BuyTicketsPresenterSpec.swift in Sources */,
 				8B97AEEC1EC26C35004D05AA /* MoviesManagerSpec.swift in Sources */,
 				8B84BACA1EAEA56400F377A5 /* MovieDetailPresenterSpec.swift in Sources */,
 				0120E2441EBD1A3F00FF197B /* MovieEntitySpec.swift in Sources */,
