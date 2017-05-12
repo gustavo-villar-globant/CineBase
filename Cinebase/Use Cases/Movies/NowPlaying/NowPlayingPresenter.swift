@@ -17,7 +17,7 @@ class NowPlayingPresenter {
     
     init(view: NowPlayingView, moviesManager: MoviesManager? = nil) {
         self.view = view
-        self.moviesManager = moviesManager ?? MoviesManager(moviesContainer: MoviesContainer(containerName: "NowPlayingMovies"))
+        self.moviesManager = moviesManager ?? MoviesManager(source: .nowPlaying, moviesContainer: MoviesContainer(containerName: "NowPlayingMovies"))
     }
     
     func onViewLoad() {

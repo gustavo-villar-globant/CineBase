@@ -15,10 +15,12 @@ class MoviesManager {
     
     private let moviesAPIClient: MoviesAPIClient
     private let moviesContainer: MoviesContainer
+    private let source: MoviesAPIClient.Source
     private weak var fetchMoviesRequest: WebAPIRequestProtocol?
     
-    init(moviesAPIClient: MoviesAPIClient = MoviesAPIClient(), moviesContainer: MoviesContainer) {
+    init(moviesAPIClient: MoviesAPIClient = MoviesAPIClient(), source: MoviesAPIClient.Source, moviesContainer: MoviesContainer) {
         self.moviesAPIClient = moviesAPIClient
+        self.source = source
         self.moviesContainer = moviesContainer
     }
 
@@ -43,7 +45,7 @@ class MoviesManager {
     
     private func fetchNowPlayingFromWeb(localResult: Result<[Movie]>, completion: @escaping (Result<[Movie]>) -> Void) {
         
-        fetchMoviesRequest = moviesAPIClient.fetchNowPlaying { [weak self] webResult in
+        fetchMoviesRequest = moviesAPIClient.fetchMovies(from: source) { [weak self] webResult in
             
             guard let manager = self else { return }
             
