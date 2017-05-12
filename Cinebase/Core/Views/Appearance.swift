@@ -11,7 +11,7 @@ import UIKit
 
 /// Define App Colors
 
-let primaryColor = "#002954".hexColor
+let primaryColor = UIColor(hex: "002954")
 let textColor = UIColor.white
 
 
