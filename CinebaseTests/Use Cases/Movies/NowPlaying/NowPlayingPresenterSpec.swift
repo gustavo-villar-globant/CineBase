@@ -22,13 +22,13 @@ class NowPlayingPresenterSpec: QuickSpec {
             var sut: NowPlayingPresenter!
             var mockView: MockNowPlayingView!
             var mockRouter: MockRouter!
-            var mockAPIClient: MockMoviesAPIClient!
+            var mockManager: MockMoviesManager!
             
             beforeEach {
                 mockView = MockNowPlayingView()
                 mockRouter = MockRouter()
-                mockAPIClient = MockMoviesAPIClient()
-                sut = NowPlayingPresenter(view: mockView, moviesAPIClient: mockAPIClient)
+                mockManager = MockMoviesManager(moviesContainer: MoviesContainer(containerName: "MockNowPlayingMovies"))
+                sut = NowPlayingPresenter(view: mockView, moviesManager: mockManager)
                 sut.showDetail = { _ in
                     mockRouter.isShowingDetail = true
                 }
@@ -40,7 +40,7 @@ class NowPlayingPresenterSpec: QuickSpec {
                     sut.onViewLoad()
                 }
                 it("should fetch the movies") {
-                    expect(mockAPIClient.isFetchingNowPlaying).to(beTrue())
+                    expect(mockManager.isFetchingNowPlaying).to(beTrue())
                     expect(mockView.isLoading).to(beTrue())
                 }
                 
@@ -48,10 +48,10 @@ class NowPlayingPresenterSpec: QuickSpec {
                     var networkError: Error!
                     beforeEach {
                         networkError = NSError()
-                        mockAPIClient.completeFetching(with: .failure(networkError))
+                        mockManager.completeFetching(with: .failure(networkError))
                     }
                     it("should display the error") {
-                        expect(mockView.displayedError).to(be(networkError))
+                        expect(mockView.displayedError).toEventually(be(networkError))
                     }
                 }
                 
@@ -59,15 +59,32 @@ class NowPlayingPresenterSpec: QuickSpec {
                     var movie: Movie!
                     beforeEach {
                         movie = Movie(movieID: 1, title: "First movie", overview: "Great movie. Recommended.", imagePath: "/first_image.png", backdropPath: "/first_backdrop.png")
-                        mockAPIClient.completeFetching(with: .success([movie]))
+                        mockManager.completeFetching(with: .success([movie]))
                     }
                     it("should display the movie cells") {
                         let movieCell = MovieCellModel(title: "First movie", imagePath: "/first_image.png")
-                        expect(mockView.displayedMovies).to(equal([movieCell]))
+                        expect(mockView.displayedMovies).toEventually(equal([movieCell]))
+                    }
+                    
+                    context("when the manager retrieves updated movies") {
+                        var movie: Movie!
+                        beforeEach {
+                            movie = Movie(movieID: 2, title: "New movie", overview: "New movie. Recommended.", imagePath: "/new_image.png", backdropPath: "/new_backdrop.png")
+                            mockManager.completeFetching(with: .success([movie]))
+                        }
+                        it("should update the movie cells") {
+                            let movieCell = MovieCellModel(title: "New movie", imagePath: "/new_image.png")
+                            expect(mockView.updatedMovies).toEventually(equal([movieCell]))
+                        }
                     }
                     
                     context("when an item is selected") {
                         beforeEach {
+                            waitUntil { done in
+                                // wait for the view to be updated with the new cells
+                                Thread.sleep(forTimeInterval: 0.1)
+                                done()
+                            }
                             sut.onItemSelected(at: 0)
                         }
                         it("should show movie details") {
@@ -88,7 +105,11 @@ class NowPlayingPresenterSpec: QuickSpec {
 extension NowPlayingPresenterSpec {
     
     class MockNowPlayingView: NowPlayingView {
+        
+        var movieCellModels: [MovieCellModel] = []
+        
         private(set) var isLoading = false
+        
         func startLoading() {
             isLoading = true
         }
@@ -98,7 +119,14 @@ extension NowPlayingPresenterSpec {
         
         private(set) var displayedMovies = [MovieCellModel]()
         func displayMovies(_ movieCellModels: [MovieCellModel]) {
+            self.movieCellModels = movieCellModels
             displayedMovies = movieCellModels
+        }
+        
+        private(set) var updatedMovies = [MovieCellModel]()
+        func updateMovies(_ movieCellModels: [MovieCellModel]) {
+            self.movieCellModels = movieCellModels
+            updatedMovies = movieCellModels
         }
         
         private(set) var displayedError: Error?
@@ -111,19 +139,17 @@ extension NowPlayingPresenterSpec {
         var isShowingDetail = false
     }
     
-    class MockMoviesAPIClient: MoviesAPIClient {
+    class MockMoviesManager: MoviesManager {
         
         private(set) var isFetchingNowPlaying = false
         private(set) var fetchNowPlayingCompletion: ((Result<[Movie]>) -> Void)?
-        override func fetchNowPlaying(completion: @escaping (Result<[Movie]>) -> Void) -> WebAPIRequestProtocol {
+        override func fetchNowPlaying(completion: @escaping (Result<[Movie]>) -> Void) {
             isFetchingNowPlaying = true
             fetchNowPlayingCompletion = completion
-            return MockWebAPIRequest()
         }
         
         func completeFetching(with result: Result<[Movie]>) {
             fetchNowPlayingCompletion?(result)
-            fetchNowPlayingCompletion = nil
         }
     }
 }
