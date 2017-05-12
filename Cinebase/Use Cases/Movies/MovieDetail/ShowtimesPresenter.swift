@@ -21,11 +21,9 @@ class ShowtimesPresenter {
     
     init(view: ShowtimesView) {
         self.view = view
-        //self.movie = movie
     }
     
     func onBuyTicketsButtonPressed() {
-      print("me apretaron")
         delegate.showtimesPresenterDidTouchBuyTicketsButton(self)
     }
     

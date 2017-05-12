@@ -10,12 +10,12 @@ import UIKit
 
 class ShowtimesBuilder {
     
-    func makeScene() -> ShowtimesViewController {
+    func makeScene(with delegate:ShowtimesPresenterDelegate) -> ShowtimesViewController {
         
         let viewController = UIStoryboard.movieDetail.instantiateViewController(withIdentifier: "ShowtimesViewController") as! ShowtimesViewController
         let presenter = ShowtimesPresenter(view: viewController)
+        presenter.delegate = delegate
         viewController.presenter = presenter
-        
         
         return viewController
         

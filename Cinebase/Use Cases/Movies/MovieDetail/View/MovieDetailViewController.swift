@@ -48,8 +48,7 @@ class MovieDetailViewController: UIViewController {
     
     // MARK: Setup
     func setupContainerView() {
-        let vc = ShowtimesBuilder().makeScene()
-        vc.presenter.delegate = self.presenter
+        let vc = ShowtimesBuilder().makeScene(with: self.presenter)
         self.currentViewController = vc
         self.currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
         self.addChildViewController(self.currentViewController!)
@@ -61,8 +60,7 @@ class MovieDetailViewController: UIViewController {
     @IBAction func selectionDidChange(_ sender: UISegmentedControl) {
 
         if sender.selectedSegmentIndex == 0 {
-            let newViewController = ShowtimesBuilder().makeScene()
-            newViewController.presenter.delegate = self.presenter
+            let newViewController = ShowtimesBuilder().makeScene(with: self.presenter)
             newViewController.view.translatesAutoresizingMaskIntoConstraints = false
             self.cycleFromViewController(oldViewController: self.currentViewController!, toViewController: newViewController)
             self.currentViewController = newViewController
