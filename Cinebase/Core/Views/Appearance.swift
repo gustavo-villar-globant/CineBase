@@ -27,6 +27,8 @@ func customizeAppearance() {
     // ToolBar Appearance
     UIToolbar.appearance().tintColor = textColor
     UIToolbar.appearance().barTintColor = primaryColor
+    //
+    UISegmentedControl.appearance().tintColor = primaryColor
     // Back Button Appearance
     UINavigationBar.appearance().tintColor = textColor
     UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:textColor]
