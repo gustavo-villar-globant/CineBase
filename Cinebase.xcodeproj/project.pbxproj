@@ -19,6 +19,8 @@
 		50E8A92A1EBCE37500A64494 /* UIColor-Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E8A9291EBCE37500A64494 /* UIColor-Utils.swift */; };
 		50E8A92C1EBD074900A64494 /* NowPlayingBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E8A92B1EBD074900A64494 /* NowPlayingBuilder.swift */; };
 		50E8A92E1EBD0D5400A64494 /* PlayTrailerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E8A92D1EBD0D5400A64494 /* PlayTrailerBuilder.swift */; };
+		8B2524291EC4C7E500AA363D /* LocalContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2524281EC4C7E500AA363D /* LocalContainer.swift */; };
+		8B25242B1EC4D7DE00AA363D /* RealmConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B25242A1EC4D7DE00AA363D /* RealmConfigurator.swift */; };
 		8B32A7701EAE58C500EE9BEB /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B32A76F1EAE58C500EE9BEB /* UIImageView+URL.swift */; };
 		8B5227BF1EA69F9800C72873 /* MovieDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5227BE1EA69F9800C72873 /* MovieDetailBuilder.swift */; };
 		8B5227C21EA6A03600C72873 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5227C11EA6A03600C72873 /* MovieDetailViewController.swift */; };
@@ -91,6 +93,8 @@
 		6E109F99AC644C75D8286D89 /* Pods-Cinebase-CinebaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinebase-CinebaseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cinebase-CinebaseTests/Pods-Cinebase-CinebaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		7141A01432CB59747297F08E /* Pods_Cinebase_CinebaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cinebase_CinebaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B34697464F8D96C18694CBF /* Pods_Cinebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cinebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B2524281EC4C7E500AA363D /* LocalContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalContainer.swift; sourceTree = "<group>"; };
+		8B25242A1EC4D7DE00AA363D /* RealmConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmConfigurator.swift; sourceTree = "<group>"; };
 		8B32A76F1EAE58C500EE9BEB /* UIImageView+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
 		8B5227BE1EA69F9800C72873 /* MovieDetailBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MovieDetailBuilder.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8B5227C11EA6A03600C72873 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MovieDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -166,6 +170,8 @@
 		0120E23D1EBD155B00FF197B /* Container */ = {
 			isa = PBXGroup;
 			children = (
+				8B25242A1EC4D7DE00AA363D /* RealmConfigurator.swift */,
+				8B2524281EC4C7E500AA363D /* LocalContainer.swift */,
 				8B97AEE71EC21F76004D05AA /* MoviesContainer.swift */,
 				0120E23E1EBD159800FF197B /* Entities */,
 			);
@@ -776,6 +782,7 @@
 				509920261EB9085E00644648 /* Trailer.swift in Sources */,
 				8B76BEFD1E9D1096003074DD /* AppDelegate.swift in Sources */,
 				8BC3C3DE1EA55F060001184A /* Result.swift in Sources */,
+				8B25242B1EC4D7DE00AA363D /* RealmConfigurator.swift in Sources */,
 				8B5227CC1EA6C39F00C72873 /* AuthenticationManager.swift in Sources */,
 				50E8A92A1EBCE37500A64494 /* UIColor-Utils.swift in Sources */,
 				8BC3C4011EA564200001184A /* WebAPIURLBuilder.swift in Sources */,
@@ -790,6 +797,7 @@
 				50E8A9281EBCDB8E00A64494 /* Appearance.swift in Sources */,
 				50E8A92C1EBD074900A64494 /* NowPlayingBuilder.swift in Sources */,
 				8B5227C21EA6A03600C72873 /* MovieDetailViewController.swift in Sources */,
+				8B2524291EC4C7E500AA363D /* LocalContainer.swift in Sources */,
 				0120E2401EBD15A000FF197B /* MovieEntity.swift in Sources */,
 				8BC3C4001EA564200001184A /* WebAPIRequest.swift in Sources */,
 				509920241EB9082F00644648 /* TrailerParser.swift in Sources */,

@@ -17,7 +17,7 @@ class MoviesManager {
     private let moviesContainer: MoviesContainer
     private weak var fetchMoviesRequest: WebAPIRequestProtocol?
     
-    init(moviesAPIClient: MoviesAPIClient = MoviesAPIClient(), moviesContainer: MoviesContainer = MoviesContainer()) {
+    init(moviesAPIClient: MoviesAPIClient = MoviesAPIClient(), moviesContainer: MoviesContainer) {
         self.moviesAPIClient = moviesAPIClient
         self.moviesContainer = moviesContainer
     }
@@ -28,7 +28,7 @@ class MoviesManager {
     */
     func fetchNowPlaying(completion: @escaping (Result<[Movie]>) -> Void) {
         
-        moviesContainer.fetchNowPlaying { [weak self] localResult in
+        moviesContainer.fetchAll { [weak self] localResult in
             
             guard let manager = self else { return }
             
@@ -65,7 +65,7 @@ class MoviesManager {
                     return
                 } else {
                     // Update new movies
-                    manager.moviesContainer.updateNowPlaying(with: serverMovies)
+                    manager.moviesContainer.replaceAll(with: serverMovies) { _ in }
                     completion(.success(serverMovies))
                 }
                 

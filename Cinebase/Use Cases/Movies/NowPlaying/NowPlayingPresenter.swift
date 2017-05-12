@@ -15,9 +15,9 @@ class NowPlayingPresenter {
     private var movies: [Movie] = []
     var showDetail: ((Movie) -> Void)?
     
-    init(view: NowPlayingView, moviesManager: MoviesManager = MoviesManager()) {
+    init(view: NowPlayingView, moviesManager: MoviesManager? = nil) {
         self.view = view
-        self.moviesManager = moviesManager
+        self.moviesManager = moviesManager ?? MoviesManager(moviesContainer: MoviesContainer(containerName: "NowPlayingMovies"))
     }
     
     func onViewLoad() {

@@ -25,7 +25,7 @@ class MoviesManagerSpec: QuickSpec {
             var mockContainer: MockMoviesContainer!
             beforeEach {
                 mockAPIClient = MockMoviesAPIClient()
-                mockContainer = MockMoviesContainer()
+                mockContainer = MockMoviesContainer(containerName: "MockMovies")
                 sut = MoviesManager(moviesAPIClient: mockAPIClient, moviesContainer: mockContainer)
                 self.fetchingResult = nil
                 self.callbackCount = 0
@@ -33,7 +33,7 @@ class MoviesManagerSpec: QuickSpec {
             
             it("shouldn't fetch from the local storage or web") {
                 expect(mockAPIClient.isFetchingNowPlaying).to(beFalse())
-                expect(mockContainer.isFetchingNowPlaying).to(beFalse())
+                expect(mockContainer.isFetchingAll).to(beFalse())
                 expect(self.fetchingResult).to(beNil())
             }
             
@@ -47,7 +47,7 @@ class MoviesManagerSpec: QuickSpec {
                 
                 it("should call first from the local storage and not the web") {
                     expect(mockAPIClient.isFetchingNowPlaying).to(beFalse())
-                    expect(mockContainer.isFetchingNowPlaying).to(beTrue())
+                    expect(mockContainer.isFetchingAll).to(beTrue())
                 }
                 
                 context("when the local fetching finishes with no values") {
@@ -84,7 +84,7 @@ class MoviesManagerSpec: QuickSpec {
                             expect(self.callbackCount).to(equal(1))
                         }
                         it("should update the local storage") {
-                            expect(mockContainer.isUpdatingNowPlaying).to(beTrue())
+                            expect(mockContainer.isReplacingAll).to(beTrue())
                         }
                     }
                     
@@ -127,7 +127,7 @@ class MoviesManagerSpec: QuickSpec {
                             expect(self.callbackCount).to(equal(1))
                         }
                         it("shouldn't update the local storage") {
-                            expect(mockContainer.isUpdatingNowPlaying).to(beFalse())
+                            expect(mockContainer.isReplacingAll).to(beFalse())
                         }
                     }
                     
@@ -141,7 +141,7 @@ class MoviesManagerSpec: QuickSpec {
                             expect(self.callbackCount).to(equal(2))
                         }
                         it("should update the local storage") {
-                            expect(mockContainer.isUpdatingNowPlaying).to(beTrue())
+                            expect(mockContainer.isReplacingAll).to(beTrue())
                         }
                     }
                 }
@@ -173,21 +173,21 @@ extension MoviesManagerSpec {
     
     class MockMoviesContainer: MoviesContainer {
         
-        private(set) var isFetchingNowPlaying = false
-        private(set) var fetchNowPlayingCompletion: ((Result<[Movie]>) -> Void)?
-        override func fetchNowPlaying(completion: @escaping (Result<[Movie]>) -> Void) {
-            isFetchingNowPlaying = true
-            fetchNowPlayingCompletion = completion
+        private(set) var isFetchingAll = false
+        private(set) var fetchAllCompletion: ((Result<[Movie]>) -> Void)?
+        override func fetchAll(completion: @escaping (Result<[Movie]>) -> Void) {
+            isFetchingAll = true
+            fetchAllCompletion = completion
         }
         
         func completeFetching(with result: Result<[Movie]>) {
-            fetchNowPlayingCompletion?(result)
-            fetchNowPlayingCompletion = nil
+            fetchAllCompletion?(result)
+            fetchAllCompletion = nil
         }
         
-        private(set) var isUpdatingNowPlaying = false
-        override func updateNowPlaying(with movies: [Movie]) {
-            isUpdatingNowPlaying = true
+        private(set) var isReplacingAll = false
+        override func replaceAll(with movies: [Movie], completion: @escaping (Result<Void>) -> Void) {
+            isReplacingAll = true
         }
     }
     

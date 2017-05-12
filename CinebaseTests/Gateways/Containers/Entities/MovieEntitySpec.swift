@@ -29,10 +29,9 @@ class MovieEntitySpec: QuickSpec {
                 sut.imagePath = "/guardians_poster.jpeg"
                 sut.backdropPath = "/backdrop_guardians.png"
                 
-                let cachePath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first!
-                let url = URL(fileURLWithPath: cachePath).appendingPathComponent("Tests.realm")
-                let configuration = Realm.Configuration(fileURL: url)
-                realm = try! Realm(configuration: configuration)
+                let realmConfigurator = RealmConfigurator()
+                realm = try! realmConfigurator.makeRealm(on: .temporal, named: "Movies")
+                
             }
             
             it("should be different than other movies") {
