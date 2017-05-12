@@ -17,8 +17,10 @@ class MovieDetailPresenter {
     private let moviesAPIClient: MoviesAPIClient
     private weak var fetchTrailerRequest: WebAPIRequestProtocol?
     var playYoutubeVideoWithKey: (String) -> Void = {_ in }
-
     var presentBuyingOptions: ((User, Movie) -> Void)?
+    
+    // containerviews loaders
+    var showShowtimesView: () -> Void = {}
     
     init(view: MovieDetailView, movie: Movie, authenticationManager: AuthenticationManagerProtocol = AuthenticationManager.shared, moviesAPIClient: MoviesAPIClient = MoviesAPIClient()) {
 
@@ -48,6 +50,13 @@ class MovieDetailPresenter {
         })
     }
     
+}
+
+// MARK: ShowtimesPresenterDelegate
+extension MovieDetailPresenter: ShowtimesPresenterDelegate {
+    func showtimesPresenterDidTouchBuyTicketsButton(_ showtimesPresenter: ShowtimesPresenter) {
+        buyTickets()
+    }
 }
 
 // MARK: - Authentication Manager delegate

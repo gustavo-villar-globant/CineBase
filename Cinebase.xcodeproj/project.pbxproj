@@ -11,6 +11,8 @@
 		0120E2441EBD1A3F00FF197B /* MovieEntitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120E2431EBD1A3F00FF197B /* MovieEntitySpec.swift */; };
 		018ADD921EC60B3600310F6A /* BuyTicketsPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018ADD911EC60B3600310F6A /* BuyTicketsPresenterSpec.swift */; };
 		3A9982C473258488E3E8E0A8 /* Pods_Cinebase_CinebaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7141A01432CB59747297F08E /* Pods_Cinebase_CinebaseTests.framework */; };
+		503A25EA1EC4C6E5009C76B2 /* ShowtimesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503A25E91EC4C6E5009C76B2 /* ShowtimesPresenter.swift */; };
+		503A25EC1EC4D0FD009C76B2 /* ShowtimesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503A25EB1EC4D0FD009C76B2 /* ShowtimesBuilder.swift */; };
 		5060B5DD1EBBAF7D00F8D202 /* PlayTrailer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5060B5DC1EBBAF7D00F8D202 /* PlayTrailer.storyboard */; };
 		5060B5DF1EBBB08200F8D202 /* PlayTrailerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5060B5DE1EBBB08200F8D202 /* PlayTrailerViewController.swift */; };
 		509920241EB9082F00644648 /* TrailerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509920231EB9082F00644648 /* TrailerParser.swift */; };
@@ -62,6 +64,8 @@
 		8BC3C4051EA569B00001184A /* MoviesAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3C4041EA569B00001184A /* MoviesAPIClient.swift */; };
 		8BC3C4081EA56A3F0001184A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3C4071EA56A3F0001184A /* Movie.swift */; };
 		8BC3C40A1EA56C180001184A /* MovieParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3C4091EA56C180001184A /* MovieParser.swift */; };
+		A105E1951EC3C36E00E5F4F4 /* ShowtimesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A105E1941EC3C36E00E5F4F4 /* ShowtimesViewController.swift */; };
+		A105E1971EC3C38E00E5F4F4 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A105E1961EC3C38D00E5F4F4 /* DetailsViewController.swift */; };
 		A1E1F3C81EAD697E00B41C67 /* NowPlayingViewController + UICollectionView delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1F3C71EAD697E00B41C67 /* NowPlayingViewController + UICollectionView delegates.swift */; };
 		A1E1F3CA1EAD6C1500B41C67 /* NowPlayingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E1F3C91EAD6C1500B41C67 /* NowPlayingCell.xib */; };
 		A1E1F3CC1EAD6CD600B41C67 /* NowPlayingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1F3CB1EAD6CD600B41C67 /* NowPlayingCell.swift */; };
@@ -79,6 +83,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		503A25E91EC4C6E5009C76B2 /* ShowtimesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowtimesPresenter.swift; sourceTree = "<group>"; };
+		503A25EB1EC4D0FD009C76B2 /* ShowtimesBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowtimesBuilder.swift; sourceTree = "<group>"; };
 		0120E23F1EBD15A000FF197B /* MovieEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieEntity.swift; sourceTree = "<group>"; };
 		0120E2431EBD1A3F00FF197B /* MovieEntitySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieEntitySpec.swift; sourceTree = "<group>"; };
 		018ADD911EC60B3600310F6A /* BuyTicketsPresenterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyTicketsPresenterSpec.swift; sourceTree = "<group>"; };
@@ -141,6 +147,8 @@
 		8BC3C4041EA569B00001184A /* MoviesAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MoviesAPIClient.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8BC3C4071EA56A3F0001184A /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Movie.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8BC3C4091EA56C180001184A /* MovieParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MovieParser.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A105E1941EC3C36E00E5F4F4 /* ShowtimesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowtimesViewController.swift; path = View/ShowtimesViewController.swift; sourceTree = "<group>"; };
+		A105E1961EC3C38D00E5F4F4 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailsViewController.swift; path = View/DetailsViewController.swift; sourceTree = "<group>"; };
 		A1E1F3C71EAD697E00B41C67 /* NowPlayingViewController + UICollectionView delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NowPlayingViewController + UICollectionView delegates.swift"; sourceTree = "<group>"; };
 		A1E1F3C91EAD6C1500B41C67 /* NowPlayingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NowPlayingCell.xib; sourceTree = "<group>"; };
 		A1E1F3CB1EAD6CD600B41C67 /* NowPlayingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingCell.swift; sourceTree = "<group>"; };
@@ -240,6 +248,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		503A25E71EC4C3F1009C76B2 /* Showtimes */ = {
+			isa = PBXGroup;
+			children = (
+				A105E1941EC3C36E00E5F4F4 /* ShowtimesViewController.swift */,
+				503A25E91EC4C6E5009C76B2 /* ShowtimesPresenter.swift */,
+				503A25EB1EC4D0FD009C76B2 /* ShowtimesBuilder.swift */,
+			);
+			name = Showtimes;
+			sourceTree = "<group>";
+		};
+		503A25E81EC4C401009C76B2 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				A105E1961EC3C38D00E5F4F4 /* DetailsViewController.swift */,
+			);
+			name = Details;
+			sourceTree = "<group>";
+		};
 		5060B5D81EBBACEF00F8D202 /* PlayTrailer */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +287,8 @@
 		8B5227BD1EA67DA700C72873 /* MovieDetail */ = {
 			isa = PBXGroup;
 			children = (
+				503A25E81EC4C401009C76B2 /* Details */,
+				503A25E71EC4C3F1009C76B2 /* Showtimes */,
 				8B5227C01EA69FC600C72873 /* View */,
 				8B5227C51EA6AB1600C72873 /* MovieDetailPresenter.swift */,
 				8B5227BE1EA69F9800C72873 /* MovieDetailBuilder.swift */,
@@ -271,8 +299,8 @@
 		8B5227C01EA69FC600C72873 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8B7A15A71EAA54A800BAF207 /* MovieDetail.storyboard */,
 				8B5227C11EA6A03600C72873 /* MovieDetailViewController.swift */,
+				8B7A15A71EAA54A800BAF207 /* MovieDetail.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -783,14 +811,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A105E1951EC3C36E00E5F4F4 /* ShowtimesViewController.swift in Sources */,
 				8B7A15AB1EAA562800BAF207 /* StoryboardLoader.swift in Sources */,
 				8BC3C3DF1EA55F060001184A /* UNIXTimestamp.swift in Sources */,
 				8B7A7ED81EA64DC000572F50 /* WindowBuilder.swift in Sources */,
+				A105E1971EC3C38E00E5F4F4 /* DetailsViewController.swift in Sources */,
+				503A25EC1EC4D0FD009C76B2 /* ShowtimesBuilder.swift in Sources */,
 				A1E1F3C81EAD697E00B41C67 /* NowPlayingViewController + UICollectionView delegates.swift in Sources */,
 				8B5227BF1EA69F9800C72873 /* MovieDetailBuilder.swift in Sources */,
 				8BC3C3FF1EA564200001184A /* WebAPIClient.swift in Sources */,
 				8BC3C4051EA569B00001184A /* MoviesAPIClient.swift in Sources */,
 				50E8A92E1EBD0D5400A64494 /* PlayTrailerBuilder.swift in Sources */,
+				503A25EA1EC4C6E5009C76B2 /* ShowtimesPresenter.swift in Sources */,
 				8B660C8D1EA7D0920099626B /* BuyTicketsViewController.swift in Sources */,
 				8B7A7ED41EA64D9F00572F50 /* NowPlayingViewController.swift in Sources */,
 				8B97AEE81EC21F76004D05AA /* MoviesContainer.swift in Sources */,
