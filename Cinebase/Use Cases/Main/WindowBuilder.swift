@@ -20,8 +20,9 @@ struct WindowBuilder {
     func makeWindow() -> UIWindow {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
-        let nowPlayingViewController = nowPlayingBuilder.makeScene()
-        let navigationController = UINavigationController(rootViewController: nowPlayingViewController)
+//        let nowPlayingViewController = nowPlayingBuilder.makeScene()
+        let moviesListBuilder = MoviesListBuilder()
+        let navigationController = UINavigationController(rootViewController: moviesListBuilder.makeScene())
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         return window

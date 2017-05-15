@@ -1,23 +1,26 @@
 //
-//  NowPlayingPresenter.swift
+//  MoviesListPresenter.swift
 //  Cinebase
 //
-//  Created by Gustavo Villar on 4/18/17.
+//  Created by Gustavo Villar on 5/15/17.
 //  Copyright © 2017 Globant. All rights reserved.
 //
 
 import Foundation
 
-class NowPlayingPresenter {
+/**
+ Base class for NowPlaying and Upcoming presenters.
+*/
+class MoviesListPresenter {
     
     weak var view: NowPlayingView?
     private let moviesManager: MoviesManager
     private var movies: [Movie] = []
     var showDetail: ((Movie) -> Void)?
     
-    init(view: NowPlayingView, moviesManager: MoviesManager? = nil) {
+    init(view: NowPlayingView, moviesManager: MoviesManager) {
         self.view = view
-        self.moviesManager = moviesManager ?? MoviesManager(source: .nowPlaying, moviesContainer: MoviesContainer(containerName: "NowPlayingMovies"))
+        self.moviesManager = moviesManager
     }
     
     func onViewLoad() {
@@ -49,7 +52,7 @@ class NowPlayingPresenter {
                 
             }
         }
-
+        
     }
     
     func onItemSelected(at index: Int) {
@@ -62,6 +65,6 @@ class NowPlayingPresenter {
         showDetail?(movie)
         
     }
-
+    
     
 }

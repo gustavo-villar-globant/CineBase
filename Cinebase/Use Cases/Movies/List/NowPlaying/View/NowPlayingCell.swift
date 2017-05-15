@@ -14,7 +14,7 @@ class NowPlayingCell: UICollectionViewCell {
         didSet {
             movieImageView.layer.shadowRadius = 4.0
             movieImageView.layer.shadowOpacity = 0.5
-            movieImageView.layer.shadowOffset = CGSize.zero
+            movieImageView.layer.shadowOffset = .zero
         }
     }
     

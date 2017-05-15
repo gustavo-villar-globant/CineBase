@@ -20,10 +20,10 @@ class NowPlayingBuilder {
         self.movieDetailBuilder = movieDetailBuilder
     }
     
-    func makeScene() -> NowPlayingViewController {
+    func makeScene(with moviesManagerConfiguration: MoviesManager.Configuration) -> NowPlayingViewController {
         
         let viewController = NowPlayingViewController()
-        let presenter = NowPlayingPresenter(view: viewController)
+        let presenter = NowPlayingPresenter(view: viewController, moviesManager: MoviesManager(configuration: moviesManagerConfiguration))
         viewController.presenter = presenter
         
         presenter.showDetail = { [movieDetailBuilder] movie in

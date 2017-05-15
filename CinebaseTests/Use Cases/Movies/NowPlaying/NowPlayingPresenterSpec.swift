@@ -27,7 +27,7 @@ class NowPlayingPresenterSpec: QuickSpec {
             beforeEach {
                 mockView = MockNowPlayingView()
                 mockRouter = MockRouter()
-                mockManager = MockMoviesManager(moviesContainer: MoviesContainer(containerName: "MockNowPlayingMovies"))
+                mockManager = MockMoviesManager(configuration: .nowPlaying)
                 sut = NowPlayingPresenter(view: mockView, moviesManager: mockManager)
                 sut.showDetail = { _ in
                     mockRouter.isShowingDetail = true

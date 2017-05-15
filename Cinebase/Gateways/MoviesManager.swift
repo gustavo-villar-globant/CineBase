@@ -15,13 +15,29 @@ class MoviesManager {
     
     private let moviesAPIClient: MoviesAPIClient
     private let moviesContainer: MoviesContainer
-    private let source: MoviesAPIClient.Source
+    private let apiSource: MoviesAPIClient.Source
     private weak var fetchMoviesRequest: WebAPIRequestProtocol?
     
-    init(moviesAPIClient: MoviesAPIClient = MoviesAPIClient(), source: MoviesAPIClient.Source, moviesContainer: MoviesContainer) {
+    init(moviesAPIClient: MoviesAPIClient, apiSource: MoviesAPIClient.Source, moviesContainer: MoviesContainer) {
         self.moviesAPIClient = moviesAPIClient
-        self.source = source
+        self.apiSource = apiSource
         self.moviesContainer = moviesContainer
+    }
+    
+    enum Configuration {
+        case nowPlaying, upcoming
+    }
+    
+    /**
+     Convenience initializer with preset configurations for Now Playing and Upcoming use cases.
+    */
+    convenience init(configuration: Configuration) {
+        switch configuration {
+        case .nowPlaying:
+            self.init(moviesAPIClient: MoviesAPIClient(), apiSource: .nowPlaying, moviesContainer: MoviesContainer(containerName: "NowPlayingMovies"))
+        case .upcoming:
+            self.init(moviesAPIClient: MoviesAPIClient(), apiSource: .upcoming, moviesContainer: MoviesContainer(containerName: "UpcomingMovies"))
+        }
     }
 
     /**
@@ -45,7 +61,7 @@ class MoviesManager {
     
     private func fetchNowPlayingFromWeb(localResult: Result<[Movie]>, completion: @escaping (Result<[Movie]>) -> Void) {
         
-        fetchMoviesRequest = moviesAPIClient.fetchMovies(from: source) { [weak self] webResult in
+        fetchMoviesRequest = moviesAPIClient.fetchMovies(from: apiSource) { [weak self] webResult in
             
             guard let manager = self else { return }
             
