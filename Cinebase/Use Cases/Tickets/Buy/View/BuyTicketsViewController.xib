@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BuyTicketsViewController" customModule="Cinebase" customModuleProvider="target">
             <connections>
+                <outlet property="label" destination="NYE-nb-zWN" id="AxS-Gr-dWK"/>
                 <outlet property="view" destination="iN0-l3-epB" id="jHz-9B-KNP"/>
             </connections>
         </placeholder>
@@ -27,11 +28,20 @@ Form</string>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCZ-Uu-A07">
+                    <rect key="frame" x="152" y="537" width="71" height="30"/>
+                    <state key="normal" title="Scan Card"/>
+                    <connections>
+                        <action selector="scanCardTouched:" destination="-1" eventType="touchUpInside" id="pNF-fJ-Cc6"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="NYE-nb-zWN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Lz5-RJ-M12"/>
+                <constraint firstItem="BCZ-Uu-A07" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Od1-r5-hwd"/>
                 <constraint firstItem="NYE-nb-zWN" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="f5V-mt-hJn"/>
+                <constraint firstAttribute="bottom" secondItem="BCZ-Uu-A07" secondAttribute="bottom" constant="100" id="iPk-Z5-o48"/>
             </constraints>
         </view>
     </objects>
