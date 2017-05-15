@@ -51,7 +51,7 @@ extension BuyTicketsViewController: CardIOPaymentViewControllerDelegate {
     
     func userDidProvide(_ cardInfo: CardIOCreditCardInfo!, in paymentViewController: CardIOPaymentViewController!) {
         if let info = cardInfo {
-            presenter?.onScanningCreditCard(
+            presenter?.onCreditCardScanned(
                 withNumber: info.cardNumber,
                 expiryMonth: Int(info.expiryMonth),
                 expiryYear: Int(info.expiryYear),

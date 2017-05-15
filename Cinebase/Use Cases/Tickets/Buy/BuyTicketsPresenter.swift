@@ -22,7 +22,7 @@ class BuyTicketsPresenter {
         dismiss?()
     }
     
-    func onScanningCreditCard(withNumber cardNumber: String, expiryMonth: Int, expiryYear: Int, cvv: String) {
+    func onCreditCardScanned(withNumber cardNumber: String, expiryMonth: Int, expiryYear: Int, cvv: String) {
         let description = "Received card info.\n" +
                         "Number: \(cardNumber)\n" +
                         "expiry: \(expiryMonth)/\(expiryYear)\n" +

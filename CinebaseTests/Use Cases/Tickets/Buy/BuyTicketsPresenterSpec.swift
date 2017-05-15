@@ -31,7 +31,7 @@ class BuyTicketsPresenterSpec: QuickSpec {
             
             context("when a credit card is scanned") {
                 beforeEach {
-                    sut.onScanningCreditCard(
+                    sut.onCreditCardScanned(
                         withNumber: "1234",
                         expiryMonth: 12,
                         expiryYear: 2020,
