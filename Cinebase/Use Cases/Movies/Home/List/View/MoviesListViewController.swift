@@ -1,5 +1,5 @@
 //
-//  NowPlayingViewController.swift
+//  MoviesListViewController.swift
 //  Cinebase
 //
 //  Created by Gustavo Villar on 4/18/17.
@@ -11,13 +11,16 @@ import UIKit
 struct MovieCellModel: Equatable {
     var title: String
     var imagePath: String
+    var releaseDate: String
     
     static func ==(lhs: MovieCellModel, rhs: MovieCellModel) -> Bool {
-        return lhs.title == rhs.title && lhs.imagePath == rhs.imagePath
+        return lhs.title == rhs.title &&
+            lhs.imagePath == rhs.imagePath &&
+            lhs.releaseDate == rhs.releaseDate
     }
 }
 
-protocol NowPlayingView: class {
+protocol MoviesListView: class {
     func startLoading()
     func stopLoading()
     var movieCellModels: [MovieCellModel] { get }
@@ -26,15 +29,21 @@ protocol NowPlayingView: class {
     func display(_ error: Error)
 }
 
-class NowPlayingViewController: UIViewController {
+class MoviesListViewController: UIViewController {
     
-    var presenter: NowPlayingPresenter!
+    var presenter: MoviesListPresenter!
     
     fileprivate(set) var movieCellModels: [MovieCellModel] = []
     let movieCellIdentifier = "MovieCell"
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
     fileprivate weak var loadingView: UIActivityIndicatorView?
+    
+    override func loadView() {
+        let xibName = String(describing: MoviesListViewController.self)
+        view = Bundle.main.loadNibNamed(xibName, owner: self, options: nil)!.first as! UIView
+    }
 
     override func viewDidLoad() {
         setupSubviews()
@@ -56,12 +65,11 @@ class NowPlayingViewController: UIViewController {
         collectionView.alpha = 0
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(UINib(nibName: "NowPlayingCell", bundle: nil), forCellWithReuseIdentifier: movieCellIdentifier)
     }
 }
 
 // MARK: - Now Playing View
-extension NowPlayingViewController: NowPlayingView {
+extension MoviesListViewController: MoviesListView {
     
     private func setupLoadingViewIfNeeded() -> UIActivityIndicatorView {
         if let loadingView = loadingView {

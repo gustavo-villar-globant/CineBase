@@ -16,6 +16,7 @@ class MovieEntity: Object {
     dynamic var overview = ""
     dynamic var imagePath = ""
     dynamic var backdropPath = ""
+    dynamic var releaseDate = Date()
     
     override static func primaryKey() -> String? {
         return "movieID"
@@ -41,6 +42,7 @@ class MovieEntity: Object {
         self.overview = movie.overview
         self.imagePath = movie.imagePath
         self.backdropPath = movie.backdropPath
+        self.releaseDate = movie.releaseDate
     }
     
 }
@@ -53,7 +55,8 @@ extension Movie {
             title: movieEntity.title,
             overview: movieEntity.overview,
             imagePath: movieEntity.imagePath,
-            backdropPath: movieEntity.backdropPath
+            backdropPath: movieEntity.backdropPath,
+            releaseDate: movieEntity.releaseDate
         )
     }
 }

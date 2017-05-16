@@ -13,12 +13,12 @@ import Foundation
 */
 class MoviesListPresenter {
     
-    weak var view: NowPlayingView?
+    weak var view: MoviesListView?
     private let moviesManager: MoviesManager
     private var movies: [Movie] = []
     var showDetail: ((Movie) -> Void)?
     
-    init(view: NowPlayingView, moviesManager: MoviesManager) {
+    init(view: MoviesListView, moviesManager: MoviesManager) {
         self.view = view
         self.moviesManager = moviesManager
     }
@@ -42,7 +42,8 @@ class MoviesListPresenter {
                     presenter.view?.display(error)
                 case .success(let movies):
                     presenter.movies = movies
-                    let movieCells = movies.map { MovieCellModel(title: $0.title, imagePath: $0.imagePath) }
+                    let formatter = DateFormatter()
+                    let movieCells = movies.map { MovieCellModel(title: $0.title, imagePath: $0.imagePath, releaseDate: formatter.format($0.releaseDate, style: .date)) }
                     if presenter.view?.movieCellModels.isEmpty == true {
                         presenter.view?.displayMovies(movieCells)
                     } else {

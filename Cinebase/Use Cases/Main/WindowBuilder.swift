@@ -11,18 +11,17 @@ import UIKit
 
 struct WindowBuilder {
     
-    private let nowPlayingBuilder: NowPlayingBuilder
+    private let moviesHomeBuilder: MoviesHomeBuilder
     
-    init(nowPlayingBuilder: NowPlayingBuilder = NowPlayingBuilder()) {
-        self.nowPlayingBuilder = nowPlayingBuilder
+    init(moviesHomeBuilder: MoviesHomeBuilder = MoviesHomeBuilder()) {
+        self.moviesHomeBuilder = moviesHomeBuilder
     }
     
     func makeWindow() -> UIWindow {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
-//        let nowPlayingViewController = nowPlayingBuilder.makeScene()
-        let moviesListBuilder = MoviesListBuilder()
-        let navigationController = UINavigationController(rootViewController: moviesListBuilder.makeScene())
+        let moviesHomeViewController = moviesHomeBuilder.makeScene()
+        let navigationController = UINavigationController(rootViewController: moviesHomeViewController)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         return window

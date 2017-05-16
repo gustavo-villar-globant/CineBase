@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoviesListViewController" customModule="Cinebase" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoviesHomeViewController" customModule="Cinebase" customModuleProvider="target">
             <connections>
                 <outlet property="segmentedControl" destination="RLB-iT-j7d" id="7kd-C4-d8q"/>
                 <outlet property="view" destination="iN0-l3-epB" id="pmk-QQ-pVp"/>
@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RLB-iT-j7d">
-                    <rect key="frame" x="98" y="20" width="179" height="29"/>
+                    <rect key="frame" x="98" y="8" width="179" height="29"/>
                     <segments>
                         <segment title="Now Playing"/>
                         <segment title="Upcoming"/>
@@ -34,7 +34,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="RLB-iT-j7d" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="AmX-QW-K6o"/>
-                <constraint firstItem="RLB-iT-j7d" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="Sll-0M-lpb"/>
+                <constraint firstItem="RLB-iT-j7d" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Sll-0M-lpb"/>
             </constraints>
         </view>
     </objects>

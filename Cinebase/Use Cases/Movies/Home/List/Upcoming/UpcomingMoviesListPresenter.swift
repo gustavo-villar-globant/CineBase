@@ -1,5 +1,5 @@
 //
-//  UpcomingPresenter.swift
+//  UpcomingMoviesListPresenter.swift
 //  Cinebase
 //
 //  Created by Gustavo Villar on 5/15/17.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-class UpcomingPresenter: MoviesListPresenter {
+class UpcomingMoviesListPresenter: MoviesListPresenter {
     
-    override init(view: NowPlayingView, moviesManager: MoviesManager = MoviesManager(configuration: .upcoming)) {
+    override init(view: MoviesListView, moviesManager: MoviesManager = MoviesManager(configuration: .upcoming)) {
         super.init(view: view, moviesManager: moviesManager)
     }
 

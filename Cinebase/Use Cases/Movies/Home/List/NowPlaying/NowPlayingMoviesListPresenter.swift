@@ -1,5 +1,5 @@
 //
-//  NowPlayingPresenter.swift
+//  NowPlayingMoviesListPresenter.swift
 //  Cinebase
 //
 //  Created by Gustavo Villar on 4/18/17.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-class NowPlayingPresenter: MoviesListPresenter {
+class NowPlayingMoviesListPresenter: MoviesListPresenter {
     
-    override init(view: NowPlayingView, moviesManager: MoviesManager = MoviesManager(configuration: .nowPlaying)) {
+    override init(view: MoviesListView, moviesManager: MoviesManager = MoviesManager(configuration: .nowPlaying)) {
         super.init(view: view, moviesManager: moviesManager)
     }
     
