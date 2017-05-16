@@ -10,19 +10,32 @@ import UIKit
 
 class MoviesHomeViewController: UIViewController {
     
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    private var segmentedControl: UISegmentedControl!
 
     private var selectedChildController: MoviesListViewController?
     var moviesViewControllers: [MoviesListViewController] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSegmentedControl()
         if let firstViewController = moviesViewControllers.first {
             setupSelectedChildController(firstViewController, animated: false)
         }
     }
     
-    @IBAction func segmentedControlValueChanged(_ sender: Any) {
+    private func setupSegmentedControl() {
+        segmentedControl = UISegmentedControl()
+        for (index, moviesVC) in moviesViewControllers.enumerated() {
+            segmentedControl.insertSegment(withTitle: moviesVC.title, at: index, animated: false)
+        }
+        segmentedControl.tintColor = .white
+        segmentedControl.sizeToFit()
+        navigationItem.titleView = segmentedControl
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
+    }
+    
+    func segmentedControlValueChanged(_ sender: Any) {
         let selectedChildController = moviesViewControllers[segmentedControl.selectedSegmentIndex]
         setupSelectedChildController(selectedChildController, animated: true)
     }
@@ -49,7 +62,7 @@ class MoviesHomeViewController: UIViewController {
         newView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(newView)
         
-        newView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 8).isActive = true
+        newView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         newView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         newView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         newView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true

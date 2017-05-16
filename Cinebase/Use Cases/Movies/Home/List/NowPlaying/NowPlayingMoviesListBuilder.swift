@@ -13,6 +13,7 @@ class NowPlayingMoviesListBuilder: MoviesListBuilder {
     func makeScene() -> NowPlayingMoviesListViewController {
         
         let viewController = NowPlayingMoviesListViewController()
+        viewController.title = "Now Playing"
         let presenter = NowPlayingMoviesListPresenter(view: viewController)
         viewController.presenter = presenter
         
