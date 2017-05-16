@@ -37,6 +37,8 @@ class MoviesHomeViewController: UIViewController {
     
     private func setupSelectedChildController(_ newChildController: MoviesListViewController, animated: Bool) {
         
+        guard newChildController != selectedChildController else { return }
+        
         let oldChildController = selectedChildController
         selectedChildController = newChildController
         
@@ -76,6 +78,7 @@ class MoviesHomeViewController: UIViewController {
                         [weak self, weak oldView,
                         weak oldChildController,
                         weak newChildController] _ in
+                        guard self?.selectedChildController == newChildController else { return }
                         oldView?.removeFromSuperview()
                         oldChildController?.removeFromParentViewController()
                         newChildController?.didMove(toParentViewController: self) }

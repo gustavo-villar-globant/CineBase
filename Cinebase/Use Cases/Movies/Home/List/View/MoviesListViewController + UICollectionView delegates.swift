@@ -37,11 +37,11 @@ extension MoviesListViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let numberOfColumns = (view.bounds.width > 700) ? 3 : 2 // 3 columns for plus models
+        let numberOfColumns = (view.bounds.width > 400) ? 3 : 2 // 3 columns for plus models
         
         let horizontalMargins = collectionViewFlowLayout.sectionInset.left + collectionViewFlowLayout.sectionInset.right
         let cellSpacing = collectionViewFlowLayout.minimumInteritemSpacing * CGFloat(numberOfColumns - 1)
-        let width = (view.bounds.width - horizontalMargins - cellSpacing) / CGFloat(numberOfColumns)
+        let width = (view.bounds.width - horizontalMargins - cellSpacing) / CGFloat(numberOfColumns) - 0.1
         let height = width / 27 * 41 // 27" X 41" is the standard movie poster size
         
         return CGSize(width: width, height: height)
