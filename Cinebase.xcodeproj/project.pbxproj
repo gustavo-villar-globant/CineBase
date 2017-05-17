@@ -22,6 +22,7 @@
 		5067767A1ECB84F3008804ED /* ShowtimesScheduleCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506776791ECB84F3008804ED /* ShowtimesScheduleCollectionCell.swift */; };
 		509920241EB9082F00644648 /* TrailerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509920231EB9082F00644648 /* TrailerParser.swift */; };
 		509920261EB9085E00644648 /* Trailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509920251EB9085E00644648 /* Trailer.swift */; };
+		509C75DA1ECCAAE400A0808A /* ShowtimesCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C75D91ECCAAE400A0808A /* ShowtimesCollectionCell.swift */; };
 		50E8A9261EBCB88000A64494 /* UpcomingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E8A9251EBCB88000A64494 /* UpcomingCell.xib */; };
 		50E8A9281EBCDB8E00A64494 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E8A9271EBCDB8E00A64494 /* Appearance.swift */; };
 		50E8A92A1EBCE37500A64494 /* UIColor-Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E8A9291EBCE37500A64494 /* UIColor-Utils.swift */; };
@@ -100,6 +101,7 @@
 		506776791ECB84F3008804ED /* ShowtimesScheduleCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowtimesScheduleCollectionCell.swift; path = Showtimes/ShowtimesScheduleCollectionCell.swift; sourceTree = "<group>"; };
 		509920231EB9082F00644648 /* TrailerParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailerParser.swift; sourceTree = "<group>"; };
 		509920251EB9085E00644648 /* Trailer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trailer.swift; sourceTree = "<group>"; };
+		509C75D91ECCAAE400A0808A /* ShowtimesCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowtimesCollectionCell.swift; path = Showtimes/ShowtimesCollectionCell.swift; sourceTree = "<group>"; };
 		50E8A9251EBCB88000A64494 /* UpcomingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpcomingCell.xib; sourceTree = "<group>"; };
 		50E8A9271EBCDB8E00A64494 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		50E8A9291EBCE37500A64494 /* UIColor-Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Utils.swift"; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				5067766F1ECB5D97008804ED /* ShowtimesViewController.swift */,
 				5067766E1ECB5D97008804ED /* ShowtimesViewController + UITableViewDelegates.swift */,
 				5067766C1ECB5D96008804ED /* ShowtimesCell.swift */,
+				509C75D91ECCAAE400A0808A /* ShowtimesCollectionCell.swift */,
 				506776771ECB606B008804ED /* ShowtimesScheduleCell.swift */,
 				506776791ECB84F3008804ED /* ShowtimesScheduleCollectionCell.swift */,
 			);
@@ -808,6 +811,7 @@
 				8B5227BF1EA69F9800C72873 /* MovieDetailBuilder.swift in Sources */,
 				506776741ECB5D97008804ED /* ShowtimesViewController.swift in Sources */,
 				8BC3C3FF1EA564200001184A /* WebAPIClient.swift in Sources */,
+				509C75DA1ECCAAE400A0808A /* ShowtimesCollectionCell.swift in Sources */,
 				8BC3C4051EA569B00001184A /* MoviesAPIClient.swift in Sources */,
 				5067767A1ECB84F3008804ED /* ShowtimesScheduleCollectionCell.swift in Sources */,
 				50E8A92E1EBD0D5400A64494 /* PlayTrailerBuilder.swift in Sources */,

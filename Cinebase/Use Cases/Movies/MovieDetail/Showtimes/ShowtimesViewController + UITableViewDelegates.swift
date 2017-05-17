@@ -25,13 +25,10 @@ extension ShowtimesViewController : UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.section == 0 {
             cell = tableView.dequeueReusableCell(withIdentifier: "ShowtimesScheduleCell", for: indexPath) as! ShowtimesScheduleCell
-            cell.backgroundColor = .blue
-            
         } else {
             let showtimeCell = tableView.dequeueReusableCell(withIdentifier: "ShowtimesCell", for: indexPath) as! ShowtimesCell
             showtimeCell.cineData = "Cine \(indexPath.row + 1)"
             cell = showtimeCell
-            cell.backgroundColor = .green
         }
         
         return cell

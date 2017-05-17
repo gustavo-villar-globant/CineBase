@@ -231,7 +231,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="m2T-Jp-FcA">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ShowtimesCollectionCell" id="m2T-Jp-FcA" customClass="ShowtimesCollectionCell" customModule="Cinebase" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -257,8 +257,15 @@
                                                                 <constraint firstItem="WWL-3Q-9Xv" firstAttribute="leading" secondItem="m2T-Jp-FcA" secondAttribute="leading" id="r8J-gs-g5q"/>
                                                                 <constraint firstItem="WWL-3Q-9Xv" firstAttribute="top" secondItem="m2T-Jp-FcA" secondAttribute="top" id="rRB-La-9Hq"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <outlet property="buyTicketButton" destination="WWL-3Q-9Xv" id="joQ-8v-MC7"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="3Pt-4N-UDN" id="F24-FG-5qM"/>
+                                                        <outlet property="delegate" destination="3Pt-4N-UDN" id="hkV-aR-bEl"/>
+                                                    </connections>
                                                 </collectionView>
                                             </subviews>
                                             <constraints>
