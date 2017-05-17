@@ -7,38 +7,21 @@
 //
 
 import UIKit
+import TagListView
 
 class ShowtimesScheduleCell: UITableViewCell {
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var daySelectionControl: DaySelectionControl!
+    
+    let days = ["Lun 15 May","Mar 16 May","Mie 17 May"]
     
     override func awakeFromNib() {
+        
+        //let size = CGSize(width: self.bounds.height, height: self.bounds.height)
+        
+        daySelectionControl.dayLabels = days
         
     }
 }
 
-extension ShowtimesScheduleCell: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
-        
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShowtimesScheduleCollectionCell", for: indexPath) as! ShowtimesScheduleCollectionCell
-        cell.scheduleTimeLabel.text = "HOLA"
-        
-        
-        return cell
-        
-    }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        
-    }
-    
-}
+
