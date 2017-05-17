@@ -12,16 +12,25 @@ class MoviesHomeViewController: UIViewController {
     
     private var segmentedControl: UISegmentedControl!
 
-    private var selectedChildController: MoviesListViewController?
     var moviesViewControllers: [MoviesListViewController] = []
+    var selectedChildController: MoviesListViewController? {
+        didSet {
+            let childIndex = index(of: selectedChildController)
+            segmentedControl.selectedSegmentIndex = childIndex
+        }
+    }
+    var transitioningChildController: MoviesListViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSegmentedControl()
+        setupSwipeRecognizer()
         if let firstViewController = moviesViewControllers.first {
             setupSelectedChildController(firstViewController, animated: false)
         }
     }
+    
+    // MARK: Segmented control methods
     
     private func setupSegmentedControl() {
         segmentedControl = UISegmentedControl()
@@ -31,7 +40,6 @@ class MoviesHomeViewController: UIViewController {
         segmentedControl.tintColor = .white
         segmentedControl.sizeToFit()
         navigationItem.titleView = segmentedControl
-        segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
     }
     
@@ -40,63 +48,64 @@ class MoviesHomeViewController: UIViewController {
         setupSelectedChildController(selectedChildController, animated: true)
     }
     
-    private func index(of moviesViewController: MoviesListViewController?) -> Int {
-        guard let moviesViewController = moviesViewController,
-            let index = moviesViewControllers.index(of: moviesViewController) else {
-            return -1
+    // MARK: Touch methods
+    private func setupSwipeRecognizer() {
+        let swipeRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        view.addGestureRecognizer(swipeRecognizer)
+    }
+    
+    func handleSwipe(_ recognizer: UIPanGestureRecognizer) {
+        
+        let translation = recognizer.translation(in: view)
+        
+        switch recognizer.state {
+            
+        case .changed, .began:
+            
+            let indexDelta = (translation.x.sign == .plus) ? -1 : 1
+            let newIndex = index(of: selectedChildController) + indexDelta
+            guard newIndex < moviesViewControllers.count, newIndex >= 0 else { return }
+            let newChildController = moviesViewControllers[newIndex]
+            
+            if newChildController != transitioningChildController {
+                cancelChildTransition()
+                beginChildTransition(to: newChildController)
+            }
+            
+            let fractionCompleted = abs(translation.x / view.bounds.width)
+            updateChildTransition(fractionCompleted: fractionCompleted)
+            
+        case .ended:
+            
+            let velocity = recognizer.velocity(in: view)
+            let fractionCompleted = abs(translation.x / view.bounds.width)
+            
+            guard let newChildController = transitioningChildController else { return }
+            let directionFactor = self.directionFactor(from: selectedChildController, to: newChildController)
+            
+            if (abs(velocity.x) > 50 && velocity.x.sign == directionFactor.sign) || fractionCompleted > 0.5 {
+                // Complete transition
+                let velocityFactor: CGFloat = (translation.x.sign == .plus) ? 1 : -1
+                let springVelocity = velocity.x * velocityFactor / (view.bounds.width - abs(translation.x))
+                let duration = TimeInterval(1 - fractionCompleted) * 0.5 + 0.1 // 0.5s is the duration for the non-interactive transition
+                completeChildTransition(withDuration: duration, initialVelocity: springVelocity)
+                
+            } else {
+                // Revert transition
+                let velocityFactor: CGFloat = (translation.x.sign == .plus) ? -1 : 1
+                let springVelocity = velocity.x * velocityFactor / abs(translation.x)
+                let duration = TimeInterval(fractionCompleted) * 0.5 + 0.1 // 0.5s is the duration for the non-interactive transition
+                revertChildTransition(withDuration: duration, initialVelocity: springVelocity)
+            }
+            
+        case .cancelled:
+            updateChildTransition(fractionCompleted: 0)
+            cancelChildTransition()
+            
+        default:
+            break
         }
-        return index
     }
     
-    private func setupSelectedChildController(_ newChildController: MoviesListViewController, animated: Bool) {
-        
-        guard newChildController != selectedChildController else { return }
-        
-        let oldChildController = selectedChildController
-        selectedChildController = newChildController
-        
-        addChildViewController(newChildController)
-        oldChildController?.willMove(toParentViewController: nil)
-        
-        let newView = newChildController.view!
-        newView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(newView)
-        
-        newView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        newView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        newView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        newView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        
-        let oldIndex = index(of: oldChildController)
-        let newIndex = index(of: newChildController)
-        let directionSign: CGFloat = (oldIndex <= newIndex) ? -1 : 1
-        
-        newView.transform = CGAffineTransform(translationX: -directionSign * view.bounds.width, y: 0)
-        let oldView = oldChildController?.view
-        
-        let oldViewFinalTransform = CGAffineTransform(translationX: directionSign * view.bounds.width, y: 0)
-        
-        let duration = animated ? 0.5 : 0
-        
-        UIView.animate(withDuration: duration,
-                       delay: 0,
-                       usingSpringWithDamping: 1,
-                       initialSpringVelocity: 1,
-                       options: [],
-                       animations: {
-                        [weak newView, weak oldView] in
-                        newView?.transform = .identity
-                        oldView?.transform = oldViewFinalTransform },
-                       completion: {
-                        [weak self, weak oldView,
-                        weak oldChildController,
-                        weak newChildController] _ in
-                        guard self?.selectedChildController == newChildController else { return }
-                        oldView?.removeFromSuperview()
-                        oldChildController?.removeFromParentViewController()
-                        newChildController?.didMove(toParentViewController: self) }
-        )
-        
-    }
-    
+     
 }

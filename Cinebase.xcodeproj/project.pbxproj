@@ -27,6 +27,7 @@
 		8B2524291EC4C7E500AA363D /* LocalContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2524281EC4C7E500AA363D /* LocalContainer.swift */; };
 		8B25242B1EC4D7DE00AA363D /* RealmConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B25242A1EC4D7DE00AA363D /* RealmConfigurator.swift */; };
 		8B32A7701EAE58C500EE9BEB /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B32A76F1EAE58C500EE9BEB /* UIImageView+URL.swift */; };
+		8B3D2A7B1ECCFCA600090E5F /* MoviesHomeViewController + Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D2A7A1ECCFCA600090E5F /* MoviesHomeViewController + Container.swift */; };
 		8B5227BF1EA69F9800C72873 /* MovieDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5227BE1EA69F9800C72873 /* MovieDetailBuilder.swift */; };
 		8B5227C21EA6A03600C72873 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5227C11EA6A03600C72873 /* MovieDetailViewController.swift */; };
 		8B5227C61EA6AB1600C72873 /* MovieDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5227C51EA6AB1600C72873 /* MovieDetailPresenter.swift */; };
@@ -118,6 +119,7 @@
 		8B2524281EC4C7E500AA363D /* LocalContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalContainer.swift; sourceTree = "<group>"; };
 		8B25242A1EC4D7DE00AA363D /* RealmConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmConfigurator.swift; sourceTree = "<group>"; };
 		8B32A76F1EAE58C500EE9BEB /* UIImageView+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
+		8B3D2A7A1ECCFCA600090E5F /* MoviesHomeViewController + Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoviesHomeViewController + Container.swift"; sourceTree = "<group>"; };
 		8B5227BE1EA69F9800C72873 /* MovieDetailBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MovieDetailBuilder.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8B5227C11EA6A03600C72873 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MovieDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8B5227C51EA6AB1600C72873 /* MovieDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MovieDetailPresenter.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -665,6 +667,7 @@
 			children = (
 				8BF417D81ECB5DCA00E99D42 /* MoviesHomeViewController.xib */,
 				8BF417D71ECB5DCA00E99D42 /* MoviesHomeViewController.swift */,
+				8B3D2A7A1ECCFCA600090E5F /* MoviesHomeViewController + Container.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -944,6 +947,7 @@
 				8BC3C4081EA56A3F0001184A /* Movie.swift in Sources */,
 				8B660C911EA7D0EF0099626B /* BuyTicketsPresenter.swift in Sources */,
 				8B97AEEA1EC23CFB004D05AA /* MoviesManager.swift in Sources */,
+				8B3D2A7B1ECCFCA600090E5F /* MoviesHomeViewController + Container.swift in Sources */,
 				8B32A7701EAE58C500EE9BEB /* UIImageView+URL.swift in Sources */,
 				8BF417BF1ECB5CAE00E99D42 /* MoviesListBuilder.swift in Sources */,
 				50E8A9281EBCDB8E00A64494 /* Appearance.swift in Sources */,
