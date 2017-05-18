@@ -62,7 +62,7 @@ class MoviesListPresenterSpec: QuickSpec {
                         mockManager.completeFetching(with: .success([movie]))
                     }
                     it("should display the movie cells") {
-                        let movieCell = MovieCellModel(title: "First movie", imagePath: "/first_image.png", releaseDate: "Próximamente")
+                        let movieCell = MovieCellModel(title: "First movie", imagePath: "/first_image.png", releaseDate: "Coming soon")
                         expect(mockView.displayedMovies).toEventually(equal([movieCell]))
                     }
                     

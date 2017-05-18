@@ -59,7 +59,7 @@ class MoviesListPresenter {
     
     private func format(movieReleaseDate: Date?) -> String {
         guard let movieReleaseDate = movieReleaseDate else {
-            return "Próximamente"
+            return "Coming soon"
         }
         return dateFormatter.format(movieReleaseDate, style: .date)
     }
