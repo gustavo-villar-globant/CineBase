@@ -76,7 +76,7 @@ class MoviesManagerSpec: QuickSpec {
                     context("when the remote fetching finishes with values"){
                         var remoteMovie: Movie!
                         beforeEach {
-                            remoteMovie = Movie(movieID: 1, title: "First movie", overview: "Great movie. Recommended.", imagePath: "/first_image.png", backdropPath: "/first_backdrop.png")
+                            remoteMovie = Movie(movieID: 1, title: "First movie", overview: "Great movie. Recommended.", imagePath: "/first_image.png", backdropPath: "/first_backdrop.png", releaseDate: Date())
                             mockAPIClient.completeFetching(with: .success([remoteMovie]))
                         }
                         it("should execute the callback with success") {
@@ -93,7 +93,7 @@ class MoviesManagerSpec: QuickSpec {
                 context("when the local fetching finishes with values") {
                     var localMovie: Movie!
                     beforeEach {
-                        localMovie = Movie(movieID: 1, title: "First movie", overview: "Great movie. Recommended.", imagePath: "/first_image.png", backdropPath: "/first_backdrop.png")
+                        localMovie = Movie(movieID: 1, title: "First movie", overview: "Great movie. Recommended.", imagePath: "/first_image.png", backdropPath: "/first_backdrop.png", releaseDate: Date())
                         mockContainer.completeFetching(with: .success([localMovie]))
                     }
                     
@@ -120,7 +120,7 @@ class MoviesManagerSpec: QuickSpec {
                     context("when the remote fetching finishes with the same values"){
                         var remoteMovie: Movie!
                         beforeEach {
-                            remoteMovie = Movie(movieID: 1, title: "First movie", overview: "Great movie. Recommended.", imagePath: "/first_image.png", backdropPath: "/first_backdrop.png")
+                            remoteMovie = Movie(movieID: 1, title: "First movie", overview: "Great movie. Recommended.", imagePath: "/first_image.png", backdropPath: "/first_backdrop.png", releaseDate: localMovie.releaseDate)
                             mockAPIClient.completeFetching(with: .success([remoteMovie]))
                         }
                         it("shouldn't execute the callback") {
@@ -134,7 +134,7 @@ class MoviesManagerSpec: QuickSpec {
                     context("when the remote fetching finishes with new values"){
                         var remoteMovie: Movie!
                         beforeEach {
-                            remoteMovie = Movie(movieID: 2, title: "New movie", overview: "New Great movie. Recommended.", imagePath: "/first_image.png", backdropPath: "/new_backdrop.png")
+                            remoteMovie = Movie(movieID: 2, title: "New movie", overview: "New Great movie. Recommended.", imagePath: "/first_image.png", backdropPath: "/new_backdrop.png", releaseDate: Date())
                             mockAPIClient.completeFetching(with: .success([remoteMovie]))
                         }
                         it("should execute the callback") {

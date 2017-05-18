@@ -42,8 +42,7 @@ class MoviesListPresenter {
                     presenter.view?.display(error)
                 case .success(let movies):
                     presenter.movies = movies
-                    let formatter = DateFormatter()
-                    let movieCells = movies.map { MovieCellModel(title: $0.title, imagePath: $0.imagePath, releaseDate: formatter.format($0.releaseDate, style: .date)) }
+                    let movieCells = movies.map { MovieCellModel(title: $0.title, imagePath: $0.imagePath, releaseDate: presenter.format(movieReleaseDate: $0.releaseDate)) }
                     if presenter.view?.movieCellModels.isEmpty == true {
                         presenter.view?.displayMovies(movieCells)
                     } else {
@@ -54,6 +53,15 @@ class MoviesListPresenter {
             }
         }
         
+    }
+    
+    private lazy var dateFormatter = DateFormatter()
+    
+    private func format(movieReleaseDate: Date?) -> String {
+        guard let movieReleaseDate = movieReleaseDate else {
+            return "Próximamente"
+        }
+        return dateFormatter.format(movieReleaseDate, style: .date)
     }
     
     func onItemSelected(at index: Int) {
