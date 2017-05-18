@@ -12,23 +12,23 @@ import Nimble
 
 @testable import Cinebase
 
-class NowPlayingPresenterSpec: QuickSpec {
+class MoviesListPresenterSpec: QuickSpec {
     
     override func spec() {
         super.spec()
         
         describe("A Now Playing Presenter") {
             
-            var sut: NowPlayingPresenter!
-            var mockView: MockNowPlayingView!
+            var sut: MoviesListPresenter!
+            var mockView: MockMoviesListView!
             var mockRouter: MockRouter!
             var mockManager: MockMoviesManager!
             
             beforeEach {
-                mockView = MockNowPlayingView()
+                mockView = MockMoviesListView()
                 mockRouter = MockRouter()
-                mockManager = MockMoviesManager(moviesContainer: MoviesContainer(containerName: "MockNowPlayingMovies"))
-                sut = NowPlayingPresenter(view: mockView, moviesManager: mockManager)
+                mockManager = MockMoviesManager(configuration: .nowPlaying)
+                sut = MoviesListPresenter(view: mockView, moviesManager: mockManager)
                 sut.showDetail = { _ in
                     mockRouter.isShowingDetail = true
                 }
@@ -58,22 +58,22 @@ class NowPlayingPresenterSpec: QuickSpec {
                 context("when the request completes successfully") {
                     var movie: Movie!
                     beforeEach {
-                        movie = Movie(movieID: 1, title: "First movie", overview: "Great movie. Recommended.", imagePath: "/first_image.png", backdropPath: "/first_backdrop.png")
+                        movie = Movie(movieID: 1, title: "First movie", overview: "Great movie. Recommended.", imagePath: "/first_image.png", backdropPath: "/first_backdrop.png", releaseDate: nil)
                         mockManager.completeFetching(with: .success([movie]))
                     }
                     it("should display the movie cells") {
-                        let movieCell = MovieCellModel(title: "First movie", imagePath: "/first_image.png")
+                        let movieCell = MovieCellModel(title: "First movie", imagePath: "/first_image.png", releaseDate: "Coming soon")
                         expect(mockView.displayedMovies).toEventually(equal([movieCell]))
                     }
                     
                     context("when the manager retrieves updated movies") {
                         var movie: Movie!
                         beforeEach {
-                            movie = Movie(movieID: 2, title: "New movie", overview: "New movie. Recommended.", imagePath: "/new_image.png", backdropPath: "/new_backdrop.png")
+                            movie = Movie(movieID: 2, title: "New movie", overview: "New movie. Recommended.", imagePath: "/new_image.png", backdropPath: "/new_backdrop.png", releaseDate: Date(unixTimestamp: 1510000000000))
                             mockManager.completeFetching(with: .success([movie]))
                         }
                         it("should update the movie cells") {
-                            let movieCell = MovieCellModel(title: "New movie", imagePath: "/new_image.png")
+                            let movieCell = MovieCellModel(title: "New movie", imagePath: "/new_image.png", releaseDate: "11/6/17")
                             expect(mockView.updatedMovies).toEventually(equal([movieCell]))
                         }
                     }
@@ -102,9 +102,9 @@ class NowPlayingPresenterSpec: QuickSpec {
 }
 
 // MARK: - Mocks
-extension NowPlayingPresenterSpec {
+extension MoviesListPresenterSpec {
     
-    class MockNowPlayingView: NowPlayingView {
+    class MockMoviesListView: MoviesListView {
         
         var movieCellModels: [MovieCellModel] = []
         
