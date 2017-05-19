@@ -39,7 +39,7 @@ extension ShowtimesViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.section == 0 ? 50: 100
+        return indexPath.section == 0 ? 75: 100
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

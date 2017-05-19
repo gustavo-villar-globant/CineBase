@@ -7,19 +7,16 @@
 //
 
 import UIKit
-import TagListView
 
 class ShowtimesScheduleCell: UITableViewCell {
     
-    @IBOutlet weak var daySelectionControl: DaySelectionControl!
+    @IBOutlet weak var daySelectionControl: ButtonsArraySelectionControl!
     
     let days = ["Lun 15 May","Mar 16 May","Mie 17 May"]
     
     override func awakeFromNib() {
         
-        //let size = CGSize(width: self.bounds.height, height: self.bounds.height)
-        
-        daySelectionControl.dayLabels = days
+        daySelectionControl.labels = days
         
     }
 }

@@ -14,7 +14,6 @@ target 'Cinebase' do
   pod 'Kingfisher', '~> 3.0'
   pod 'youtube-ios-player-helper', '~> 0.1.4'
   pod 'RealmSwift', '~> 2.7.0'
-  pod 'TagListView', '~> 1.0'
   
   target 'CinebaseTests' do
     # inherit! :search_paths

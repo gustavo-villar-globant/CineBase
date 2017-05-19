@@ -148,20 +148,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="359" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NHO-n7-FAu" customClass="DaySelectionControl" customModule="Cinebase" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="59.5"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NHO-n7-FAu" customClass="ButtonsArraySelectionControl" customModule="Cinebase" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="5" width="359" height="49.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="NHO-n7-FAu" firstAttribute="top" secondItem="HPd-a2-lcM" secondAttribute="top" id="5Lk-oK-nkD"/>
+                                                <constraint firstItem="NHO-n7-FAu" firstAttribute="top" secondItem="HPd-a2-lcM" secondAttribute="top" constant="5" id="5Lk-oK-nkD"/>
                                                 <constraint firstAttribute="trailing" secondItem="NHO-n7-FAu" secondAttribute="trailing" id="OPn-BR-56Z"/>
                                                 <constraint firstItem="NHO-n7-FAu" firstAttribute="leading" secondItem="HPd-a2-lcM" secondAttribute="leading" id="Z9i-1M-9nM"/>
-                                                <constraint firstAttribute="bottom" secondItem="NHO-n7-FAu" secondAttribute="bottom" id="uzV-Iu-3et"/>
+                                                <constraint firstAttribute="bottom" secondItem="NHO-n7-FAu" secondAttribute="bottom" constant="5" id="uzV-Iu-3et"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="daySelectionControl" destination="NHO-n7-FAu" id="3AF-WE-Oco"/>
+                                            <outlet property="daySelectionControl" destination="NHO-n7-FAu" id="xsl-AL-OV3"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShowtimesCell" rowHeight="100" id="3Pt-4N-UDN" customClass="ShowtimesCell" customModule="Cinebase" customModuleProvider="target">
