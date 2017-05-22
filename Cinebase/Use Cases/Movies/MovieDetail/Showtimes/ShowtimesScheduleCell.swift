@@ -10,15 +10,28 @@ import UIKit
 
 class ShowtimesScheduleCell: UITableViewCell {
     
-    @IBOutlet weak var daySelectionControl: ButtonsArraySelectionControl!
+    @IBOutlet weak var daySelectionControl: TagsSelectionControl!
     
     let days = ["Lun 15 May","Mar 16 May","Mie 17 May"]
     
     override func awakeFromNib() {
         
+        setupDaySelectionControl(with: days)
+    }
+    
+    func setupDaySelectionControl(with days: [String]) {   
+        daySelectionControl.spacing = 10
         daySelectionControl.labels = days
+        daySelectionControl.cornerRadius = 10
+        daySelectionControl.tagBackgroundColor = .blue
+        daySelectionControl.tagSelectedBackgroundColor = .green
+    }
+    
+    @IBAction func daySelectionValueChanged(_ sender: TagsSelectionControl) {
         
+        print(sender.selectedViewIndex)
     }
 }
+
 
 
