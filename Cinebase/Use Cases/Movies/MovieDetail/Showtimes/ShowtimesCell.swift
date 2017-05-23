@@ -12,7 +12,10 @@ class ShowtimesCell: UITableViewCell {
     
     @IBOutlet weak var cinemaLabel: UILabel!
     
-    @IBOutlet weak var collectionView: UICollectionView!
+   
+    @IBOutlet weak var scheduleSelectionControl: TagsSelectionControl!
+    
+    let schedule = ["2:00 pm","3:00 pm","4:00 pm"]
     
     var cineData: String? {
         didSet {
@@ -21,32 +24,16 @@ class ShowtimesCell: UITableViewCell {
     }
     
     override func awakeFromNib() {
-        
+        setupScheduleSelectionControl(with: schedule)
     }
+    
+    func setupScheduleSelectionControl(with schedule: [String]) {
+        scheduleSelectionControl.spacing = 5
+        scheduleSelectionControl.labels = schedule
+        //scheduleSelectionControl.cornerRadius = 10
+        scheduleSelectionControl.tagBackgroundColor = .gray
+        scheduleSelectionControl.tagSelectedBackgroundColor = .red
+    }
+    
 }
 
-extension ShowtimesCell: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
-        
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShowtimesCollectionCell", for: indexPath) as! ShowtimesCollectionCell
-        //cell.scheduleTimeLabel.text = "HOLA"
-        
-        
-        return cell
-        
-    }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        
-    }
-    
-}

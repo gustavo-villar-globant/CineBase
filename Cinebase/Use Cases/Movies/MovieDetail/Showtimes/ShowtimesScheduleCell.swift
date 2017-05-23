@@ -25,6 +25,7 @@ class ShowtimesScheduleCell: UITableViewCell {
         daySelectionControl.cornerRadius = 10
         daySelectionControl.tagBackgroundColor = .blue
         daySelectionControl.tagSelectedBackgroundColor = .green
+        daySelectionControl.selectedViewIndex = 0
     }
     
     @IBAction func daySelectionValueChanged(_ sender: TagsSelectionControl) {

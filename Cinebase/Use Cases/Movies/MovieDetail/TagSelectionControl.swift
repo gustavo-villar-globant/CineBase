@@ -26,7 +26,7 @@ class TagsSelectionControl: UIControl {
                 view.delegate = self
             }
             
-            selectedViewIndex = 0
+            //selectedViewIndex = 0
             layoutSubviews()
         }
     }
