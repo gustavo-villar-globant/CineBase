@@ -20,16 +20,57 @@ class TagsSelectionControl: UIControl {
             tagViews = []
             
             for label in labels {
-                let view = TagView(tagName: label)
+                let view = TagView(tagName: label, height: tagHeight, square: squareTags)
+                //let view = TagView(tagName: label)
                 addSubview(view)
                 tagViews.append(view)
                 view.delegate = self
             }
             
-            //selectedViewIndex = 0
             layoutSubviews()
         }
     }
+    
+    var tagHeight: CGFloat? {
+        didSet {
+            for view in tagViews {
+                view.removeFromSuperview()
+            }
+            
+            tagViews = []
+            
+            for label in labels {
+                let view = TagView(tagName: label, height: tagHeight, square: squareTags)
+                //let view = TagView(tagName: label)
+                addSubview(view)
+                tagViews.append(view)
+                view.delegate = self
+            }
+            
+            layoutSubviews()
+        }
+    }
+    
+    var squareTags: Bool = false {
+        didSet {
+            for view in tagViews {
+                view.removeFromSuperview()
+            }
+            
+            tagViews = []
+            
+            for label in labels {
+                let view = TagView(tagName: label, height: bounds.size.height, square: squareTags)
+                //let view = TagView(tagName: label)
+                addSubview(view)
+                tagViews.append(view)
+                view.delegate = self
+            }
+            
+            layoutSubviews()
+        }
+    }
+    
     
     var selectedViewIndex:Int = 0 {
         
@@ -49,6 +90,7 @@ class TagsSelectionControl: UIControl {
     }
     
     var tagViews:[TagView] = []
+    
     
     var cornerRadius: CGFloat = 0 {
         didSet {
@@ -92,6 +134,14 @@ class TagsSelectionControl: UIControl {
     
     var spacing: CGFloat = 1
     
+    private(set) var rowViews: [UIView] = []
+    private(set) var tagViewHeight: CGFloat = 0
+    private(set) var rows = 0 {
+        didSet {
+            invalidateIntrinsicContentSize()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -99,15 +149,61 @@ class TagsSelectionControl: UIControl {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        for (index, view) in tagViews.enumerated() {
-            var initialX: CGFloat = 0
-            if index != 0 {
-                initialX = spacing + tagViews[index - 1].frame.maxX //to change the space between views
-            }
-            view.frame = CGRect(x: initialX, y: 0, width: bounds.size.height, height: bounds.size.height)
-            view.layoutSubviews()
-        }
+        rearrangeViews()
+        
     }
+    
+    private func rearrangeViews() {
+        let views = tagViews as [UIView] + rowViews
+        for view in views {
+            view.removeFromSuperview()
+        }
+        rowViews.removeAll(keepingCapacity: true)
+        
+        var currentRow = 0
+        var currentRowView: UIView!
+        var currentRowTagCount = 0
+        var currentRowWidth: CGFloat = 0
+        for (index, tagView) in tagViews.enumerated() {
+            tagView.frame.size = tagView.intrinsicContentSize
+            tagViewHeight = tagView.frame.height
+            
+            if currentRowTagCount == 0 || currentRowWidth + tagView.frame.width > frame.width {
+                currentRow += 1
+                currentRowWidth = 0
+                currentRowTagCount = 0
+                currentRowView = UIView()
+                currentRowView.frame.origin.y = CGFloat(currentRow - 1) * (tagViewHeight + spacing)
+                
+                rowViews.append(currentRowView)
+                addSubview(currentRowView)
+            }
+            
+            tagView.frame.origin = CGPoint(x: currentRowWidth, y: 0)
+            currentRowView.addSubview(tagView)
+            
+            currentRowTagCount += 1
+            currentRowWidth += tagView.frame.width + spacing
+            
+            currentRowView.frame.origin.x = 0
+            currentRowView.frame.size.width = currentRowWidth
+            currentRowView.frame.size.height = max(tagViewHeight, currentRowView.frame.height)
+            
+        }
+        rows = currentRow
+        
+        invalidateIntrinsicContentSize()
+        
+    }
+    
+    override open var intrinsicContentSize: CGSize {
+        var height = CGFloat(rows) * (tagViewHeight + spacing)
+        if rows > 0 {
+            height -= spacing
+        }
+        return CGSize(width: frame.width, height: height)
+    }
+
     
 }
 
@@ -129,14 +225,12 @@ class TagView: UIControl {
     
     var tagNameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.systemFont(ofSize: 12)
         label.textColor = .white
         label.numberOfLines = 0
         label.textAlignment = .center
         return label
     }()
-    
-    let tagName: String
     
     override var isSelected: Bool {
         didSet {
@@ -187,23 +281,39 @@ class TagView: UIControl {
         }
     }
     
+    var textFont: UIFont = UIFont.systemFont(ofSize: 12) {
+        didSet {
+            tagNameLabel.font = textFont
+        }
+    }
+    
+    var paddingY: CGFloat = 2
+    var paddingX: CGFloat = 2
+    
     private func reloadStyles() {
         if isSelected {
-            tagNameLabel.font = UIFont.boldSystemFont(ofSize: 14)
             backgroundColor = selectedBackgroundColor ?? tagBackgroundColor
         }
         else {
-            tagNameLabel.font = UIFont.systemFont(ofSize: 14)
             backgroundColor = tagBackgroundColor
         }
     }
     
     weak var delegate: TagViewDelegate?
     
-    init(tagName: String) {
+    var tagHeight: CGFloat?
+    
+    var squareTag: Bool = false
+    
+    init(tagName: String, height: CGFloat? = nil, square: Bool = false) {
         
-        self.tagName = tagName
+        if let height = height {
+           self.tagHeight = height
+        }
+        self.squareTag = square
         super.init(frame: CGRect.zero)
+        tagNameLabel.text = tagName
+        
         self.addTarget(self, action: #selector(viewTapped), for: .touchDown)
         reloadStyles()
     }
@@ -216,10 +326,47 @@ class TagView: UIControl {
         delegate?.buttonSelectionViewTapped(view: self)
     }
     
+    override open var intrinsicContentSize: CGSize {
+        
+        var size = tagNameLabel.text?.size(attributes: [NSFontAttributeName: textFont]) ?? CGSize.zero
+        size.width += paddingX * 2 + cornerRadius * 2
+        
+        
+        if let height = tagHeight {
+            
+            if squareTag {
+                return CGSize(width: height, height: height)
+            } else {
+                return CGSize(width: size.width, height: height)
+            }
+
+        } else {
+            
+            size.height = textFont.pointSize + paddingY * 2
+            if size.width < size.height {
+                size.width = size.height
+            }
+            
+            return size
+        }
+        
+    }
+
+    
     override func layoutSubviews() {
         
-        tagNameLabel.text = tagName
-        tagNameLabel.frame = CGRect(x: 2, y: 2, width: bounds.size.width - 4, height: bounds.size.height - 4)
+        super.layoutSubviews()
+        
+        if squareTag {
+            let width = self.bounds.width - paddingX * 2 - cornerRadius * 2
+            
+            tagNameLabel.frame = CGRect(x: cornerRadius + paddingX, y: paddingY, width: width, height: self.bounds.height - paddingY * 2)
+            
+        } else {
+            let size = tagNameLabel.text?.size(attributes: [NSFontAttributeName: textFont]) ?? CGSize.zero
+            
+            tagNameLabel.frame = CGRect(x: cornerRadius + paddingX, y: self.bounds.midY - size.height / 2, width: size.width, height: size.height)
+        }
         addSubview(tagNameLabel)
     }
     

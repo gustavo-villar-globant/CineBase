@@ -16,11 +16,14 @@ protocol ShowtimesView: class {
 
 class ShowtimesViewController: UIViewController {
 
-    //var delegate: ShowtimesViewControllerDelegate!
+    @IBOutlet weak var tableView: UITableView!
+    
     var presenter: ShowtimesPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
     }
 
 }

@@ -24,13 +24,14 @@ class ShowtimesCell: UITableViewCell {
     }
     
     override func awakeFromNib() {
-        setupScheduleSelectionControl(with: schedule)
+       setupScheduleSelectionControl(with: schedule)
     }
     
     func setupScheduleSelectionControl(with schedule: [String]) {
         scheduleSelectionControl.spacing = 5
         scheduleSelectionControl.labels = schedule
-        //scheduleSelectionControl.cornerRadius = 10
+        scheduleSelectionControl.squareTags = true
+        scheduleSelectionControl.cornerRadius = 5
         scheduleSelectionControl.tagBackgroundColor = .gray
         scheduleSelectionControl.tagSelectedBackgroundColor = .red
     }
