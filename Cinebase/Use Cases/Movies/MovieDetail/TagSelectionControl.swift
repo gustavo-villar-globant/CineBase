@@ -29,8 +29,16 @@ class TagsSelectionControl: UIControl {
         }
     }
     
+    var paddingX: CGFloat = 2 {
+        didSet {
+            for tagView in tagViews {
+                tagView.paddingX = paddingX
+            }
+            rearrangeViews()
+        }
+
+    }
     var paddingY: CGFloat = 2
-    var paddingX: CGFloat = 2
     
     var hasSquareTags: Bool = false {
         didSet {
@@ -84,6 +92,12 @@ class TagsSelectionControl: UIControl {
                 let v = tagViews[selectedViewIndex]
                 v.isSelected = true
             }
+        }
+    }
+    
+    func resetTags() {
+        for view in tagViews {
+            view.isSelected = false
         }
     }
     
@@ -208,7 +222,7 @@ class TagsSelectionControl: UIControl {
 
 extension TagsSelectionControl : TagViewDelegate {
     
-    func buttonSelectionViewTapped(view: TagView) {
+    func tagViewTapped(view: TagView) {
         let index = tagViews.index(of: view)!
         selectedViewIndex = index
         sendActions(for: .valueChanged)
@@ -217,7 +231,7 @@ extension TagsSelectionControl : TagViewDelegate {
 }
 
 protocol TagViewDelegate: class {
-    func buttonSelectionViewTapped(view: TagView)
+    func tagViewTapped(view: TagView)
 }
 
 class TagView: UIControl {
@@ -324,7 +338,7 @@ class TagView: UIControl {
     }
     
     func viewTapped(_ sender: UIControl) {
-        delegate?.buttonSelectionViewTapped(view: self)
+        delegate?.tagViewTapped(view: self)
     }
     
     override open var intrinsicContentSize: CGSize {
@@ -341,7 +355,6 @@ class TagView: UIControl {
         
     }
 
-    
     override func layoutSubviews() {
         
         super.layoutSubviews()

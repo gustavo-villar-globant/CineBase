@@ -183,6 +183,9 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jRe-7F-B07" customClass="TagsSelectionControl" customModule="Cinebase" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="54.5" width="359" height="45.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <connections>
+                                                        <action selector="scheduleSelectionTapped:" destination="3Pt-4N-UDN" eventType="valueChanged" id="g6A-5u-Zhb"/>
+                                                    </connections>
                                                 </view>
                                             </subviews>
                                             <constraints>

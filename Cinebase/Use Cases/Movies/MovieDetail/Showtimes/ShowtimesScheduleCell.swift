@@ -12,28 +12,36 @@ class ShowtimesScheduleCell: UITableViewCell {
     
     @IBOutlet weak var daySelectionControl: TagsSelectionControl!
     
-    let days = ["Lun 15 May","Mar 16 May", "Mie 17 May", "Jue 18 May"]
+    let days = ["Lun 15 May","Mar 16 May", "Mie 17 May", "Jue 18 May", "Vie 19 May"]
     
     override func awakeFromNib() {
         setupDaySelectionControl(with: days)
     }
     
     func setupDaySelectionControl(with days: [String]) {   
+        //Pre-settings
         daySelectionControl.spacing = 10
+        
+        // Tags to show
         daySelectionControl.labels = days
+        
+        // Tag dimensions settings
+        daySelectionControl.tagHeight = 50
         daySelectionControl.hasSquareTags = true
-        daySelectionControl.tagHeight = 60
+        
+        // Tag appearance settings
         daySelectionControl.cornerRadius = 10
         daySelectionControl.tagBackgroundColor = .gray
         daySelectionControl.tagSelectedBackgroundColor = .orange
         daySelectionControl.selectedTextColor = .white
         daySelectionControl.selectedViewIndex = 0
-        invalidateIntrinsicContentSize()
+        
     }
     
     @IBAction func daySelectionValueChanged(_ sender: TagsSelectionControl) {
         
-        print(sender.selectedViewIndex)
+        print("Horario Seleccionado: \(sender.labels[sender.selectedViewIndex])")
+        
     }
 }
 

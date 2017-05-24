@@ -28,19 +28,17 @@ extension ShowtimesViewController : UITableViewDelegate, UITableViewDataSource {
         } else {
             let showtimeCell = tableView.dequeueReusableCell(withIdentifier: "ShowtimesCell", for: indexPath) as! ShowtimesCell
             showtimeCell.cineData = "Cine \(indexPath.row + 1)"
+            showtimeCell.delegate = self
             cell = showtimeCell
+            
         }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        tableView.deselectRow(at: indexPath, animated: false)
     }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return indexPath.section == 0 ? 75: 100
-//    }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return section == 0 ? nil : section == 1 ? "Favorites" : "Near me"

@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: ShowtimesView Protocol Definition
 protocol ShowtimesView: class {
-    func handleBuyTicketsButtonPressed(_ sender: UIButton)
+    func handleBuyTicketsButtonPressed(_ sender: UITableViewCell)
 }
 
 class ShowtimesViewController: UIViewController {
@@ -29,8 +29,15 @@ class ShowtimesViewController: UIViewController {
 }
 
 extension ShowtimesViewController: ShowtimesView {
-    @IBAction func handleBuyTicketsButtonPressed(_ sender: UIButton) {
+    func handleBuyTicketsButtonPressed(_ sender: UITableViewCell) {
         presenter.onBuyTicketsButtonPressed()
     }
 }
 
+extension ShowtimesViewController: ShowtimesCellDelegate {
+    func cellTapped(sender: ShowtimesCell, schedule: String) {
+        let cine = sender.cineData!
+        print("Cine: \(cine), Horario: \(schedule)")
+        handleBuyTicketsButtonPressed(sender)
+    }
+}
