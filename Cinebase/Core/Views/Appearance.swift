@@ -19,9 +19,9 @@ let textColor = UIColor.white
 func customizeAppearance() {
     
     // Status Bar Appearance
-    UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+    UINavigationBar.appearance().barStyle = .black
     // Navigation Bar Appearance
-    UINavigationBar.appearance().titleTextAttributes=[NSForegroundColorAttributeName:UIColor.white]
+    UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: textColor]
     UINavigationBar.appearance().barTintColor = primaryColor
     UINavigationBar.appearance().isTranslucent = false
     // ToolBar Appearance
@@ -31,7 +31,7 @@ func customizeAppearance() {
     UISegmentedControl.appearance().tintColor = primaryColor
     // Back Button Appearance
     UINavigationBar.appearance().tintColor = textColor
-    UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:textColor]
+    UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: textColor]
     // UITableViewHeader appearance
     UITableViewHeaderFooterView.appearance().tintColor = primaryColor
     // UITabBar appearance

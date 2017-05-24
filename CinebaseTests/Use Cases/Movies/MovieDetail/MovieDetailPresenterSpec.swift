@@ -28,7 +28,7 @@ class MovieDetailPresenterSpec: QuickSpec {
                 mockView = MockMovieDetailView()
                 mockRouter = MockRouter()
                 mockAPIClient = MockTrailersAPIClient()
-                movie = Movie(movieID: 1, title: "Movie with detail", overview: "Amazing movie review detail", imagePath: "/awesome.png", backdropPath: "/backdrop.png")
+                movie = Movie(movieID: 1, title: "Movie with detail", overview: "Amazing movie review detail", imagePath: "/awesome.png", backdropPath: "/backdrop.png", releaseDate: Date())
                 mockAuthenticationManager = MockAuthenticationManager()
                 sut = MovieDetailPresenter(view: mockView, movie: movie, authenticationManager: mockAuthenticationManager, moviesAPIClient:mockAPIClient)
                 sut.presentBuyingOptions = { _ in

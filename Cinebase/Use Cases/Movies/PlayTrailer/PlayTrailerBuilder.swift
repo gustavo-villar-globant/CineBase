@@ -8,10 +8,6 @@
 
 import UIKit
 
-//protocol NowPlayingRouterProtocol: class {
-////    func showDetail(of movie: Movie)
-//}
-
 class PlayTrailerBuilder {
     
     
