@@ -6,71 +6,69 @@
 //  Copyright © 2017 Globant. All rights reserved.
 //
 
-import UIKit
 
+import UIKit
 
 class TagsSelectionControl: UIControl {
     
     var labels: [String] = [""] {
         didSet {
-            for view in tagViews {
-                view.removeFromSuperview()
-            }
-            
-            tagViews = []
-            
-            for label in labels {
-                let view = TagView(tagName: label, height: tagHeight, square: squareTags)
-                //let view = TagView(tagName: label)
-                addSubview(view)
-                tagViews.append(view)
-                view.delegate = self
-            }
-            
-            layoutSubviews()
+            reloadViews()
         }
     }
     
     var tagHeight: CGFloat? {
         didSet {
-            for view in tagViews {
-                view.removeFromSuperview()
-            }
-            
-            tagViews = []
-            
-            for label in labels {
-                let view = TagView(tagName: label, height: tagHeight, square: squareTags)
-                //let view = TagView(tagName: label)
-                addSubview(view)
-                tagViews.append(view)
-                view.delegate = self
-            }
-            
-            layoutSubviews()
+            reloadViews()
         }
     }
     
-    var squareTags: Bool = false {
+    var textFont: UIFont = UIFont.systemFont(ofSize: 12) {
         didSet {
-            for view in tagViews {
-                view.removeFromSuperview()
-            }
-            
-            tagViews = []
-            
-            for label in labels {
-                let view = TagView(tagName: label, height: bounds.size.height, square: squareTags)
-                //let view = TagView(tagName: label)
-                addSubview(view)
-                tagViews.append(view)
-                view.delegate = self
-            }
-            
-            layoutSubviews()
+           reloadViews()
         }
     }
     
+    var paddingY: CGFloat = 2
+    var paddingX: CGFloat = 2
+    
+    var hasSquareTags: Bool = false {
+        didSet {
+            reloadViews()
+        }
+    }
+    
+    func reloadViews() {
+        for view in tagViews {
+            view.removeFromSuperview()
+        }
+        
+        tagViews = []
+        var maxWidth: CGFloat = 0
+        var height: CGFloat?
+        for label in labels {
+            var size = label.size(attributes: [NSFontAttributeName: textFont]) 
+            size.width += paddingX * 2 + cornerRadius * 2
+            if maxWidth < size.width {
+                maxWidth = size.width
+            }
+        }
+
+        if hasSquareTags && tagHeight == nil {
+            height = maxWidth
+        } else {
+            height = tagHeight
+        }
+        
+        for label in labels {
+            let view = TagView(tagName: label, height: height, square: hasSquareTags)
+            addSubview(view)
+            tagViews.append(view)
+            view.delegate = self
+        }
+        
+        layoutSubviews()
+    }
     
     var selectedViewIndex:Int = 0 {
         
@@ -94,9 +92,11 @@ class TagsSelectionControl: UIControl {
     
     var cornerRadius: CGFloat = 0 {
         didSet {
+            reloadViews()
             for tagView in tagViews {
                 tagView.cornerRadius = cornerRadius
             }
+            
         }
     }
     
@@ -164,7 +164,7 @@ class TagsSelectionControl: UIControl {
         var currentRowView: UIView!
         var currentRowTagCount = 0
         var currentRowWidth: CGFloat = 0
-        for (index, tagView) in tagViews.enumerated() {
+        for tagView in tagViews {
             tagView.frame.size = tagView.intrinsicContentSize
             tagViewHeight = tagView.frame.height
             
@@ -203,7 +203,6 @@ class TagsSelectionControl: UIControl {
         }
         return CGSize(width: frame.width, height: height)
     }
-
     
 }
 
@@ -263,7 +262,7 @@ class TagView: UIControl {
         }
     }
     
-    open var selectedTextColor: UIColor = UIColor.white {
+    open var selectedTextColor: UIColor? {
         didSet {
             reloadStyles()
         }
@@ -293,9 +292,11 @@ class TagView: UIControl {
     private func reloadStyles() {
         if isSelected {
             backgroundColor = selectedBackgroundColor ?? tagBackgroundColor
+            tagNameLabel.textColor = selectedTextColor ?? textColor
         }
         else {
             backgroundColor = tagBackgroundColor
+            tagNameLabel.textColor = textColor
         }
     }
     
@@ -303,14 +304,14 @@ class TagView: UIControl {
     
     var tagHeight: CGFloat?
     
-    var squareTag: Bool = false
+    var isSquare: Bool = false
     
     init(tagName: String, height: CGFloat? = nil, square: Bool = false) {
         
         if let height = height {
            self.tagHeight = height
         }
-        self.squareTag = square
+        self.isSquare = square
         super.init(frame: CGRect.zero)
         tagNameLabel.text = tagName
         
@@ -331,23 +332,11 @@ class TagView: UIControl {
         var size = tagNameLabel.text?.size(attributes: [NSFontAttributeName: textFont]) ?? CGSize.zero
         size.width += paddingX * 2 + cornerRadius * 2
         
-        
         if let height = tagHeight {
-            
-            if squareTag {
-                return CGSize(width: height, height: height)
-            } else {
-                return CGSize(width: size.width, height: height)
-            }
-
+            return isSquare ? CGSize(width: height, height: height) : CGSize(width: size.width, height: height)
         } else {
-            
             size.height = textFont.pointSize + paddingY * 2
-            if size.width < size.height {
-                size.width = size.height
-            }
-            
-            return size
+            return isSquare ? CGSize(width: size.width, height: size.width) : CGSize(width: size.width < size.height ? size.height : size.width, height: size.height)
         }
         
     }
@@ -357,14 +346,12 @@ class TagView: UIControl {
         
         super.layoutSubviews()
         
-        if squareTag {
+        if isSquare {
             let width = self.bounds.width - paddingX * 2 - cornerRadius * 2
-            
             tagNameLabel.frame = CGRect(x: cornerRadius + paddingX, y: paddingY, width: width, height: self.bounds.height - paddingY * 2)
             
         } else {
             let size = tagNameLabel.text?.size(attributes: [NSFontAttributeName: textFont]) ?? CGSize.zero
-            
             tagNameLabel.frame = CGRect(x: cornerRadius + paddingX, y: self.bounds.midY - size.height / 2, width: size.width, height: size.height)
         }
         addSubview(tagNameLabel)

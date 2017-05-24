@@ -15,7 +15,7 @@ class ShowtimesCell: UITableViewCell {
    
     @IBOutlet weak var scheduleSelectionControl: TagsSelectionControl!
     
-    let schedule = ["2:00 pm","3:00 pm","4:00 pm"]
+    let schedule = ["21:40","22:40"]
     
     var cineData: String? {
         didSet {
@@ -30,9 +30,9 @@ class ShowtimesCell: UITableViewCell {
     func setupScheduleSelectionControl(with schedule: [String]) {
         scheduleSelectionControl.spacing = 5
         scheduleSelectionControl.labels = schedule
-        scheduleSelectionControl.squareTags = true
+        scheduleSelectionControl.tagHeight = 25
         scheduleSelectionControl.cornerRadius = 5
-        scheduleSelectionControl.tagBackgroundColor = .gray
+        scheduleSelectionControl.tagBackgroundColor = .orange
         scheduleSelectionControl.tagSelectedBackgroundColor = .red
     }
     

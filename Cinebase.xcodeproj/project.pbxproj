@@ -99,7 +99,7 @@
 		506776771ECB606B008804ED /* ShowtimesScheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowtimesScheduleCell.swift; path = Showtimes/ShowtimesScheduleCell.swift; sourceTree = "<group>"; };
 		509920231EB9082F00644648 /* TrailerParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailerParser.swift; sourceTree = "<group>"; };
 		509920251EB9085E00644648 /* Trailer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trailer.swift; sourceTree = "<group>"; };
-		509C75DD1ECCE8BF00A0808A /* TagSelectionControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagSelectionControl.swift; sourceTree = "<group>"; };
+		509C75DD1ECCE8BF00A0808A /* TagSelectionControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TagSelectionControl.swift; path = "../../Use Cases/Movies/MovieDetail/TagSelectionControl.swift"; sourceTree = "<group>"; };
 		50E8A9251EBCB88000A64494 /* UpcomingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpcomingCell.xib; sourceTree = "<group>"; };
 		50E8A9271EBCDB8E00A64494 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		50E8A9291EBCE37500A64494 /* UIColor-Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Utils.swift"; sourceTree = "<group>"; };
@@ -245,7 +245,6 @@
 				5067766F1ECB5D97008804ED /* ShowtimesViewController.swift */,
 				5067766E1ECB5D97008804ED /* ShowtimesViewController + UITableViewDelegates.swift */,
 				506776771ECB606B008804ED /* ShowtimesScheduleCell.swift */,
-				509C75DD1ECCE8BF00A0808A /* TagSelectionControl.swift */,
 				5067766C1ECB5D96008804ED /* ShowtimesCell.swift */,
 			);
 			name = Showtimes;
@@ -360,6 +359,7 @@
 		8B7A15A91EAA55EC00BAF207 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				509C75DD1ECCE8BF00A0808A /* TagSelectionControl.swift */,
 				8B7A15AA1EAA562800BAF207 /* StoryboardLoader.swift */,
 				8B32A76F1EAE58C500EE9BEB /* UIImageView+URL.swift */,
 				50E8A9271EBCDB8E00A64494 /* Appearance.swift */,
