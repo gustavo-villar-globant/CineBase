@@ -1,23 +1,26 @@
 //
-//  NowPlayingPresenter.swift
+//  MoviesListPresenter.swift
 //  Cinebase
 //
-//  Created by Gustavo Villar on 4/18/17.
+//  Created by Gustavo Villar on 5/15/17.
 //  Copyright © 2017 Globant. All rights reserved.
 //
 
 import Foundation
 
-class NowPlayingPresenter {
+/**
+ Base class for NowPlaying and Upcoming presenters.
+*/
+class MoviesListPresenter {
     
-    weak var view: NowPlayingView?
+    weak var view: MoviesListView?
     private let moviesManager: MoviesManager
     private var movies: [Movie] = []
     var showDetail: ((Movie) -> Void)?
     
-    init(view: NowPlayingView, moviesManager: MoviesManager? = nil) {
+    init(view: MoviesListView, moviesManager: MoviesManager) {
         self.view = view
-        self.moviesManager = moviesManager ?? MoviesManager(moviesContainer: MoviesContainer(containerName: "NowPlayingMovies"))
+        self.moviesManager = moviesManager
     }
     
     func onViewLoad() {
@@ -39,7 +42,7 @@ class NowPlayingPresenter {
                     presenter.view?.display(error)
                 case .success(let movies):
                     presenter.movies = movies
-                    let movieCells = movies.map { MovieCellModel(title: $0.title, imagePath: $0.imagePath) }
+                    let movieCells = movies.map { MovieCellModel(title: $0.title, imagePath: $0.imagePath, releaseDate: presenter.format(movieReleaseDate: $0.releaseDate)) }
                     if presenter.view?.movieCellModels.isEmpty == true {
                         presenter.view?.displayMovies(movieCells)
                     } else {
@@ -49,7 +52,16 @@ class NowPlayingPresenter {
                 
             }
         }
-
+        
+    }
+    
+    private lazy var dateFormatter = DateFormatter()
+    
+    private func format(movieReleaseDate: Date?) -> String {
+        guard let movieReleaseDate = movieReleaseDate else {
+            return "Coming soon"
+        }
+        return dateFormatter.format(movieReleaseDate, style: .date)
     }
     
     func onItemSelected(at index: Int) {
@@ -62,6 +74,6 @@ class NowPlayingPresenter {
         showDetail?(movie)
         
     }
-
+    
     
 }

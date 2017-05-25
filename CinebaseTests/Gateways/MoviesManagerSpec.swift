@@ -26,13 +26,13 @@ class MoviesManagerSpec: QuickSpec {
             beforeEach {
                 mockAPIClient = MockMoviesAPIClient()
                 mockContainer = MockMoviesContainer(containerName: "MockMovies")
-                sut = MoviesManager(moviesAPIClient: mockAPIClient, moviesContainer: mockContainer)
+                sut = MoviesManager(moviesAPIClient: mockAPIClient, apiSource: .nowPlaying, moviesContainer: mockContainer)
                 self.fetchingResult = nil
                 self.callbackCount = 0
             }
             
             it("shouldn't fetch from the local storage or web") {
-                expect(mockAPIClient.isFetchingNowPlaying).to(beFalse())
+                expect(mockAPIClient.isFetchingMovies).to(beFalse())
                 expect(mockContainer.isFetchingAll).to(beFalse())
                 expect(self.fetchingResult).to(beNil())
             }
@@ -46,7 +46,7 @@ class MoviesManagerSpec: QuickSpec {
                 }
                 
                 it("should call first from the local storage and not the web") {
-                    expect(mockAPIClient.isFetchingNowPlaying).to(beFalse())
+                    expect(mockAPIClient.isFetchingMovies).to(beFalse())
                     expect(mockContainer.isFetchingAll).to(beTrue())
                 }
                 
@@ -60,7 +60,7 @@ class MoviesManagerSpec: QuickSpec {
                     }
                     
                     it("should fetch from the server") {
-                        expect(mockAPIClient.isFetchingNowPlaying).to(beTrue())
+                        expect(mockAPIClient.isFetchingMovies).to(beTrue())
                     }
                     
                     context("when the remote fetching finishes with error") {
@@ -76,7 +76,7 @@ class MoviesManagerSpec: QuickSpec {
                     context("when the remote fetching finishes with values"){
                         var remoteMovie: Movie!
                         beforeEach {
-                            remoteMovie = Movie(movieID: 1, title: "First movie", overview: "Great movie. Recommended.", imagePath: "/first_image.png", backdropPath: "/first_backdrop.png")
+                            remoteMovie = Movie(movieID: 1, title: "First movie", overview: "Great movie. Recommended.", imagePath: "/first_image.png", backdropPath: "/first_backdrop.png", releaseDate: Date())
                             mockAPIClient.completeFetching(with: .success([remoteMovie]))
                         }
                         it("should execute the callback with success") {
@@ -93,7 +93,7 @@ class MoviesManagerSpec: QuickSpec {
                 context("when the local fetching finishes with values") {
                     var localMovie: Movie!
                     beforeEach {
-                        localMovie = Movie(movieID: 1, title: "First movie", overview: "Great movie. Recommended.", imagePath: "/first_image.png", backdropPath: "/first_backdrop.png")
+                        localMovie = Movie(movieID: 1, title: "First movie", overview: "Great movie. Recommended.", imagePath: "/first_image.png", backdropPath: "/first_backdrop.png", releaseDate: Date())
                         mockContainer.completeFetching(with: .success([localMovie]))
                     }
                     
@@ -103,7 +103,7 @@ class MoviesManagerSpec: QuickSpec {
                     }
                     
                     it("should fetch from the server") {
-                        expect(mockAPIClient.isFetchingNowPlaying).to(beTrue())
+                        expect(mockAPIClient.isFetchingMovies).to(beTrue())
                     }
                     
                     context("when the remote fetching finishes with error") {
@@ -120,7 +120,7 @@ class MoviesManagerSpec: QuickSpec {
                     context("when the remote fetching finishes with the same values"){
                         var remoteMovie: Movie!
                         beforeEach {
-                            remoteMovie = Movie(movieID: 1, title: "First movie", overview: "Great movie. Recommended.", imagePath: "/first_image.png", backdropPath: "/first_backdrop.png")
+                            remoteMovie = Movie(movieID: 1, title: "First movie", overview: "Great movie. Recommended.", imagePath: "/first_image.png", backdropPath: "/first_backdrop.png", releaseDate: localMovie.releaseDate)
                             mockAPIClient.completeFetching(with: .success([remoteMovie]))
                         }
                         it("shouldn't execute the callback") {
@@ -134,7 +134,7 @@ class MoviesManagerSpec: QuickSpec {
                     context("when the remote fetching finishes with new values"){
                         var remoteMovie: Movie!
                         beforeEach {
-                            remoteMovie = Movie(movieID: 2, title: "New movie", overview: "New Great movie. Recommended.", imagePath: "/first_image.png", backdropPath: "/new_backdrop.png")
+                            remoteMovie = Movie(movieID: 2, title: "New movie", overview: "New Great movie. Recommended.", imagePath: "/first_image.png", backdropPath: "/new_backdrop.png", releaseDate: Date())
                             mockAPIClient.completeFetching(with: .success([remoteMovie]))
                         }
                         it("should execute the callback") {
@@ -157,17 +157,17 @@ class MoviesManagerSpec: QuickSpec {
 extension MoviesManagerSpec {
     class MockMoviesAPIClient: MoviesAPIClient {
         
-        private(set) var isFetchingNowPlaying = false
-        private(set) var fetchNowPlayingCompletion: ((Result<[Movie]>) -> Void)?
-        override func fetchNowPlaying(completion: @escaping (Result<[Movie]>) -> Void) -> WebAPIRequestProtocol {
-            isFetchingNowPlaying = true
-            fetchNowPlayingCompletion = completion
+        private(set) var isFetchingMovies = false
+        private(set) var fetchMoviesCompletion: ((Result<[Movie]>) -> Void)?
+        override func fetchMovies(from source: Source, completion: @escaping (Result<[Movie]>) -> Void) -> WebAPIRequestProtocol {
+            isFetchingMovies = true
+            fetchMoviesCompletion = completion
             return MockWebAPIRequest()
         }
         
         func completeFetching(with result: Result<[Movie]>) {
-            fetchNowPlayingCompletion?(result)
-            fetchNowPlayingCompletion = nil
+            fetchMoviesCompletion?(result)
+            fetchMoviesCompletion = nil
         }
     }
     

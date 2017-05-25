@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.4.0)
+  - CardIO (5.4.1)
   - Firebase (3.15.0):
     - Firebase/Core (= 3.15.0)
   - Firebase/Auth (3.15.0):
@@ -54,6 +55,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.4.0)
+  - CardIO (~> 5.4.1)
   - Firebase (~> 3.15.0)
   - Firebase/Auth
   - GoogleSignIn
@@ -78,6 +80,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   Firebase: 2b1cdfba1cda8589f32904a697cc753322bff9d8
   FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
   FirebaseAuth: cc8a1824170adbd351edb7f994490a3fb5c18be6
@@ -95,6 +98,6 @@ SPEC CHECKSUMS:
   Timberjack: 20de84a2c135134de6821d1ea90cd57709567e2d
   youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: 1b8b6511f9bcc24db2121e7ae4bdc20984072d9d
+PODFILE CHECKSUM: 9a7e12d9d8144a04fea7c065669cafec18a82286
 
 COCOAPODS: 1.2.1

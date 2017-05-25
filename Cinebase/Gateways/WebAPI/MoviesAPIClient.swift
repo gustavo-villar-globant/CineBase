@@ -12,9 +12,14 @@ class MoviesAPIClient {
     
     private let webAPIClient = WebAPIClient()
     
-    func fetchNowPlaying(completion: @escaping (Result<[Movie]>) -> Void) -> WebAPIRequestProtocol {
+    enum Source: String {
+        case nowPlaying = "now_playing"
+        case upcoming = "upcoming"
+    }
+    
+    func fetchMovies(from source: Source, completion: @escaping (Result<[Movie]>) -> Void) -> WebAPIRequestProtocol {
         
-        return webAPIClient.request(.get, path: "/movie/now_playing", queryParameters: ["language": Locale.current.languageCode!]) { (result) in
+        return webAPIClient.request(.get, path: "/movie/\(source.rawValue)", queryParameters: ["language": Locale.current.languageCode!]) { (result) in
             
             switch result {
             case .failure(let error):
