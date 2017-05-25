@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ShowtimesCellDelegate: class {
-    func cellTapped(sender: ShowtimesCell, schedule: String)
+    func cellTapped(sender: ShowtimesCell, tagIndex: Int)
 }
 
 class ShowtimesCell: UITableViewCell {
@@ -46,8 +46,8 @@ class ShowtimesCell: UITableViewCell {
     }
     
     @IBAction func scheduleSelectionTapped(_ sender: TagsSelectionControl) {
-        let schedule = sender.tagViews[sender.selectedViewIndex].tagNameLabel.text!
-        delegate?.cellTapped(sender: self, schedule: schedule)
+        //let schedule = sender.tagViews[sender.selectedViewIndex].tagNameLabel.text!
+        delegate?.cellTapped(sender: self, tagIndex: sender.selectedViewIndex)
         sender.resetTags()
     }
     

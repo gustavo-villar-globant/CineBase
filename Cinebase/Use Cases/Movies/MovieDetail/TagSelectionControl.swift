@@ -11,72 +11,23 @@ import UIKit
 
 class TagsSelectionControl: UIControl {
     
+    // MARK: Control Properties
+    private(set) var rowViews: [UIView] = []
+    private(set) var tagViewHeight: CGFloat = 0
+    private(set) var rows = 0 {
+        didSet {
+            invalidateIntrinsicContentSize()
+        }
+    }
+
     var labels: [String] = [""] {
         didSet {
             reloadViews()
         }
     }
     
-    var tagHeight: CGFloat? {
-        didSet {
-            reloadViews()
-        }
-    }
-    
-    var textFont: UIFont = UIFont.systemFont(ofSize: 12) {
-        didSet {
-           reloadViews()
-        }
-    }
-    
-    var paddingX: CGFloat = 2 {
-        didSet {
-            for tagView in tagViews {
-                tagView.paddingX = paddingX
-            }
-            rearrangeViews()
-        }
-
-    }
-    var paddingY: CGFloat = 2
-    
-    var hasSquareTags: Bool = false {
-        didSet {
-            reloadViews()
-        }
-    }
-    
-    func reloadViews() {
-        for view in tagViews {
-            view.removeFromSuperview()
-        }
-        
-        tagViews = []
-        var maxWidth: CGFloat = 0
-        var height: CGFloat?
-        for label in labels {
-            var size = label.size(attributes: [NSFontAttributeName: textFont]) 
-            size.width += paddingX * 2 + cornerRadius * 2
-            if maxWidth < size.width {
-                maxWidth = size.width
-            }
-        }
-
-        if hasSquareTags && tagHeight == nil {
-            height = maxWidth
-        } else {
-            height = tagHeight
-        }
-        
-        for label in labels {
-            let view = TagView(tagName: label, height: height, square: hasSquareTags)
-            addSubview(view)
-            tagViews.append(view)
-            view.delegate = self
-        }
-        
-        layoutSubviews()
-    }
+    var tagViews:[TagView] = []
+    var spacing: CGFloat = 1
     
     var selectedViewIndex:Int = 0 {
         
@@ -94,23 +45,45 @@ class TagsSelectionControl: UIControl {
             }
         }
     }
+
     
-    func resetTags() {
-        for view in tagViews {
-            view.isSelected = false
+    // MARK: Tag dimensions properties
+    var tagHeight: CGFloat? {
+        didSet {
+            reloadViews()
         }
     }
     
-    var tagViews:[TagView] = []
+    var paddingX: CGFloat = 2 {
+        didSet {
+            for tagView in tagViews {
+                tagView.paddingX = paddingX
+            }
+            rearrangeViews()
+        }
+    }
     
+    var paddingY: CGFloat = 2
     
+    var hasSquareTags: Bool = false {
+        didSet {
+            reloadViews()
+        }
+    }
+    
+    // MARK: Tag appearance properties
     var cornerRadius: CGFloat = 0 {
         didSet {
             reloadViews()
             for tagView in tagViews {
                 tagView.cornerRadius = cornerRadius
             }
-            
+        }
+    }
+    
+    var textFont: UIFont = UIFont.systemFont(ofSize: 12) {
+        didSet {
+            reloadViews()
         }
     }
     
@@ -146,25 +119,38 @@ class TagsSelectionControl: UIControl {
         }
     }
     
-    var spacing: CGFloat = 1
-    
-    private(set) var rowViews: [UIView] = []
-    private(set) var tagViewHeight: CGFloat = 0
-    private(set) var rows = 0 {
-        didSet {
-            invalidateIntrinsicContentSize()
+    // MARK: Util methods
+    private func reloadViews() {
+        for view in tagViews {
+            view.removeFromSuperview()
         }
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
         
-        rearrangeViews()
+        tagViews = []
+        var maxWidth: CGFloat = 0
+        var height: CGFloat?
+        for label in labels {
+            var size = label.size(attributes: [NSFontAttributeName: textFont]) 
+            size.width += paddingX * 2 + cornerRadius * 2
+            if maxWidth < size.width {
+                maxWidth = size.width
+            }
+        }
+
+        if hasSquareTags && tagHeight == nil {
+            height = maxWidth
+        } else {
+            height = tagHeight
+        }
         
+        for label in labels {
+            let view = TagView(tagName: label, height: height, square: hasSquareTags)
+            addSubview(view)
+            tagViews.append(view)
+            view.delegate = self
+        }
+        
+        //setNeedsLayout()
+        layoutSubviews()
     }
     
     private func rearrangeViews() {
@@ -210,6 +196,22 @@ class TagsSelectionControl: UIControl {
         
     }
     
+    func resetTags() {
+        for view in tagViews {
+            view.isSelected = false
+        }
+    }
+    
+    // MARK: Overrided methods & properties
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        rearrangeViews()
+    }
+    
     override open var intrinsicContentSize: CGSize {
         var height = CGFloat(rows) * (tagViewHeight + spacing)
         if rows > 0 {
@@ -220,6 +222,7 @@ class TagsSelectionControl: UIControl {
     
 }
 
+// MARK: TagViewDelegate protocol implementation
 extension TagsSelectionControl : TagViewDelegate {
     
     func tagViewTapped(view: TagView) {
@@ -230,146 +233,4 @@ extension TagsSelectionControl : TagViewDelegate {
     
 }
 
-protocol TagViewDelegate: class {
-    func tagViewTapped(view: TagView)
-}
-
-class TagView: UIControl {
-    
-    var tagNameLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12)
-        label.textColor = .white
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        return label
-    }()
-    
-    override var isSelected: Bool {
-        didSet {
-            reloadStyles()
-        }
-    }
-    
-    open var cornerRadius: CGFloat = 0 {
-        didSet {
-            layer.cornerRadius = cornerRadius
-            layer.masksToBounds = cornerRadius > 0
-        }
-    }
-    
-    open var borderWidth: CGFloat = 1 {
-        didSet {
-            layer.borderWidth = borderWidth
-        }
-    }
-    
-    open var borderColor: UIColor? {
-        didSet {
-            reloadStyles()
-        }
-    }
-    
-    open var textColor: UIColor = UIColor.white {
-        didSet {
-            reloadStyles()
-        }
-    }
-    
-    open var selectedTextColor: UIColor? {
-        didSet {
-            reloadStyles()
-        }
-    }
-    
-    open var tagBackgroundColor: UIColor = UIColor.gray {
-        didSet {
-            reloadStyles()
-        }
-    }
-    
-    open var selectedBackgroundColor: UIColor? {
-        didSet {
-            reloadStyles()
-        }
-    }
-    
-    var textFont: UIFont = UIFont.systemFont(ofSize: 12) {
-        didSet {
-            tagNameLabel.font = textFont
-        }
-    }
-    
-    var paddingY: CGFloat = 2
-    var paddingX: CGFloat = 2
-    
-    private func reloadStyles() {
-        if isSelected {
-            backgroundColor = selectedBackgroundColor ?? tagBackgroundColor
-            tagNameLabel.textColor = selectedTextColor ?? textColor
-        }
-        else {
-            backgroundColor = tagBackgroundColor
-            tagNameLabel.textColor = textColor
-        }
-    }
-    
-    weak var delegate: TagViewDelegate?
-    
-    var tagHeight: CGFloat?
-    
-    var isSquare: Bool = false
-    
-    init(tagName: String, height: CGFloat? = nil, square: Bool = false) {
-        
-        if let height = height {
-           self.tagHeight = height
-        }
-        self.isSquare = square
-        super.init(frame: CGRect.zero)
-        tagNameLabel.text = tagName
-        
-        self.addTarget(self, action: #selector(viewTapped), for: .touchDown)
-        reloadStyles()
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func viewTapped(_ sender: UIControl) {
-        delegate?.tagViewTapped(view: self)
-    }
-    
-    override open var intrinsicContentSize: CGSize {
-        
-        var size = tagNameLabel.text?.size(attributes: [NSFontAttributeName: textFont]) ?? CGSize.zero
-        size.width += paddingX * 2 + cornerRadius * 2
-        
-        if let height = tagHeight {
-            return isSquare ? CGSize(width: height, height: height) : CGSize(width: size.width, height: height)
-        } else {
-            size.height = textFont.pointSize + paddingY * 2
-            return isSquare ? CGSize(width: size.width, height: size.width) : CGSize(width: size.width < size.height ? size.height : size.width, height: size.height)
-        }
-        
-    }
-
-    override func layoutSubviews() {
-        
-        super.layoutSubviews()
-        
-        if isSquare {
-            let width = self.bounds.width - paddingX * 2 - cornerRadius * 2
-            tagNameLabel.frame = CGRect(x: cornerRadius + paddingX, y: paddingY, width: width, height: self.bounds.height - paddingY * 2)
-            
-        } else {
-            let size = tagNameLabel.text?.size(attributes: [NSFontAttributeName: textFont]) ?? CGSize.zero
-            tagNameLabel.frame = CGRect(x: cornerRadius + paddingX, y: self.bounds.midY - size.height / 2, width: size.width, height: size.height)
-        }
-        addSubview(tagNameLabel)
-    }
-    
-    
-}
 
