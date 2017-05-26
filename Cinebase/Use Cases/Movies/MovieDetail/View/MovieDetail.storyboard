@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -113,6 +113,9 @@
                             <constraint firstItem="SVr-Tg-Drm" firstAttribute="leading" secondItem="4Ol-Wv-Gw3" secondAttribute="leading" id="qf8-YU-ufC"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="359" height="320"/>
                     <connections>
@@ -135,33 +138,99 @@
                         <rect key="frame" x="0.0" y="0.0" width="359" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWL-3Q-9Xv">
-                                <rect key="frame" x="29" y="141" width="300" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <state key="normal" title="Buy tickets"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SE5-ui-fz3">
+                                <rect key="frame" x="0.0" y="0.0" width="359" height="320"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShowtimesScheduleCell" id="xys-4J-FzZ" customClass="ShowtimesScheduleCell" customModule="Cinebase" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="359" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xys-4J-FzZ" id="HPd-a2-lcM">
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NHO-n7-FAu" customClass="TagsSelectionControl" customModule="Cinebase" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="5" width="359" height="89.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <connections>
+                                                        <action selector="daySelectionValueChanged:" destination="xys-4J-FzZ" eventType="valueChanged" id="Gg0-w1-DVj"/>
+                                                    </connections>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="NHO-n7-FAu" firstAttribute="top" secondItem="HPd-a2-lcM" secondAttribute="top" constant="5" id="5Lk-oK-nkD"/>
+                                                <constraint firstAttribute="trailing" secondItem="NHO-n7-FAu" secondAttribute="trailing" id="OPn-BR-56Z"/>
+                                                <constraint firstItem="NHO-n7-FAu" firstAttribute="leading" secondItem="HPd-a2-lcM" secondAttribute="leading" id="Z9i-1M-9nM"/>
+                                                <constraint firstAttribute="bottom" secondItem="NHO-n7-FAu" secondAttribute="bottom" constant="5" id="uzV-Iu-3et"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="daySelectionControl" destination="NHO-n7-FAu" id="2Si-yn-B65"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShowtimesCell" rowHeight="100" id="3Pt-4N-UDN" customClass="ShowtimesCell" customModule="Cinebase" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="128" width="359" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Pt-4N-UDN" id="Rip-KX-Paq">
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prueba" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBO-2h-lY9">
+                                                    <rect key="frame" x="8" y="13" width="343" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jRe-7F-B07" customClass="TagsSelectionControl" customModule="Cinebase" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="54.5" width="359" height="45.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <connections>
+                                                        <action selector="scheduleSelectionTapped:" destination="3Pt-4N-UDN" eventType="valueChanged" id="g6A-5u-Zhb"/>
+                                                    </connections>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="jRe-7F-B07" secondAttribute="bottom" id="1eN-sS-whb"/>
+                                                <constraint firstAttribute="trailing" secondItem="jRe-7F-B07" secondAttribute="trailing" id="Hma-rQ-OYS"/>
+                                                <constraint firstItem="jRe-7F-B07" firstAttribute="top" secondItem="RBO-2h-lY9" secondAttribute="bottom" constant="21" id="IoW-dq-38Z"/>
+                                                <constraint firstItem="RBO-2h-lY9" firstAttribute="trailing" secondItem="Rip-KX-Paq" secondAttribute="trailingMargin" id="Ueo-Wf-iyg"/>
+                                                <constraint firstItem="RBO-2h-lY9" firstAttribute="top" secondItem="Rip-KX-Paq" secondAttribute="topMargin" constant="5" id="l7t-X5-dy9"/>
+                                                <constraint firstItem="jRe-7F-B07" firstAttribute="leading" secondItem="Rip-KX-Paq" secondAttribute="leading" id="oby-UE-dLv"/>
+                                                <constraint firstItem="RBO-2h-lY9" firstAttribute="leading" secondItem="Rip-KX-Paq" secondAttribute="leadingMargin" id="sMF-09-E8A"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cinemaLabel" destination="RBO-2h-lY9" id="gG3-c0-FwJ"/>
+                                            <outlet property="scheduleSelectionControl" destination="jRe-7F-B07" id="ya7-5W-X6Q"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <action selector="handleBuyTicketsButtonPressed:" destination="NqJ-yo-mDy" eventType="touchUpInside" id="7mb-I1-yf0"/>
+                                    <outlet property="dataSource" destination="NqJ-yo-mDy" id="iHO-T3-1hR"/>
+                                    <outlet property="delegate" destination="NqJ-yo-mDy" id="7To-fD-IyL"/>
                                 </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(You will be asked to login)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Pw-Ts-edq">
-                                <rect key="frame" x="29" y="222" width="300" height="16"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="0.17454663209999999" green="0.17454663209999999" blue="0.17454663209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SE5-ui-fz3" firstAttribute="leading" secondItem="M5R-Ic-wxO" secondAttribute="leading" id="3bs-U4-DEr"/>
+                            <constraint firstItem="48i-Rb-Tta" firstAttribute="top" secondItem="SE5-ui-fz3" secondAttribute="bottom" id="HiV-yE-fNN"/>
+                            <constraint firstItem="SE5-ui-fz3" firstAttribute="top" secondItem="x1X-fb-zKq" secondAttribute="bottom" id="lir-uK-EdD"/>
+                            <constraint firstAttribute="trailing" secondItem="SE5-ui-fz3" secondAttribute="trailing" id="ryH-Ha-Ly6"/>
+                        </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="359" height="320"/>
+                    <connections>
+                        <outlet property="tableView" destination="SE5-ui-fz3" id="bss-cG-LkF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8D-qa-ihc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="-72"/>
+            <point key="canvasLocation" x="1021.6" y="-89.055472263868069"/>
         </scene>
     </scenes>
     <resources>

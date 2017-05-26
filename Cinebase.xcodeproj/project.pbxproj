@@ -11,10 +11,15 @@
 		0120E2441EBD1A3F00FF197B /* MovieEntitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120E2431EBD1A3F00FF197B /* MovieEntitySpec.swift */; };
 		018ADD921EC60B3600310F6A /* BuyTicketsPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018ADD911EC60B3600310F6A /* BuyTicketsPresenterSpec.swift */; };
 		3A9982C473258488E3E8E0A8 /* Pods_Cinebase_CinebaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7141A01432CB59747297F08E /* Pods_Cinebase_CinebaseTests.framework */; };
-		503A25EA1EC4C6E5009C76B2 /* ShowtimesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503A25E91EC4C6E5009C76B2 /* ShowtimesPresenter.swift */; };
-		503A25EC1EC4D0FD009C76B2 /* ShowtimesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503A25EB1EC4D0FD009C76B2 /* ShowtimesBuilder.swift */; };
+		506776701ECB5D97008804ED /* ShowtimesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067766B1ECB5D96008804ED /* ShowtimesBuilder.swift */; };
+		506776711ECB5D97008804ED /* ShowtimesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067766C1ECB5D96008804ED /* ShowtimesCell.swift */; };
+		506776721ECB5D97008804ED /* ShowtimesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067766D1ECB5D97008804ED /* ShowtimesPresenter.swift */; };
+		506776731ECB5D97008804ED /* ShowtimesViewController + UITableViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5067766E1ECB5D97008804ED /* ShowtimesViewController + UITableViewDelegates.swift */; };
+		506776761ECB5DC4008804ED /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506776751ECB5DC4008804ED /* DetailsViewController.swift */; };
+		506776781ECB606B008804ED /* ShowtimesScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506776771ECB606B008804ED /* ShowtimesScheduleCell.swift */; };
 		509920241EB9082F00644648 /* TrailerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509920231EB9082F00644648 /* TrailerParser.swift */; };
 		509920261EB9085E00644648 /* Trailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509920251EB9085E00644648 /* Trailer.swift */; };
+		509C75DE1ECCE8BF00A0808A /* TagSelectionControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C75DD1ECCE8BF00A0808A /* TagSelectionControl.swift */; };
 		50E8A9281EBCDB8E00A64494 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E8A9271EBCDB8E00A64494 /* Appearance.swift */; };
 		50E8A92A1EBCE37500A64494 /* UIColor-Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E8A9291EBCE37500A64494 /* UIColor-Utils.swift */; };
 		8B001E3C1ECB6AE000B42D17 /* NowPlayingMoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B001E3B1ECB6AE000B42D17 /* NowPlayingMoviesListViewController.swift */; };
@@ -67,8 +72,6 @@
 		8BF417BF1ECB5CAE00E99D42 /* MoviesListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF417AD1ECB5CAE00E99D42 /* MoviesListBuilder.swift */; };
 		8BF417C01ECB5CAE00E99D42 /* MoviesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF417AE1ECB5CAE00E99D42 /* MoviesListPresenter.swift */; };
 		8BF417C21ECB5CAE00E99D42 /* NowPlayingMoviesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF417B11ECB5CAE00E99D42 /* NowPlayingMoviesListPresenter.swift */; };
-		8BF417C31ECB5CAE00E99D42 /* NowPlayingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF417B31ECB5CAE00E99D42 /* NowPlayingCell.swift */; };
-		8BF417C41ECB5CAE00E99D42 /* NowPlayingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BF417B41ECB5CAE00E99D42 /* NowPlayingCell.xib */; };
 		8BF417C81ECB5CAE00E99D42 /* UpcomingMoviesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF417B91ECB5CAE00E99D42 /* UpcomingMoviesListPresenter.swift */; };
 		8BF417C91ECB5CAE00E99D42 /* UpcomingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BF417BB1ECB5CAE00E99D42 /* UpcomingCell.xib */; };
 		8BF417CD1ECB5CE100E99D42 /* MoviesHomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF417CC1ECB5CE100E99D42 /* MoviesHomeBuilder.swift */; };
@@ -80,8 +83,10 @@
 		8BF417DE1ECB5E6C00E99D42 /* MoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF417DC1ECB5E6C00E99D42 /* MoviesListViewController.swift */; };
 		8BF417DF1ECB5E6C00E99D42 /* MoviesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BF417DD1ECB5E6C00E99D42 /* MoviesListViewController.xib */; };
 		8BF417E11ECB5F2900E99D42 /* MoviesListViewController + UICollectionView delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF417E01ECB5F2900E99D42 /* MoviesListViewController + UICollectionView delegates.swift */; };
-		A105E1951EC3C36E00E5F4F4 /* ShowtimesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A105E1941EC3C36E00E5F4F4 /* ShowtimesViewController.swift */; };
-		A105E1971EC3C38E00E5F4F4 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A105E1961EC3C38D00E5F4F4 /* DetailsViewController.swift */; };
+		A1A3A6101ED7838600496804 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A3A60F1ED7838600496804 /* TagView.swift */; };
+		A1A3A6121ED78E6600496804 /* ShowtimesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A3A6111ED78E6600496804 /* ShowtimesViewController.swift */; };
+		A1A3A6151ED78ED800496804 /* NowPlayingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A3A6131ED78ED800496804 /* NowPlayingCell.swift */; };
+		A1A3A6161ED78ED800496804 /* NowPlayingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A3A6141ED78ED800496804 /* NowPlayingCell.xib */; };
 		F64BB24FB9184671397EBB49 /* Pods_Cinebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B34697464F8D96C18694CBF /* Pods_Cinebase.framework */; };
 /* End PBXBuildFile section */
 
@@ -100,10 +105,15 @@
 		0120E2431EBD1A3F00FF197B /* MovieEntitySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieEntitySpec.swift; sourceTree = "<group>"; };
 		018ADD911EC60B3600310F6A /* BuyTicketsPresenterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyTicketsPresenterSpec.swift; sourceTree = "<group>"; };
 		01EB04841EC3BCC4008D11C2 /* Cinebase-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cinebase-Bridging-Header.h"; sourceTree = "<group>"; };
-		503A25E91EC4C6E5009C76B2 /* ShowtimesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowtimesPresenter.swift; sourceTree = "<group>"; };
-		503A25EB1EC4D0FD009C76B2 /* ShowtimesBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowtimesBuilder.swift; sourceTree = "<group>"; };
+		5067766B1ECB5D96008804ED /* ShowtimesBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowtimesBuilder.swift; path = Showtimes/ShowtimesBuilder.swift; sourceTree = "<group>"; };
+		5067766C1ECB5D96008804ED /* ShowtimesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowtimesCell.swift; path = Showtimes/ShowtimesCell.swift; sourceTree = "<group>"; };
+		5067766D1ECB5D97008804ED /* ShowtimesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowtimesPresenter.swift; path = Showtimes/ShowtimesPresenter.swift; sourceTree = "<group>"; };
+		5067766E1ECB5D97008804ED /* ShowtimesViewController + UITableViewDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ShowtimesViewController + UITableViewDelegates.swift"; path = "Showtimes/ShowtimesViewController + UITableViewDelegates.swift"; sourceTree = "<group>"; };
+		506776751ECB5DC4008804ED /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailsViewController.swift; path = Details/DetailsViewController.swift; sourceTree = "<group>"; };
+		506776771ECB606B008804ED /* ShowtimesScheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowtimesScheduleCell.swift; path = Showtimes/ShowtimesScheduleCell.swift; sourceTree = "<group>"; };
 		509920231EB9082F00644648 /* TrailerParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailerParser.swift; sourceTree = "<group>"; };
 		509920251EB9085E00644648 /* Trailer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trailer.swift; sourceTree = "<group>"; };
+		509C75DD1ECCE8BF00A0808A /* TagSelectionControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TagSelectionControl.swift; path = "../../Use Cases/Movies/MovieDetail/TagSelectionControl.swift"; sourceTree = "<group>"; };
 		50E8A9271EBCDB8E00A64494 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		50E8A9291EBCE37500A64494 /* UIColor-Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Utils.swift"; sourceTree = "<group>"; };
 		6E109F99AC644C75D8286D89 /* Pods-Cinebase-CinebaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinebase-CinebaseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cinebase-CinebaseTests/Pods-Cinebase-CinebaseTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,8 +173,6 @@
 		8BF417AD1ECB5CAE00E99D42 /* MoviesListBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesListBuilder.swift; sourceTree = "<group>"; };
 		8BF417AE1ECB5CAE00E99D42 /* MoviesListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesListPresenter.swift; sourceTree = "<group>"; };
 		8BF417B11ECB5CAE00E99D42 /* NowPlayingMoviesListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingMoviesListPresenter.swift; sourceTree = "<group>"; };
-		8BF417B31ECB5CAE00E99D42 /* NowPlayingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingCell.swift; sourceTree = "<group>"; };
-		8BF417B41ECB5CAE00E99D42 /* NowPlayingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NowPlayingCell.xib; sourceTree = "<group>"; };
 		8BF417B91ECB5CAE00E99D42 /* UpcomingMoviesListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesListPresenter.swift; sourceTree = "<group>"; };
 		8BF417BB1ECB5CAE00E99D42 /* UpcomingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpcomingCell.xib; sourceTree = "<group>"; };
 		8BF417CC1ECB5CE100E99D42 /* MoviesHomeBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesHomeBuilder.swift; sourceTree = "<group>"; };
@@ -176,8 +184,10 @@
 		8BF417DC1ECB5E6C00E99D42 /* MoviesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesListViewController.swift; sourceTree = "<group>"; };
 		8BF417DD1ECB5E6C00E99D42 /* MoviesListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoviesListViewController.xib; sourceTree = "<group>"; };
 		8BF417E01ECB5F2900E99D42 /* MoviesListViewController + UICollectionView delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoviesListViewController + UICollectionView delegates.swift"; sourceTree = "<group>"; };
-		A105E1941EC3C36E00E5F4F4 /* ShowtimesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowtimesViewController.swift; path = View/ShowtimesViewController.swift; sourceTree = "<group>"; };
-		A105E1961EC3C38D00E5F4F4 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailsViewController.swift; path = View/DetailsViewController.swift; sourceTree = "<group>"; };
+		A1A3A60F1ED7838600496804 /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		A1A3A6111ED78E6600496804 /* ShowtimesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowtimesViewController.swift; path = Showtimes/ShowtimesViewController.swift; sourceTree = "<group>"; };
+		A1A3A6131ED78ED800496804 /* NowPlayingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingCell.swift; sourceTree = "<group>"; };
+		A1A3A6141ED78ED800496804 /* NowPlayingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NowPlayingCell.xib; sourceTree = "<group>"; };
 		DA5EFCEF9EACBF7DA8FA3330 /* Pods-Cinebase-CinebaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinebase-CinebaseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cinebase-CinebaseTests/Pods-Cinebase-CinebaseTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E33E706DF76366A43E76DED5 /* Pods-Cinebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cinebase/Pods-Cinebase.release.xcconfig"; sourceTree = "<group>"; };
 		FD60F1B9300BAF822E9473E0 /* Pods-Cinebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinebase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cinebase/Pods-Cinebase.debug.xcconfig"; sourceTree = "<group>"; };
@@ -277,9 +287,12 @@
 		503A25E71EC4C3F1009C76B2 /* Showtimes */ = {
 			isa = PBXGroup;
 			children = (
-				A105E1941EC3C36E00E5F4F4 /* ShowtimesViewController.swift */,
-				503A25E91EC4C6E5009C76B2 /* ShowtimesPresenter.swift */,
-				503A25EB1EC4D0FD009C76B2 /* ShowtimesBuilder.swift */,
+				5067766B1ECB5D96008804ED /* ShowtimesBuilder.swift */,
+				5067766D1ECB5D97008804ED /* ShowtimesPresenter.swift */,
+				A1A3A6111ED78E6600496804 /* ShowtimesViewController.swift */,
+				5067766E1ECB5D97008804ED /* ShowtimesViewController + UITableViewDelegates.swift */,
+				506776771ECB606B008804ED /* ShowtimesScheduleCell.swift */,
+				5067766C1ECB5D96008804ED /* ShowtimesCell.swift */,
 			);
 			name = Showtimes;
 			sourceTree = "<group>";
@@ -287,7 +300,7 @@
 		503A25E81EC4C401009C76B2 /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				A105E1961EC3C38D00E5F4F4 /* DetailsViewController.swift */,
+				506776751ECB5DC4008804ED /* DetailsViewController.swift */,
 			);
 			name = Details;
 			sourceTree = "<group>";
@@ -383,6 +396,8 @@
 		8B7A15A91EAA55EC00BAF207 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				509C75DD1ECCE8BF00A0808A /* TagSelectionControl.swift */,
+				A1A3A60F1ED7838600496804 /* TagView.swift */,
 				8B7A15AA1EAA562800BAF207 /* StoryboardLoader.swift */,
 				8B32A76F1EAE58C500EE9BEB /* UIImageView+URL.swift */,
 				50E8A9271EBCDB8E00A64494 /* Appearance.swift */,
@@ -617,9 +632,9 @@
 		8BF417B21ECB5CAE00E99D42 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A1A3A6131ED78ED800496804 /* NowPlayingCell.swift */,
+				A1A3A6141ED78ED800496804 /* NowPlayingCell.xib */,
 				8B001E3B1ECB6AE000B42D17 /* NowPlayingMoviesListViewController.swift */,
-				8BF417B31ECB5CAE00E99D42 /* NowPlayingCell.swift */,
-				8BF417B41ECB5CAE00E99D42 /* NowPlayingCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -793,9 +808,9 @@
 				8B76BF071E9D1096003074DD /* LaunchScreen.storyboard in Resources */,
 				8B7A15A81EAA54A800BAF207 /* MovieDetail.storyboard in Resources */,
 				8BF417DA1ECB5DCA00E99D42 /* MoviesHomeViewController.xib in Resources */,
-				8BF417C41ECB5CAE00E99D42 /* NowPlayingCell.xib in Resources */,
 				8BF417D41ECB5D7700E99D42 /* PlayTrailer.storyboard in Resources */,
 				8BF417C91ECB5CAE00E99D42 /* UpcomingCell.xib in Resources */,
+				A1A3A6161ED78ED800496804 /* NowPlayingCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -907,32 +922,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A105E1951EC3C36E00E5F4F4 /* ShowtimesViewController.swift in Sources */,
 				8BF417D51ECB5D7700E99D42 /* PlayTrailerViewController.swift in Sources */,
 				8B001E491ECB895100B42D17 /* DateFormatter.swift in Sources */,
 				8B7A15AB1EAA562800BAF207 /* StoryboardLoader.swift in Sources */,
 				8BC3C3DF1EA55F060001184A /* UNIXTimestamp.swift in Sources */,
 				8B001E441ECB736100B42D17 /* UpcomingCell.swift in Sources */,
 				8B7A7ED81EA64DC000572F50 /* WindowBuilder.swift in Sources */,
-				A105E1971EC3C38E00E5F4F4 /* DetailsViewController.swift in Sources */,
 				8BF417D31ECB5D7700E99D42 /* PlayTrailerBuilder.swift in Sources */,
 				8B001E421ECB700400B42D17 /* UpcomingMoviesListViewController.swift in Sources */,
-				503A25EC1EC4D0FD009C76B2 /* ShowtimesBuilder.swift in Sources */,
 				8BF417C81ECB5CAE00E99D42 /* UpcomingMoviesListPresenter.swift in Sources */,
 				8B5227BF1EA69F9800C72873 /* MovieDetailBuilder.swift in Sources */,
 				8BC3C3FF1EA564200001184A /* WebAPIClient.swift in Sources */,
 				8BF417C01ECB5CAE00E99D42 /* MoviesListPresenter.swift in Sources */,
 				8BC3C4051EA569B00001184A /* MoviesAPIClient.swift in Sources */,
-				503A25EA1EC4C6E5009C76B2 /* ShowtimesPresenter.swift in Sources */,
+				A1A3A6101ED7838600496804 /* TagView.swift in Sources */,
 				8B660C8D1EA7D0920099626B /* BuyTicketsViewController.swift in Sources */,
+				506776721ECB5D97008804ED /* ShowtimesPresenter.swift in Sources */,
+				506776701ECB5D97008804ED /* ShowtimesBuilder.swift in Sources */,
 				8BF417DE1ECB5E6C00E99D42 /* MoviesListViewController.swift in Sources */,
 				8B97AEE81EC21F76004D05AA /* MoviesContainer.swift in Sources */,
 				8B001E401ECB6FD800B42D17 /* UpcomingMoviesListBuilder.swift in Sources */,
 				8B5227C61EA6AB1600C72873 /* MovieDetailPresenter.swift in Sources */,
 				8BC3C4021EA564200001184A /* ModelParser.swift in Sources */,
+				506776711ECB5D97008804ED /* ShowtimesCell.swift in Sources */,
 				8BC3C40A1EA56C180001184A /* MovieParser.swift in Sources */,
 				509920261EB9085E00644648 /* Trailer.swift in Sources */,
-				8BF417C31ECB5CAE00E99D42 /* NowPlayingCell.swift in Sources */,
 				8B76BEFD1E9D1096003074DD /* AppDelegate.swift in Sources */,
 				8BC3C3DE1EA55F060001184A /* Result.swift in Sources */,
 				8B25242B1EC4D7DE00AA363D /* RealmConfigurator.swift in Sources */,
@@ -940,13 +954,18 @@
 				8B5227CC1EA6C39F00C72873 /* AuthenticationManager.swift in Sources */,
 				50E8A92A1EBCE37500A64494 /* UIColor-Utils.swift in Sources */,
 				8BC3C4011EA564200001184A /* WebAPIURLBuilder.swift in Sources */,
+				506776781ECB606B008804ED /* ShowtimesScheduleCell.swift in Sources */,
 				8BC3C4031EA564200001184A /* ParsingError.swift in Sources */,
 				8B001E3E1ECB6DAA00B42D17 /* NowPlayingMoviesListBuilder.swift in Sources */,
 				8BF417C21ECB5CAE00E99D42 /* NowPlayingMoviesListPresenter.swift in Sources */,
+				A1A3A6151ED78ED800496804 /* NowPlayingCell.swift in Sources */,
 				8B660C931EA7D1080099626B /* BuyTicketsBuilder.swift in Sources */,
+				506776761ECB5DC4008804ED /* DetailsViewController.swift in Sources */,
 				8BC3C4081EA56A3F0001184A /* Movie.swift in Sources */,
 				8B660C911EA7D0EF0099626B /* BuyTicketsPresenter.swift in Sources */,
 				8B97AEEA1EC23CFB004D05AA /* MoviesManager.swift in Sources */,
+				509C75DE1ECCE8BF00A0808A /* TagSelectionControl.swift in Sources */,
+				506776731ECB5D97008804ED /* ShowtimesViewController + UITableViewDelegates.swift in Sources */,
 				8B3D2A7B1ECCFCA600090E5F /* MoviesHomeViewController + Container.swift in Sources */,
 				8B32A7701EAE58C500EE9BEB /* UIImageView+URL.swift in Sources */,
 				8BF417BF1ECB5CAE00E99D42 /* MoviesListBuilder.swift in Sources */,
@@ -960,6 +979,7 @@
 				8BC3C4001EA564200001184A /* WebAPIRequest.swift in Sources */,
 				8B001E3C1ECB6AE000B42D17 /* NowPlayingMoviesListViewController.swift in Sources */,
 				509920241EB9082F00644648 /* TrailerParser.swift in Sources */,
+				A1A3A6121ED78E6600496804 /* ShowtimesViewController.swift in Sources */,
 				8B660C881EA7CC6A0099626B /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

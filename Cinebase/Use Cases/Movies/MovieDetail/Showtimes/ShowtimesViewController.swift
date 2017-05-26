@@ -11,22 +11,32 @@ import UIKit
 
 // MARK: ShowtimesView Protocol Definition
 protocol ShowtimesView: class {
-    func handleBuyTicketsButtonPressed(_ sender: UIButton)
+    
 }
 
 class ShowtimesViewController: UIViewController {
 
-    //var delegate: ShowtimesViewControllerDelegate!
+    @IBOutlet weak var tableView: UITableView!
+    
     var presenter: ShowtimesPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 120
     }
 
 }
 
 extension ShowtimesViewController: ShowtimesView {
-    @IBAction func handleBuyTicketsButtonPressed(_ sender: UIButton) {
+    
+}
+
+extension ShowtimesViewController: ShowtimesCellDelegate {
+    func cellTapped(sender: ShowtimesCell, tagIndex: Int) {
+        let cine = sender.cineData!
+        let schedule = sender.schedule[tagIndex]
+        print("Cine: \(cine), Horario: \(schedule)")
         presenter.onBuyTicketsButtonPressed()
     }
 }
