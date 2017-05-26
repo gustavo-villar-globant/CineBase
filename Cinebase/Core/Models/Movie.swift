@@ -13,7 +13,7 @@ struct Movie: Equatable {
     let title: String
     let overview: String
     let imagePath: String
-    let backdropPath: String
+    let backdropPath: String?
     let releaseDate: Date?
     
     static func ==(lhs: Movie, rhs: Movie) -> Bool {

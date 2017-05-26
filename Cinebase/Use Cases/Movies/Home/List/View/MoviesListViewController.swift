@@ -131,7 +131,9 @@ extension MoviesListViewController: MoviesListView {
     }
     
     func display(_ error: Error) {
-        
+        let alert = UIAlertController(title: error.localizedDescription, message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        present(alert, animated: true)
     }
     
 }
