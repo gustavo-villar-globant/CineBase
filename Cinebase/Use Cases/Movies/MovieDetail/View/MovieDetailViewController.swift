@@ -11,7 +11,7 @@ import UIKit
 // MARK: MovieViewModel Definition
 struct MovieViewModel: Equatable {
     var title: String
-    var backdropPath: String
+    var backdropPath: String?
     var overview: String
     
     static func ==(lhs: MovieViewModel, rhs: MovieViewModel) -> Bool {
@@ -120,8 +120,8 @@ extension MovieDetailViewController: MovieDetailView {
     func display(_ movieViewModel: MovieViewModel) {
         title = movieViewModel.title
         overViewText = movieViewModel.overview
-        let url = URL(string: movieViewModel.backdropPath)
-        backdropImageView.setImage(with: url)
+        let backdropURL = URL(string: movieViewModel.backdropPath ?? "")
+        backdropImageView.setImage(with: backdropURL)
     }
 }
 

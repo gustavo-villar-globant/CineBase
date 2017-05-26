@@ -15,7 +15,7 @@ class MovieEntity: Object {
     dynamic var title = ""
     dynamic var overview = ""
     dynamic var imagePath = ""
-    dynamic var backdropPath = ""
+    dynamic var backdropPath: String?
     dynamic var releaseDate: Date?
     
     override static func primaryKey() -> String? {
