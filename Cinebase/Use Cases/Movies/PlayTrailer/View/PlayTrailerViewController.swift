@@ -18,7 +18,18 @@ class PlayTrailerViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        playerView.load(withVideoId: id)
+        self.playerView.delegate = self
+        //playerView.load(withVideoId: id)
+        
+        //let vars = {"autoplay" : 1}
+        let playerVars = [
+            "autohide" : 1,
+            "controls" : 0,
+            "playsinline" : 1
+        ]
+        
+        playerView.load(withVideoId: id, playerVars: playerVars)
+        //playerView.playVideo()
         
     }
     
@@ -30,4 +41,11 @@ class PlayTrailerViewController: UIViewController {
         return true
     }
     
+}
+
+extension PlayTrailerViewController : YTPlayerViewDelegate {
+    func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
+        print("listo")
+        playerView.playVideo()
+    }
 }

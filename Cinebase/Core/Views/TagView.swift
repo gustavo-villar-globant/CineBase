@@ -20,6 +20,7 @@ class TagView: UIControl {
     weak var delegate: TagViewDelegate?
     var tagHeight: CGFloat?
     var isSquare: Bool = false
+    
 
     var tagNameLabel: UILabel = {
         let label = UILabel()
